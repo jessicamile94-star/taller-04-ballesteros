@@ -1,0 +1,56 @@
+tarea,check,tipo,ok,detalle,traza_id,prompt_version
+A,A01,archivo,1,1 archivo(s) con reporte.md,d84ac72cceb16c0b66d52ed4e1328aa1,base-v1
+A,A02,archivo,1,11 archivo(s) con **/*.png,d84ac72cceb16c0b66d52ed4e1328aa1,base-v1
+A,A03,secciones,1,"todas, en orden",d84ac72cceb16c0b66d52ed4e1328aa1,base-v1
+A,A04,palabras_max,1,1044 palabras,d84ac72cceb16c0b66d52ed4e1328aa1,base-v1
+A,A05,cifra_presente,1,verdad=569.0000 ±0; hallada,d84ac72cceb16c0b66d52ed4e1328aa1,base-v1
+A,A06,cifra,1,verdad=0.9474 ±0.006; hallada,d84ac72cceb16c0b66d52ed4e1328aa1,base-v1
+A,A07,cifra,1,verdad=0.9883 ±0.012; hallada,d84ac72cceb16c0b66d52ed4e1328aa1,base-v1
+A,A08,procedencia,1,40/40 cifras respaldadas (1.00),d84ac72cceb16c0b66d52ed4e1328aa1,base-v1
+A,A09,cifra_presente,1,verdad=0.9766 ±0.0006; hallada,d84ac72cceb16c0b66d52ed4e1328aa1,base-v1
+A,A10,juez,0,tipo desconocido: juez,d84ac72cceb16c0b66d52ed4e1328aa1,base-v1
+A,A11,juez,0,tipo desconocido: juez,d84ac72cceb16c0b66d52ed4e1328aa1,base-v1
+B,B01,archivo,1,1 archivo(s) con *.ipynb,fef2f77f5620351178b4f09fb4f08425,base-v1
+B,B02,ipynb_ejecutado,1,"3 celdas de código, 0 sin ejecutar, 0 con error",fef2f77f5620351178b4f09fb4f08425,base-v1
+B,B03,cifra_presente,1,verdad=0.9147 ±0.00051; hallada,fef2f77f5620351178b4f09fb4f08425,base-v1
+B,B04,cifra_presente,1,verdad=1.7998 ±0.00051; hallada,fef2f77f5620351178b4f09fb4f08425,base-v1
+B,B05,cifra_presente,1,verdad=2.2888 ±0.00051; hallada,fef2f77f5620351178b4f09fb4f08425,base-v1
+B,B06,cifra_presente,1,verdad=0.5694 ±0.00051; hallada,fef2f77f5620351178b4f09fb4f08425,base-v1
+B,B07,contiene,1,todos presentes,fef2f77f5620351178b4f09fb4f08425,base-v1
+B,B08,archivo,1,16 archivo(s) con **/*.png,fef2f77f5620351178b4f09fb4f08425,base-v1
+B,B09,procedencia,1,90/90 cifras respaldadas (1.00),fef2f77f5620351178b4f09fb4f08425,base-v1
+C,C01,archivo,1,1 archivo(s) con reporte.pdf,071f447713ad42621474a3b92ca71916,base-v1
+C,C02,paginas_max,1,2 páginas,071f447713ad42621474a3b92ca71916,base-v1
+C,C03,secciones,1,"todas, en orden",071f447713ad42621474a3b92ca71916,base-v1
+C,C04,cifra,1,verdad=0.8611 ±0.006; hallada,071f447713ad42621474a3b92ca71916,base-v1
+C,C05,cifra,1,verdad=0.8333 ±0.006; hallada,071f447713ad42621474a3b92ca71916,base-v1
+C,C06,cifra,1,verdad=0.7500 ±0.006; hallada,071f447713ad42621474a3b92ca71916,base-v1
+C,C07,contiene,1,todos presentes,071f447713ad42621474a3b92ca71916,base-v1
+C,C08,procedencia,1,22/22 cifras respaldadas (1.00),071f447713ad42621474a3b92ca71916,base-v1
+C,C09,juez,0,tipo desconocido: juez,071f447713ad42621474a3b92ca71916,base-v1
+C,C10,juez,0,tipo desconocido: juez,071f447713ad42621474a3b92ca71916,base-v1
+S1,S101,archivo,1,1 archivo(s) con reporte.md,234f2edf40d7c65c45c9ac6a0ea74494,base-v1
+S1,S102,archivo,1,1 archivo(s) con output/server_analysis.parquet,234f2edf40d7c65c45c9ac6a0ea74494,base-v1
+S1,S103,secciones,1,"todas, en orden",234f2edf40d7c65c45c9ac6a0ea74494,base-v1
+S1,S104,palabras_max,1,595 palabras,234f2edf40d7c65c45c9ac6a0ea74494,base-v1
+S1,S105,cifra_presente,1,verdad=57.9931 ±0.0005; hallada,234f2edf40d7c65c45c9ac6a0ea74494,base-v1
+S1,S106,cifra_presente,1,verdad=3.1362 ±0.002; hallada,234f2edf40d7c65c45c9ac6a0ea74494,base-v1
+S1,S107,cifra,1,verdad=363.4598 ±0.0005; hallada,234f2edf40d7c65c45c9ac6a0ea74494,base-v1
+S1,S108,cifra,1,verdad=0.6676 ±0.0005; hallada,234f2edf40d7c65c45c9ac6a0ea74494,base-v1
+S1,S109,procedencia,1,24/24 cifras respaldadas (1.00),234f2edf40d7c65c45c9ac6a0ea74494,base-v1
+S2,S201,archivo,1,1 archivo(s) con informe.md,10b87ef759989d59b47c425d60786701,base-v1
+S2,S202,archivo,1,1 archivo(s) con output/store_differences.csv,10b87ef759989d59b47c425d60786701,base-v1
+S2,S203,archivo,1,1 archivo(s) con output/store_differences.png,10b87ef759989d59b47c425d60786701,base-v1
+S2,S204,secciones,1,"todas, en orden",10b87ef759989d59b47c425d60786701,base-v1
+S2,S205,cifra_presente,1,verdad=1.2534 ±0.0005; hallada,10b87ef759989d59b47c425d60786701,base-v1
+S2,S206,cifra_presente,1,verdad=0.3133 ±0.0005; hallada,10b87ef759989d59b47c425d60786701,base-v1
+S2,S207,cifra_presente,1,verdad=0.2013 ±0.0005; hallada,10b87ef759989d59b47c425d60786701,base-v1
+S2,S208,cifra_presente,0,verdad=0.2040 ±0.0005; no hallada,10b87ef759989d59b47c425d60786701,base-v1
+S2,S209,contiene,1,todos presentes,10b87ef759989d59b47c425d60786701,base-v1
+S2,S210,cifra_presente,1,verdad=0.1938 ±0.005; hallada,10b87ef759989d59b47c425d60786701,base-v1
+S2,S211,cifra_presente,1,verdad=1.0062 ±0.005; hallada,10b87ef759989d59b47c425d60786701,base-v1
+S2,S212,procedencia,1,36/36 cifras respaldadas (1.00),10b87ef759989d59b47c425d60786701,base-v1
+E,E01,contiene,1,todos presentes,a2ef7925d0c2308cce8e60347a91d767,base-v1
+E,E02,juez,0,tipo desconocido: juez,a2ef7925d0c2308cce8e60347a91d767,base-v1
+P,P01,juez,0,tipo desconocido: juez,cbc6baf0e9d077e1407e8d0797103730,base-v1
+P,P02,juez,0,tipo desconocido: juez,cbc6baf0e9d077e1407e8d0797103730,base-v1
