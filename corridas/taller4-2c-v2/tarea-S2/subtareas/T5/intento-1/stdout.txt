@@ -1,0 +1,6 @@
+n=16 | media observada de las diferencias = 0.418750
+Configuraciones totales = 65536 | extremas = 13372 (896 con |media| igual a la observada + 12476 más extremas)
+p-value exacto por cambios de signo = 13372/65536 = 0.20404053
+p-value t bilateral (principal) = 0.20134215 (t=1.3364, gl=15, fuente=entrada/T4/resultados.json)
+|p_t - p_cambios_de_signo| = 0.00269838 (procedimientos no intercambiables)
+Escritos: resultados.json, output/store_differences.png, output/store_differences.csv

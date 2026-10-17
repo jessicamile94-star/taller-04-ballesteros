@@ -1,0 +1,6 @@
+T3 completada.
+Original sin cambios: True | copia fiel: True
+requires_review=True: 49 filas | dtype: bool
+Fila 23: {'server': 'AI-SRV-01', 'timestamp': '2026-08-24 09:55:00', 'gpu_utilization': 97.0, 'cpu_utilization': 93.0, 'memory_gb': 55.0, 'power_w': 590.0, 'temperature_c': 66.97, 'load_score': 3.136217861183744, 'requires_review': True}
+Fila 23 coincide con lo esperado: True
+Parquet escrito en output/server_analysis.parquet

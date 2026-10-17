@@ -1,0 +1,59 @@
+{
+ "subtareas": [
+  {
+   "id": "T1",
+   "tipo": "calculo",
+   "secciones": [
+    "Parte 1"
+   ],
+   "depende_de": [],
+   "objetivo": "Implementar la línea base léxica: definir en código el corpus de 10 documentos y las 6 consultas con sus juicios de relevancia, vectorizar con TfidfVectorizer (parámetros por defecto), calcular similitud coseno consulta-documento, ordenar los 10 documentos por consulta y calcular Hit@1, Hit@3 y MRR agregados sobre las 6 consultas, guardando también el ranking completo por consulta.",
+   "criterio": "Existen las tres cifras agregadas (Hit@1, Hit@3, MRR) para TF-IDF y el ranking ordenado de los 10 documentos para cada una de las 6 consultas, todo producido por ejecución del código.",
+   "status": "pendiente",
+   "intentos": 0
+  },
+  {
+   "id": "T2",
+   "tipo": "calculo",
+   "secciones": [
+    "Parte 2"
+   ],
+   "depende_de": [
+    "T1"
+   ],
+   "objetivo": "Con la misma matriz TF-IDF, las mismas consultas y juicios de T1, proyectar a 4 dimensiones con TruncatedSVD(n_components=4, random_state=0) (LSA), repetir la recuperación y evaluación por similitud coseno, y construir una sola tabla con Hit@1, Hit@3 y MRR de los dos métodos (TF-IDF y LSA).",
+   "criterio": "Existe una tabla única con las tres métricas para TF-IDF y para LSA, calculadas sobre las mismas 6 consultas, más los rankings por consulta de LSA.",
+   "status": "pendiente",
+   "intentos": 0
+  },
+  {
+   "id": "T3",
+   "tipo": "calculo",
+   "secciones": [
+    "Parte 3"
+   ],
+   "depende_de": [
+    "T1",
+    "T2"
+   ],
+   "objetivo": "A partir de los rankings de ambos métodos, identificar en qué consultas falla cada método (documento relevante fuera del top 3) y calcular, para cada consulta, los términos que comparten la consulta con su documento relevante (y con los documentos mal rankeados en el top), para sustentar la explicación del porqué de los fallos.",
+   "criterio": "Existen: lista de consultas que fallan por método (relevante fuera del top 3) y una tabla o listado de términos compartidos consulta-documento relevante (y solapamiento con los documentos que sí quedaron en el top) para las consultas problemáticas.",
+   "status": "pendiente",
+   "intentos": 0
+  },
+  {
+   "id": "T4",
+   "tipo": "conceptual",
+   "secciones": [
+    "Parte 4"
+   ],
+   "depende_de": [
+    "T3"
+   ],
+   "objetivo": "Redactar la respuesta conceptual: por qué un recuperador denso con embeddings de un modelo entrenado resolvería q5 mejor que TF-IDF y LSA (apoyándose en el fallo de q5 y los términos compartidos identificados en T3), y qué costos tiene frente a TF-IDF (modelo, cómputo, indexación, interpretabilidad).",
+   "criterio": "Texto que explica el caso de q5 con referencia a los resultados de T1-T3 y menciona al menos los costos del recuperador denso frente a TF-IDF.",
+   "status": "pendiente",
+   "intentos": 0
+  }
+ ]
+}

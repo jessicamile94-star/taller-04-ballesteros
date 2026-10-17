@@ -27,14 +27,22 @@ de Python 3.12 que resuelve una subtarea. Reglas obligatorias:
 - Imprime un resumen breve de los resultados.
 Devuelve SOLO el script, dentro de un bloque ```python ... ```."""
 
+SISTEMA_V2 = SISTEMA + """
 
-def mensajes(subtarea: dict, contexto: dict, previo: str | None, correccion: str | None) -> list[dict]:
+Para evitar agotar el límite de salida, traduce cada requisito directamente a instrucciones de
+Python y deja los cálculos a la ejecución del script. Mantén el script conciso: sin deliberaciones,
+explicación previa, texto repetido del contexto ni comentarios extensos. Conserva todas las
+validaciones y archivos exigidos. Devuelve un único bloque de código ejecutable."""
+
+
+def mensajes(subtarea: dict, contexto: dict, previo: str | None, correccion: str | None,
+             system_prompt: str = SISTEMA) -> list[dict]:
     usuario = (f"SUBTAREA {subtarea['id']}: {subtarea.get('objetivo', '')}\n"
                f"CRITERIO DE ÉXITO: {subtarea.get('criterio', '')}\n\n"
                f"CONTEXTO DEL ENUNCIADO (citado por sección):\n{contexto['texto']}\n")
     if contexto.get("previos"):
         usuario += f"\nRESULTADOS DE LAS SUBTAREAS PREVIAS:\n{contexto['previos']}\n"
-    msgs = [{"role": "system", "content": SISTEMA}, {"role": "user", "content": usuario}]
+    msgs = [{"role": "system", "content": system_prompt}, {"role": "user", "content": usuario}]
     if previo and correccion:
         msgs += [{"role": "assistant", "content": f"```python\n{previo}\n```"},
                  {"role": "user", "content": f"El crítico RECHAZÓ el script. Corrige esto y devuelve "
@@ -51,5 +59,8 @@ def extraer_codigo(texto: str) -> str:
 
 def programar(llm: ClienteLLM, subtarea: dict, contexto: dict, previo: str | None = None,
               correccion: str | None = None) -> str:
-    return extraer_codigo(llm.pedir("programador", mensajes(subtarea, contexto, previo, correccion),
-                                    subtarea=subtarea["id"]))
+    prompt = getattr(llm.traza, "prompt_programador", None)
+    sistema = (prompt.prompt if prompt is not None else SISTEMA)
+    return extraer_codigo(llm.pedir(
+        "programador", mensajes(subtarea, contexto, previo, correccion, sistema),
+        subtarea=subtarea["id"], langfuse_prompt=prompt))

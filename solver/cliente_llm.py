@@ -103,7 +103,8 @@ class ClienteLLM:
     # ------------------------------------------------------------------ llamadas
     def chat(self, agente: str, mensajes: list[dict], *, subtarea: str | None = None,
              json_mode: bool = False, tools: list[dict] | None = None,
-             max_tokens: int | None = None, tope: int | None = None) -> dict:
+             max_tokens: int | None = None, tope: int | None = None,
+             langfuse_prompt=None) -> dict:
         """Una respuesta no vacía del modelo, o una excepción. Nunca una cadena vacía.
 
         Si vuelve vacía por longitud, se duplica max_tokens hasta `tope`. Si ya estaba en el tope,
@@ -122,7 +123,8 @@ class ClienteLLM:
             intento += 1
             t0 = time.perf_counter()
             try:
-                with self.traza.generacion_langfuse(agente, self.modelo, mensajes) as generacion:
+                with self.traza.generacion_langfuse(
+                        agente, self.modelo, mensajes, prompt=langfuse_prompt) as generacion:
                     r = self.llm.chat(mensajes, tools=tools, json_mode=json_mode, max_tokens=max_tokens)
                     if generacion is not None:
                         uso_actual = r.get("uso") or {}

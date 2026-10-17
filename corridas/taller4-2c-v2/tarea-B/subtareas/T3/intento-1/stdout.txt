@@ -1,0 +1,10 @@
+T3 — Comprobación empírica (N=10000, semilla=0)
+  t0: teórica=0.569376  observada=0.568200  (conteo=5682)
+  t1: teórica=0.209462  observada=0.209300  (conteo=2093)
+  t2: teórica=0.127045  observada=0.129600  (conteo=1296)
+  t3: teórica=0.094117  observada=0.092900  (conteo=929)
+  t4: teórica=0.000000  observada=0.000000  (conteo=0)
+  t5: teórica=0.000000  observada=0.000000  (conteo=0)
+Divergencia KL (bits): 0.00005007
+Divergencia KL (nats): 0.00003471
+Figura guardada: parte3_frecuencias_vs_teoricas.png

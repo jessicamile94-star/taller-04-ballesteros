@@ -1,0 +1,6 @@
+T3 completada.
+Figura: output/store_differences.png (16 observaciones, referencia en cero incluida)
+CSV: output/store_differences.csv
+Favorece a A: 6 | Favorece a B: 10 | Empates: 0
+Mayor magnitud a favor de B: S08 (difference=+2.1000)
+Mayor magnitud a favor de A: S09 (difference=-1.8000)

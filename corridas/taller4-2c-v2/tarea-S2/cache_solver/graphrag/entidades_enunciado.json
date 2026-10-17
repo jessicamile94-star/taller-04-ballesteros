@@ -1,0 +1,2501 @@
+{
+ "Tarea 1": [
+  {
+   "clave": "tarea 1",
+   "nombre": "Tarea 1",
+   "tipo": "concepto",
+   "alias": [],
+   "descripciones": [
+    "Tarea que consiste en completar el contrato de análisis."
+   ],
+   "citas": [
+    "Tarea 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "contrato de analisi",
+   "nombre": "contrato de análisis",
+   "tipo": "concepto",
+   "alias": [],
+   "descripciones": [
+    "Contrato que debe completarse respondiendo las preguntas 1 a 10 del informe antes de calcular resultados."
+   ],
+   "citas": [
+    "Tarea 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "informe",
+   "nombre": "informe",
+   "tipo": "dataset",
+   "alias": [],
+   "descripciones": [
+    "Documento que contiene las preguntas 1 a 10.",
+    "Documento donde se identifican las tiendas que favorecen a cada modelo y las diferencias de mayor magnitud."
+   ],
+   "citas": [
+    "Tarea 1",
+    "Tarea 3"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "pregunta 1 a 10",
+   "nombre": "preguntas 1 a 10",
+   "tipo": "restriccion",
+   "alias": [],
+   "descripciones": [
+    "Preguntas del informe que deben responderse antes de calcular resultados."
+   ],
+   "citas": [
+    "Tarea 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "proceso objetivo propuesto",
+   "nombre": "proceso objetivo propuesto",
+   "tipo": "concepto",
+   "alias": [],
+   "descripciones": [
+    "Punto del contrato que declara el proceso objetivo propuesto."
+   ],
+   "citas": [
+    "Tarea 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "metrica",
+   "nombre": "métrica",
+   "tipo": "metrica",
+   "alias": [],
+   "descripciones": [
+    "Punto del contrato que declara la métrica de evaluación y su dirección.",
+    "Elemento que debe incluirse en el informe ejecutivo."
+   ],
+   "citas": [
+    "Tarea 1",
+    "Parte 5"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "unidad de analisi",
+   "nombre": "unidad de análisis",
+   "tipo": "concepto",
+   "alias": [],
+   "descripciones": [
+    "Punto del contrato que declara la unidad de análisis."
+   ],
+   "citas": [
+    "Tarea 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "evidencia de emparejamiento",
+   "nombre": "evidencia de emparejamiento",
+   "tipo": "concepto",
+   "alias": [
+    "matching"
+   ],
+   "descripciones": [
+    "Punto del contrato que requiere evidencia de emparejamiento."
+   ],
+   "citas": [
+    "Tarea 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "estimando",
+   "nombre": "estimando",
+   "tipo": "concepto",
+   "alias": [
+    "estimand"
+   ],
+   "descripciones": [
+    "Punto del contrato que declara el estimando."
+   ],
+   "citas": [
+    "Tarea 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "hipotesi",
+   "nombre": "hipótesis",
+   "tipo": "concepto",
+   "alias": [],
+   "descripciones": [
+    "Punto del contrato que declara la hipótesis."
+   ],
+   "citas": [
+    "Tarea 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "procedimiento principal",
+   "nombre": "procedimiento principal",
+   "tipo": "concepto",
+   "alias": [],
+   "descripciones": [
+    "Punto del contrato que declara el procedimiento principal."
+   ],
+   "citas": [
+    "Tarea 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "p value",
+   "nombre": "p-value",
+   "tipo": "metrica",
+   "alias": [
+    "valor p",
+    "p-value bilateral",
+    "valor p bilateral"
+   ],
+   "descripciones": [
+    "Valor p cuyos resultados acompañantes deben declararse en el contrato.",
+    "Valor p de la prueba t que debe conservarse.",
+    "Valor a reportar, explicado de forma condicional a la hipótesis nula, el diseño y los supuestos.",
+    "Valor p que la conclusión debe reportar.",
+    "Valor p de dos colas que debe reportarse y explicarse correctamente qué representa.",
+    "Medida que debe incluirse en el informe ejecutivo."
+   ],
+   "citas": [
+    "Tarea 1",
+    "Tarea 4",
+    "Tarea 5",
+    "Tarea 7",
+    "Parte 4",
+    "Parte 5"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "limite del diseno",
+   "nombre": "límites del diseño",
+   "tipo": "concepto",
+   "alias": [],
+   "descripciones": [
+    "Punto del contrato que declara los límites del diseño."
+   ],
+   "citas": [
+    "Tarea 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  }
+ ],
+ "Tarea 2": [
+  {
+   "clave": "csv",
+   "nombre": "CSV",
+   "tipo": "dataset",
+   "alias": [],
+   "descripciones": [
+    "Archivo que se carga validando que contenga exactamente las columnas store_id, error_a y error_b, y que no debe modificarse."
+   ],
+   "citas": [
+    "Tarea 2"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "store id",
+   "nombre": "store_id",
+   "tipo": "dataset",
+   "alias": [
+    "identificador de tienda"
+   ],
+   "descripciones": [
+    "Columna identificadora de cada tienda; cada valor debe ser único y no nulo.",
+    "Columna mediante la cual deben validarse los 16 pares de la auditoría."
+   ],
+   "citas": [
+    "Tarea 2",
+    "Parte 2"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "error a",
+   "nombre": "error_a",
+   "tipo": "dataset",
+   "alias": [],
+   "descripciones": [
+    "Columna de errores del CSV cuyos valores deben ser numéricos, finitos y no negativos."
+   ],
+   "citas": [
+    "Tarea 2"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "error b",
+   "nombre": "error_b",
+   "tipo": "dataset",
+   "alias": [],
+   "descripciones": [
+    "Columna de errores del CSV cuyos valores deben ser numéricos, finitos y no negativos."
+   ],
+   "citas": [
+    "Tarea 2"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "difference",
+   "nombre": "difference",
+   "tipo": "dataset",
+   "alias": [
+    "diferencia",
+    "vector de diferencias",
+    "diferencias"
+   ],
+   "descripciones": [
+    "Columna añadida a la tabla pareada, calculada como error_a − error_b.",
+    "Cantidad cuyo signo y magnitud se deben mostrar para cada tienda en la figura.",
+    "Vector de diferencias sobre el que se calculan los estadísticos y la prueba t pareada.",
+    "Datos sobre los que se aplica la prueba t de una muestra.",
+    "Vector mediante el cual se remuestrean tiendas completas en el bootstrap pareado."
+   ],
+   "citas": [
+    "Tarea 2",
+    "Tarea 3",
+    "Tarea 4",
+    "Tarea 5",
+    "Tarea 6"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "favor",
+   "nombre": "favors",
+   "tipo": "dataset",
+   "alias": [],
+   "descripciones": [
+    "Columna añadida que vale 'B' si la diferencia es positiva y 'A' si es negativa."
+   ],
+   "citas": [
+    "Tarea 2"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "tabla pareada",
+   "nombre": "tabla pareada",
+   "tipo": "dataset",
+   "alias": [
+    "tabla_pareada",
+    "pares"
+   ],
+   "descripciones": [
+    "Tabla construida conservando las tres columnas originales y añadiendo difference y favors."
+   ],
+   "citas": [
+    "Tarea 2"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "valueerror",
+   "nombre": "ValueError",
+   "tipo": "concepto",
+   "alias": [],
+   "descripciones": [
+    "Excepción que se debe lanzar cuando falla la validación de columnas, identificadores o errores."
+   ],
+   "citas": [
+    "Tarea 2"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "unicidad de identificador",
+   "nombre": "unicidad de identificadores",
+   "tipo": "restriccion",
+   "alias": [
+    "identificadores únicos y no nulos"
+   ],
+   "descripciones": [
+    "Cada identificador debe ser único y no nulo; si no, ValueError que mencione el identificador."
+   ],
+   "citas": [
+    "Tarea 2"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "error no negativo",
+   "nombre": "errores no negativos",
+   "tipo": "restriccion",
+   "alias": [
+    "errores numéricos, finitos y no negativo"
+   ],
+   "descripciones": [
+    "Los errores deben ser numéricos, finitos y no negativos; si no, ValueError."
+   ],
+   "citas": [
+    "Tarea 2"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "no modificar el csv original",
+   "nombre": "no modificar el CSV original",
+   "tipo": "restriccion",
+   "alias": [],
+   "descripciones": [
+    "El CSV original no debe ser modificado durante la carga y auditoría."
+   ],
+   "citas": [
+    "Tarea 2"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "verificacion por store id",
+   "nombre": "verificación por store_id",
+   "tipo": "restriccion",
+   "alias": [
+    "verificar los pares"
+   ],
+   "descripciones": [
+    "Los pares deben verificarse mediante store_id; comprobar solo la longitud de dos vectores no demuestra que correspondan a las mismas tiendas."
+   ],
+   "citas": [
+    "Tarea 2"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  }
+ ],
+ "Tarea 3": [
+  {
+   "clave": "output store difference png",
+   "nombre": "output/store_differences.png",
+   "tipo": "dataset",
+   "alias": [
+    "figura de diferencias por tienda",
+    "store_differences.png"
+   ],
+   "descripciones": [
+    "Archivo donde se debe guardar la figura que muestra las diferencias por tienda.",
+    "Archivo PNG de salida que el programa debe guardar."
+   ],
+   "citas": [
+    "Tarea 3",
+    "Tarea 7"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "difference",
+   "nombre": "difference",
+   "tipo": "dataset",
+   "alias": [
+    "diferencia",
+    "vector de diferencias",
+    "diferencias"
+   ],
+   "descripciones": [
+    "Columna añadida a la tabla pareada, calculada como error_a − error_b.",
+    "Cantidad cuyo signo y magnitud se deben mostrar para cada tienda en la figura.",
+    "Vector de diferencias sobre el que se calculan los estadísticos y la prueba t pareada.",
+    "Datos sobre los que se aplica la prueba t de una muestra.",
+    "Vector mediante el cual se remuestrean tiendas completas en el bootstrap pareado."
+   ],
+   "citas": [
+    "Tarea 2",
+    "Tarea 3",
+    "Tarea 4",
+    "Tarea 5",
+    "Tarea 6"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "tienda",
+   "nombre": "tienda",
+   "tipo": "dataset",
+   "alias": [
+    "store",
+    "tiendas",
+    "tiendas completas"
+   ],
+   "descripciones": [
+    "Unidad para la que se muestra una observación con su diferencia en la figura.",
+    "Unidades de datos que se remuestrean completas, no por separado sus errores.",
+    "Unidades que se remuestrean completas en el bootstrap pareado."
+   ],
+   "citas": [
+    "Tarea 3",
+    "Tarea 6",
+    "Parte 4"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "referencia en cero",
+   "nombre": "referencia en cero",
+   "tipo": "restriccion",
+   "alias": [],
+   "descripciones": [
+    "La figura debe incluir una referencia visible en cero."
+   ],
+   "citas": [
+    "Tarea 3"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "informe",
+   "nombre": "informe",
+   "tipo": "dataset",
+   "alias": [],
+   "descripciones": [
+    "Documento que contiene las preguntas 1 a 10.",
+    "Documento donde se identifican las tiendas que favorecen a cada modelo y las diferencias de mayor magnitud."
+   ],
+   "citas": [
+    "Tarea 1",
+    "Tarea 3"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  }
+ ],
+ "Tarea 4": [
+  {
+   "clave": "difference",
+   "nombre": "difference",
+   "tipo": "dataset",
+   "alias": [
+    "diferencia",
+    "vector de diferencias",
+    "diferencias"
+   ],
+   "descripciones": [
+    "Columna añadida a la tabla pareada, calculada como error_a − error_b.",
+    "Cantidad cuyo signo y magnitud se deben mostrar para cada tienda en la figura.",
+    "Vector de diferencias sobre el que se calculan los estadísticos y la prueba t pareada.",
+    "Datos sobre los que se aplica la prueba t de una muestra.",
+    "Vector mediante el cual se remuestrean tiendas completas en el bootstrap pareado."
+   ],
+   "citas": [
+    "Tarea 2",
+    "Tarea 3",
+    "Tarea 4",
+    "Tarea 5",
+    "Tarea 6"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "scipy stat",
+   "nombre": "scipy.stats",
+   "tipo": "metodo",
+   "alias": [
+    "scipy"
+   ],
+   "descripciones": [
+    "Módulo indicado para calcular la prueba t y el intervalo sobre el vector de diferencias."
+   ],
+   "citas": [
+    "Tarea 4"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "prueba t pareada",
+   "nombre": "prueba t pareada",
+   "tipo": "metodo",
+   "alias": [
+    "prueba t",
+    "media pareada",
+    "prueba t de una muestra",
+    "t-test"
+   ],
+   "descripciones": [
+    "Prueba t para la media pareada que se calcula con scipy.stats sobre las diferencias.",
+    "Procedimiento principal de la tarea, aplicado sobre las diferencias con alternativa bilateral.",
+    "Prueba estadística que el programa debe mostrar junto con el resumen.",
+    "Prueba estadística de la que se debe reportar el estadístico t, sus grados de libertad y el p-value bilateral."
+   ],
+   "citas": [
+    "Tarea 4",
+    "Tarea 5",
+    "Tarea 7",
+    "Parte 4"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "intervalo t bilateral del 95",
+   "nombre": "intervalo t bilateral del 95 %",
+   "tipo": "metrica",
+   "alias": [
+    "intervalo de confianza",
+    "IC 95 %"
+   ],
+   "descripciones": [
+    "Intervalo de confianza bilateral del 95 % para la media pareada que debe conservarse."
+   ],
+   "citas": [
+    "Tarea 4"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "tamano de muestra",
+   "nombre": "n",
+   "tipo": "metrica",
+   "alias": [
+    "tamaño de muestra"
+   ],
+   "descripciones": [
+    "Tamaño de muestra de las diferencias que se debe reportar."
+   ],
+   "citas": [
+    "Tarea 4"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "mean",
+   "nombre": "mean",
+   "tipo": "metrica",
+   "alias": [
+    "media",
+    "diferencia media",
+    "diferencia media en unidades vendidas"
+   ],
+   "descripciones": [
+    "Media de las diferencias que se debe reportar e interpretar en unidades vendidas.",
+    "Medida cuyo signo y magnitud deben interpretarse en unidades vendidas."
+   ],
+   "citas": [
+    "Tarea 4",
+    "Parte 3"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "sample sd",
+   "nombre": "sample_sd",
+   "tipo": "metrica",
+   "alias": [
+    "sd",
+    "desviación estándar muestral"
+   ],
+   "descripciones": [
+    "Desviación estándar muestral de las diferencias que se debe reportar.",
+    "Medida de dispersión muestral que debe reportarse."
+   ],
+   "citas": [
+    "Tarea 4",
+    "Parte 3"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "standard error",
+   "nombre": "standard_error",
+   "tipo": "metrica",
+   "alias": [
+    "SE",
+    "error estándar"
+   ],
+   "descripciones": [
+    "Error estándar de la media de las diferencias, calculado como sd / √n.",
+    "Medida de incertidumbre que debe reportarse junto con las demás estadísticas."
+   ],
+   "citas": [
+    "Tarea 4",
+    "Parte 3"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "grado de libertad",
+   "nombre": "grados de libertad",
+   "tipo": "metrica",
+   "alias": [],
+   "descripciones": [
+    "Grados de libertad de la prueba t que deben conservarse.",
+    "Cantidad asociada al estadístico t que debe reportarse."
+   ],
+   "citas": [
+    "Tarea 4",
+    "Parte 4"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "estadistico t",
+   "nombre": "estadístico t",
+   "tipo": "metrica",
+   "alias": [
+    "estadístico",
+    "t"
+   ],
+   "descripciones": [
+    "Estadístico de la prueba t que debe conservarse.",
+    "Estadístico de la prueba t que debe reportarse junto con sus grados de libertad."
+   ],
+   "citas": [
+    "Tarea 4",
+    "Parte 4"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "p value",
+   "nombre": "p-value",
+   "tipo": "metrica",
+   "alias": [
+    "valor p",
+    "p-value bilateral",
+    "valor p bilateral"
+   ],
+   "descripciones": [
+    "Valor p cuyos resultados acompañantes deben declararse en el contrato.",
+    "Valor p de la prueba t que debe conservarse.",
+    "Valor a reportar, explicado de forma condicional a la hipótesis nula, el diseño y los supuestos.",
+    "Valor p que la conclusión debe reportar.",
+    "Valor p de dos colas que debe reportarse y explicarse correctamente qué representa.",
+    "Medida que debe incluirse en el informe ejecutivo."
+   ],
+   "citas": [
+    "Tarea 1",
+    "Tarea 4",
+    "Tarea 5",
+    "Tarea 7",
+    "Parte 4",
+    "Parte 5"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "desviacion muestral",
+   "nombre": "desviación muestral",
+   "tipo": "restriccion",
+   "alias": [],
+   "descripciones": [
+    "Regla de que la desviación estándar reportada debe ser muestral."
+   ],
+   "citas": [
+    "Tarea 4"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "se sd n",
+   "nombre": "SE = sd / √n",
+   "tipo": "restriccion",
+   "alias": [],
+   "descripciones": [
+    "Regla de cálculo del error estándar como la desviación estándar dividida por raíz de n."
+   ],
+   "citas": [
+    "Tarea 4"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "conservar resultado de la prueba",
+   "nombre": "conservar resultados de la prueba",
+   "tipo": "restriccion",
+   "alias": [],
+   "descripciones": [
+    "Regla de conservar grados de libertad, estadístico, p-value e intervalo."
+   ],
+   "citas": [
+    "Tarea 4"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "dispersion entre tienda",
+   "nombre": "dispersión entre tiendas",
+   "tipo": "concepto",
+   "alias": [],
+   "descripciones": [
+    "Dispersión entre tiendas que debe distinguirse del error estándar de la media."
+   ],
+   "citas": [
+    "Tarea 4"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  }
+ ],
+ "Tarea 5": [
+  {
+   "clave": "prueba t pareada",
+   "nombre": "prueba t pareada",
+   "tipo": "metodo",
+   "alias": [
+    "prueba t",
+    "media pareada",
+    "prueba t de una muestra",
+    "t-test"
+   ],
+   "descripciones": [
+    "Prueba t para la media pareada que se calcula con scipy.stats sobre las diferencias.",
+    "Procedimiento principal de la tarea, aplicado sobre las diferencias con alternativa bilateral.",
+    "Prueba estadística que el programa debe mostrar junto con el resumen.",
+    "Prueba estadística de la que se debe reportar el estadístico t, sus grados de libertad y el p-value bilateral."
+   ],
+   "citas": [
+    "Tarea 4",
+    "Tarea 5",
+    "Tarea 7",
+    "Parte 4"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "prueba exacta por cambio de signo",
+   "nombre": "prueba exacta por cambios de signo",
+   "tipo": "metodo",
+   "alias": [
+    "prueba de cambios de signo",
+    "test exacto de signos",
+    "prueba de signos"
+   ],
+   "descripciones": [
+    "Prueba que enumera las configuraciones de signos y cuenta las medias nulas al menos tan extremas como la observada.",
+    "Prueba exacta basada en cambios de signo cuyo p-value debe reportarse."
+   ],
+   "citas": [
+    "Tarea 5",
+    "Parte 4"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "difference",
+   "nombre": "difference",
+   "tipo": "dataset",
+   "alias": [
+    "diferencia",
+    "vector de diferencias",
+    "diferencias"
+   ],
+   "descripciones": [
+    "Columna añadida a la tabla pareada, calculada como error_a − error_b.",
+    "Cantidad cuyo signo y magnitud se deben mostrar para cada tienda en la figura.",
+    "Vector de diferencias sobre el que se calculan los estadísticos y la prueba t pareada.",
+    "Datos sobre los que se aplica la prueba t de una muestra.",
+    "Vector mediante el cual se remuestrean tiendas completas en el bootstrap pareado."
+   ],
+   "citas": [
+    "Tarea 2",
+    "Tarea 3",
+    "Tarea 4",
+    "Tarea 5",
+    "Tarea 6"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "p value",
+   "nombre": "p-value",
+   "tipo": "metrica",
+   "alias": [
+    "valor p",
+    "p-value bilateral",
+    "valor p bilateral"
+   ],
+   "descripciones": [
+    "Valor p cuyos resultados acompañantes deben declararse en el contrato.",
+    "Valor p de la prueba t que debe conservarse.",
+    "Valor a reportar, explicado de forma condicional a la hipótesis nula, el diseño y los supuestos.",
+    "Valor p que la conclusión debe reportar.",
+    "Valor p de dos colas que debe reportarse y explicarse correctamente qué representa.",
+    "Medida que debe incluirse en el informe ejecutivo."
+   ],
+   "citas": [
+    "Tarea 1",
+    "Tarea 4",
+    "Tarea 5",
+    "Tarea 7",
+    "Parte 4",
+    "Parte 5"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "conteo de extrema",
+   "nombre": "conteo de extremas",
+   "tipo": "metrica",
+   "alias": [
+    "conteo de configuraciones extremas"
+   ],
+   "descripciones": [
+    "Número de medias nulas cuya magnitud es al menos tan extrema como la observada, a reportar en el informe."
+   ],
+   "citas": [
+    "Tarea 5"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "216 configuracion de signo",
+   "nombre": "216 configuraciones de signos",
+   "tipo": "restriccion",
+   "alias": [
+    "total de configuraciones"
+   ],
+   "descripciones": [
+    "Regla de enumerar las 216 configuraciones de signos y reportar el total."
+   ],
+   "citas": [
+    "Tarea 5"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "hipotesi nula",
+   "nombre": "hipótesis nula",
+   "tipo": "concepto",
+   "alias": [
+    "H0",
+    "referencia nula"
+   ],
+   "descripciones": [
+    "Hipótesis a la que debe condicionarse la explicación del p-value en el informe.",
+    "Referencia nula que, junto con la prueba t, no tiene supuestos idénticos."
+   ],
+   "citas": [
+    "Tarea 5",
+    "Parte 4"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "media nula",
+   "nombre": "medias nulas",
+   "tipo": "concepto",
+   "alias": [],
+   "descripciones": [
+    "Medias generadas por las configuraciones de signos cuya magnitud se compara con la observada."
+   ],
+   "citas": [
+    "Tarea 5"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "alternativa bilateral",
+   "nombre": "alternativa bilateral",
+   "tipo": "restriccion",
+   "alias": [
+    "prueba bilateral"
+   ],
+   "descripciones": [
+    "Especificación de que la prueba t de una muestra debe usar la alternativa bilateral."
+   ],
+   "citas": [
+    "Tarea 5"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "diseno",
+   "nombre": "diseño",
+   "tipo": "concepto",
+   "alias": [],
+   "descripciones": [
+    "Diseño del estudio que condiciona la explicación del p-value en el informe."
+   ],
+   "citas": [
+    "Tarea 5"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "supuesto",
+   "nombre": "supuestos",
+   "tipo": "concepto",
+   "alias": [
+    "supuestos estadísticos"
+   ],
+   "descripciones": [
+    "Supuestos que deben explicarse en el informe junto con el p-value.",
+    "Supuestos que la referencia nula y la prueba t no comparten de manera idéntica."
+   ],
+   "citas": [
+    "Tarea 5",
+    "Parte 4"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  }
+ ],
+ "Tarea 6": [
+  {
+   "clave": "bootstrap pareado",
+   "nombre": "bootstrap pareado",
+   "tipo": "metodo",
+   "alias": [
+    "bootstrap",
+    "intervalo bootstrap",
+    "intervalo bootstrap pareado"
+   ],
+   "descripciones": [
+    "Técnica de remuestreo pareado que se debe realizar en la tarea 6.",
+    "Intervalo bootstrap que el programa debe mostrar como parte de la salida.",
+    "Intervalo que debe reportarse con su semilla y número de remuestras, remuestreando tiendas completas."
+   ],
+   "citas": [
+    "Tarea 6",
+    "Tarea 7",
+    "Parte 4"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "np random default rng",
+   "nombre": "np.random.default_rng",
+   "tipo": "metodo",
+   "alias": [],
+   "descripciones": [
+    "Generador aleatorio de NumPy que se debe usar con la semilla indicada."
+   ],
+   "citas": [
+    "Tarea 6"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "difference",
+   "nombre": "difference",
+   "tipo": "dataset",
+   "alias": [
+    "diferencia",
+    "vector de diferencias",
+    "diferencias"
+   ],
+   "descripciones": [
+    "Columna añadida a la tabla pareada, calculada como error_a − error_b.",
+    "Cantidad cuyo signo y magnitud se deben mostrar para cada tienda en la figura.",
+    "Vector de diferencias sobre el que se calculan los estadísticos y la prueba t pareada.",
+    "Datos sobre los que se aplica la prueba t de una muestra.",
+    "Vector mediante el cual se remuestrean tiendas completas en el bootstrap pareado."
+   ],
+   "citas": [
+    "Tarea 2",
+    "Tarea 3",
+    "Tarea 4",
+    "Tarea 5",
+    "Tarea 6"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "tienda",
+   "nombre": "tienda",
+   "tipo": "dataset",
+   "alias": [
+    "store",
+    "tiendas",
+    "tiendas completas"
+   ],
+   "descripciones": [
+    "Unidad para la que se muestra una observación con su diferencia en la figura.",
+    "Unidades de datos que se remuestrean completas, no por separado sus errores.",
+    "Unidades que se remuestrean completas en el bootstrap pareado."
+   ],
+   "citas": [
+    "Tarea 3",
+    "Tarea 6",
+    "Parte 4"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "error de a",
+   "nombre": "errores de A",
+   "tipo": "concepto",
+   "alias": [],
+   "descripciones": [
+    "Errores del sistema A que no se deben remuestrear por separado."
+   ],
+   "citas": [
+    "Tarea 6"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "error de b",
+   "nombre": "errores de B",
+   "tipo": "concepto",
+   "alias": [],
+   "descripciones": [
+    "Errores del sistema B que no se deben remuestrear por separado."
+   ],
+   "citas": [
+    "Tarea 6"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "intervalo percentil del 95",
+   "nombre": "intervalo percentil del 95 %",
+   "tipo": "metrica",
+   "alias": [
+    "intervalo percentil"
+   ],
+   "descripciones": [
+    "Resultado que se debe reportar del bootstrap pareado."
+   ],
+   "citas": [
+    "Tarea 6"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "analisi de sensibilidad aproximado",
+   "nombre": "análisis de sensibilidad aproximado",
+   "tipo": "concepto",
+   "alias": [],
+   "descripciones": [
+    "Papel con el que se reporta el intervalo percentil del 95 %."
+   ],
+   "citas": [
+    "Tarea 6"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "seed 20260829",
+   "nombre": "SEED = 20260829",
+   "tipo": "restriccion",
+   "alias": [
+    "semilla 20260829"
+   ],
+   "descripciones": [
+    "Semilla indicada para el generador aleatorio."
+   ],
+   "citas": [
+    "Tarea 6"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "bootstrap resampl 10 000",
+   "nombre": "BOOTSTRAP_RESAMPLES = 10_000",
+   "tipo": "restriccion",
+   "alias": [
+    "10 000 remuestras"
+   ],
+   "descripciones": [
+    "Número de remuestras bootstrap a realizar."
+   ],
+   "citas": [
+    "Tarea 6"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "remuestreo de tienda completa",
+   "nombre": "remuestreo de tiendas completas",
+   "tipo": "restriccion",
+   "alias": [],
+   "descripciones": [
+    "Regla de remuestrear tiendas completas y no por separado los errores de A y B."
+   ],
+   "citas": [
+    "Tarea 6"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "reproducibilidad del intervalo",
+   "nombre": "reproducibilidad del intervalo",
+   "tipo": "restriccion",
+   "alias": [],
+   "descripciones": [
+    "Dos ejecuciones con la misma semilla deben dar el mismo intervalo."
+   ],
+   "citas": [
+    "Tarea 6"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  }
+ ],
+ "Tarea 7": [
+  {
+   "clave": "pipeline",
+   "nombre": "pipeline",
+   "tipo": "metodo",
+   "alias": [
+    "programa"
+   ],
+   "descripciones": [
+    "Flujo relativamente estable en ML clásico tras el entrenamiento y despliegue del modelo.",
+    "Pipeline que debe ejecutarse y cuyo programa debe guardar las salidas y mostrar los resultados estadísticos."
+   ],
+   "citas": [
+    "s4-llmops-y-finetuning § 1. Por qué LLMOps es diferente a MLOps",
+    "Tarea 7"
+   ],
+   "origen": [
+    "notas",
+    "enunciado"
+   ],
+   "fragmentos": [
+    "s4-llmops-y-finetuning#1"
+   ],
+   "comunidad": 6
+  },
+  {
+   "clave": "output store difference csv",
+   "nombre": "output/store_differences.csv",
+   "tipo": "dataset",
+   "alias": [
+    "store_differences.csv"
+   ],
+   "descripciones": [
+    "Archivo CSV de salida donde el programa debe guardar la tabla pareada de diferencias."
+   ],
+   "citas": [
+    "Tarea 7"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "output store difference png",
+   "nombre": "output/store_differences.png",
+   "tipo": "dataset",
+   "alias": [
+    "figura de diferencias por tienda",
+    "store_differences.png"
+   ],
+   "descripciones": [
+    "Archivo donde se debe guardar la figura que muestra las diferencias por tienda.",
+    "Archivo PNG de salida que el programa debe guardar."
+   ],
+   "citas": [
+    "Tarea 3",
+    "Tarea 7"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "prueba t pareada",
+   "nombre": "prueba t pareada",
+   "tipo": "metodo",
+   "alias": [
+    "prueba t",
+    "media pareada",
+    "prueba t de una muestra",
+    "t-test"
+   ],
+   "descripciones": [
+    "Prueba t para la media pareada que se calcula con scipy.stats sobre las diferencias.",
+    "Procedimiento principal de la tarea, aplicado sobre las diferencias con alternativa bilateral.",
+    "Prueba estadística que el programa debe mostrar junto con el resumen.",
+    "Prueba estadística de la que se debe reportar el estadístico t, sus grados de libertad y el p-value bilateral."
+   ],
+   "citas": [
+    "Tarea 4",
+    "Tarea 5",
+    "Tarea 7",
+    "Parte 4"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "referencia por cambio de signo",
+   "nombre": "referencia por cambios de signo",
+   "tipo": "metodo",
+   "alias": [
+    "cambios de signo"
+   ],
+   "descripciones": [
+    "Referencia por cambios de signo que el programa debe mostrar."
+   ],
+   "citas": [
+    "Tarea 7"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "bootstrap pareado",
+   "nombre": "bootstrap pareado",
+   "tipo": "metodo",
+   "alias": [
+    "bootstrap",
+    "intervalo bootstrap",
+    "intervalo bootstrap pareado"
+   ],
+   "descripciones": [
+    "Técnica de remuestreo pareado que se debe realizar en la tarea 6.",
+    "Intervalo bootstrap que el programa debe mostrar como parte de la salida.",
+    "Intervalo que debe reportarse con su semilla y número de remuestras, remuestreando tiendas completas."
+   ],
+   "citas": [
+    "Tarea 6",
+    "Tarea 7",
+    "Parte 4"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "informe ejecutivo",
+   "nombre": "informe ejecutivo",
+   "tipo": "dataset",
+   "alias": [
+    "conclusión"
+   ],
+   "descripciones": [
+    "Informe de la pregunta 18 que constituye la conclusión y debe incluir unidad, procedencia, métrica, emparejamiento, efecto, incertidumbre, procedimiento, p-value, sensibilidad, al menos dos limitaciones y una frase explícita sobre lo que no puede concluirse.",
+    "Documento que debe redactarse con un máximo de 150 palabras e incluir elementos obligatorios."
+   ],
+   "citas": [
+    "Tarea 7",
+    "Parte 5"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "maximo 150 palabra",
+   "nombre": "máximo 150 palabras",
+   "tipo": "restriccion",
+   "alias": [],
+   "descripciones": [
+    "Límite de extensión del informe ejecutivo de la pregunta 18."
+   ],
+   "citas": [
+    "Tarea 7"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "unidad",
+   "nombre": "unidad",
+   "tipo": "concepto",
+   "alias": [],
+   "descripciones": [
+    "Unidad de análisis que la conclusión debe incluir.",
+    "Elemento que debe incluirse en el informe ejecutivo."
+   ],
+   "citas": [
+    "Tarea 7",
+    "Parte 5"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "emparejamiento",
+   "nombre": "emparejamiento",
+   "tipo": "metodo",
+   "alias": [],
+   "descripciones": [
+    "Emparejamiento de las observaciones que la conclusión debe indicar.",
+    "Elemento que debe incluirse en el informe ejecutivo."
+   ],
+   "citas": [
+    "Tarea 7",
+    "Parte 5"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "efecto",
+   "nombre": "efecto",
+   "tipo": "metrica",
+   "alias": [],
+   "descripciones": [
+    "Efecto observado que la conclusión debe reportar.",
+    "Cantidad cuyos valores compatibles con los datos deben explicarse bajo el modelo utilizado.",
+    "Elemento que debe incluirse en el informe ejecutivo."
+   ],
+   "citas": [
+    "Tarea 7",
+    "Parte 3",
+    "Parte 5"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "incertidumbre",
+   "nombre": "incertidumbre",
+   "tipo": "concepto",
+   "alias": [],
+   "descripciones": [
+    "Incertidumbre que la conclusión debe incluir.",
+    "Elemento que debe incluirse en el informe ejecutivo."
+   ],
+   "citas": [
+    "Tarea 7",
+    "Parte 5"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "p value",
+   "nombre": "p-value",
+   "tipo": "metrica",
+   "alias": [
+    "valor p",
+    "p-value bilateral",
+    "valor p bilateral"
+   ],
+   "descripciones": [
+    "Valor p cuyos resultados acompañantes deben declararse en el contrato.",
+    "Valor p de la prueba t que debe conservarse.",
+    "Valor a reportar, explicado de forma condicional a la hipótesis nula, el diseño y los supuestos.",
+    "Valor p que la conclusión debe reportar.",
+    "Valor p de dos colas que debe reportarse y explicarse correctamente qué representa.",
+    "Medida que debe incluirse en el informe ejecutivo."
+   ],
+   "citas": [
+    "Tarea 1",
+    "Tarea 4",
+    "Tarea 5",
+    "Tarea 7",
+    "Parte 4",
+    "Parte 5"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "sensibilidad",
+   "nombre": "sensibilidad",
+   "tipo": "metrica",
+   "alias": [],
+   "descripciones": [
+    "Sensibilidad que la conclusión debe incluir."
+   ],
+   "citas": [
+    "Tarea 7"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "limitacion",
+   "nombre": "limitaciones",
+   "tipo": "restriccion",
+   "alias": [],
+   "descripciones": [
+    "La conclusión debe incluir al menos dos limitaciones.",
+    "Se requieren al menos dos limitaciones en el informe ejecutivo."
+   ],
+   "citas": [
+    "Tarea 7",
+    "Parte 5"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  }
+ ],
+ "Parte 2": [
+  {
+   "clave": "store id",
+   "nombre": "store_id",
+   "tipo": "dataset",
+   "alias": [
+    "identificador de tienda"
+   ],
+   "descripciones": [
+    "Columna identificadora de cada tienda; cada valor debe ser único y no nulo.",
+    "Columna mediante la cual deben validarse los 16 pares de la auditoría."
+   ],
+   "citas": [
+    "Tarea 2",
+    "Parte 2"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "16 par",
+   "nombre": "16 pares",
+   "tipo": "restriccion",
+   "alias": [
+    "pares validados"
+   ],
+   "descripciones": [
+    "Los 16 pares deben confirmarse como validados mediante store_id."
+   ],
+   "citas": [
+    "Parte 2"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "igual longitud de columna",
+   "nombre": "igual longitud de columnas",
+   "tipo": "concepto",
+   "alias": [
+    "misma longitud"
+   ],
+   "descripciones": [
+    "Comprobar únicamente que ambas columnas tienen la misma longitud no es suficiente para validar los pares."
+   ],
+   "citas": [
+    "Parte 2"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "variante a",
+   "nombre": "A",
+   "tipo": "metodo",
+   "alias": [
+    "variante A"
+   ],
+   "descripciones": [
+    "Opción cuya preferencia por tienda se contabiliza en la auditoría."
+   ],
+   "citas": [
+    "Parte 2"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "variante b",
+   "nombre": "B",
+   "tipo": "metodo",
+   "alias": [
+    "variante B"
+   ],
+   "descripciones": [
+    "Opción cuya preferencia por tienda se contabiliza en la auditoría."
+   ],
+   "citas": [
+    "Parte 2"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "empate",
+   "nombre": "empates",
+   "tipo": "concepto",
+   "alias": [
+    "tiendas sin preferencia"
+   ],
+   "descripciones": [
+    "Posible resultado en el que una tienda no favorece ni a A ni a B."
+   ],
+   "citas": [
+    "Parte 2"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "conteo de tienda por preferencia",
+   "nombre": "conteo de tiendas por preferencia",
+   "tipo": "metrica",
+   "alias": [
+    "tiendas que favorecen a A o B"
+   ],
+   "descripciones": [
+    "Número de tiendas que favorecen a A, cuántas favorecen a B y si existen empates."
+   ],
+   "citas": [
+    "Parte 2"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "diferencia de mayor magnitud",
+   "nombre": "diferencia de mayor magnitud",
+   "tipo": "metrica",
+   "alias": [
+    "diferencias máximas"
+   ],
+   "descripciones": [
+    "Diferencias de mayor magnitud que deben identificarse en cada dirección."
+   ],
+   "citas": [
+    "Parte 2"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  }
+ ],
+ "Parte 3": [
+  {
+   "clave": "numero de tienda",
+   "nombre": "número de tiendas",
+   "tipo": "metrica",
+   "alias": [],
+   "descripciones": [
+    "Cantidad de tiendas que debe reportarse en el análisis."
+   ],
+   "citas": [
+    "Parte 3"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "mean",
+   "nombre": "mean",
+   "tipo": "metrica",
+   "alias": [
+    "media",
+    "diferencia media",
+    "diferencia media en unidades vendidas"
+   ],
+   "descripciones": [
+    "Media de las diferencias que se debe reportar e interpretar en unidades vendidas.",
+    "Medida cuyo signo y magnitud deben interpretarse en unidades vendidas."
+   ],
+   "citas": [
+    "Tarea 4",
+    "Parte 3"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "sample sd",
+   "nombre": "sample_sd",
+   "tipo": "metrica",
+   "alias": [
+    "sd",
+    "desviación estándar muestral"
+   ],
+   "descripciones": [
+    "Desviación estándar muestral de las diferencias que se debe reportar.",
+    "Medida de dispersión muestral que debe reportarse."
+   ],
+   "citas": [
+    "Tarea 4",
+    "Parte 3"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "standard error",
+   "nombre": "standard_error",
+   "tipo": "metrica",
+   "alias": [
+    "SE",
+    "error estándar"
+   ],
+   "descripciones": [
+    "Error estándar de la media de las diferencias, calculado como sd / √n.",
+    "Medida de incertidumbre que debe reportarse junto con las demás estadísticas."
+   ],
+   "citas": [
+    "Tarea 4",
+    "Parte 3"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "intervalo t del 95",
+   "nombre": "intervalo t del 95 %",
+   "tipo": "metrica",
+   "alias": [
+    "intervalo t"
+   ],
+   "descripciones": [
+    "Intervalo al 95 % que debe reportarse y explicarse según los valores del efecto compatibles con los datos."
+   ],
+   "citas": [
+    "Parte 3"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "efecto",
+   "nombre": "efecto",
+   "tipo": "metrica",
+   "alias": [],
+   "descripciones": [
+    "Efecto observado que la conclusión debe reportar.",
+    "Cantidad cuyos valores compatibles con los datos deben explicarse bajo el modelo utilizado.",
+    "Elemento que debe incluirse en el informe ejecutivo."
+   ],
+   "citas": [
+    "Tarea 7",
+    "Parte 3",
+    "Parte 5"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "probabilidad posterior",
+   "nombre": "probabilidad posterior",
+   "tipo": "concepto",
+   "alias": [],
+   "descripciones": [
+    "Interpretación bayesiana que no debe darse al intervalo t."
+   ],
+   "citas": [
+    "Parte 3"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "parametro",
+   "nombre": "parámetro",
+   "tipo": "concepto",
+   "alias": [],
+   "descripciones": [
+    "Cantidad sobre la cual no debe interpretarse el intervalo como probabilidad posterior."
+   ],
+   "citas": [
+    "Parte 3"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "unidad vendida",
+   "nombre": "unidades vendidas",
+   "tipo": "metrica",
+   "alias": [],
+   "descripciones": [
+    "Unidad en la que se expresa e interpreta la diferencia media."
+   ],
+   "citas": [
+    "Parte 3"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "no interpretar el intervalo como probabilidad posterior",
+   "nombre": "no interpretar el intervalo como probabilidad posterior",
+   "tipo": "restriccion",
+   "alias": [],
+   "descripciones": [
+    "Regla que prohíbe leer el intervalo t como una probabilidad posterior sobre el parámetro."
+   ],
+   "citas": [
+    "Parte 3"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  }
+ ],
+ "Parte 4": [
+  {
+   "clave": "prueba t pareada",
+   "nombre": "prueba t pareada",
+   "tipo": "metodo",
+   "alias": [
+    "prueba t",
+    "media pareada",
+    "prueba t de una muestra",
+    "t-test"
+   ],
+   "descripciones": [
+    "Prueba t para la media pareada que se calcula con scipy.stats sobre las diferencias.",
+    "Procedimiento principal de la tarea, aplicado sobre las diferencias con alternativa bilateral.",
+    "Prueba estadística que el programa debe mostrar junto con el resumen.",
+    "Prueba estadística de la que se debe reportar el estadístico t, sus grados de libertad y el p-value bilateral."
+   ],
+   "citas": [
+    "Tarea 4",
+    "Tarea 5",
+    "Tarea 7",
+    "Parte 4"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "estadistico t",
+   "nombre": "estadístico t",
+   "tipo": "metrica",
+   "alias": [
+    "estadístico",
+    "t"
+   ],
+   "descripciones": [
+    "Estadístico de la prueba t que debe conservarse.",
+    "Estadístico de la prueba t que debe reportarse junto con sus grados de libertad."
+   ],
+   "citas": [
+    "Tarea 4",
+    "Parte 4"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "grado de libertad",
+   "nombre": "grados de libertad",
+   "tipo": "metrica",
+   "alias": [],
+   "descripciones": [
+    "Grados de libertad de la prueba t que deben conservarse.",
+    "Cantidad asociada al estadístico t que debe reportarse."
+   ],
+   "citas": [
+    "Tarea 4",
+    "Parte 4"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "p value",
+   "nombre": "p-value",
+   "tipo": "metrica",
+   "alias": [
+    "valor p",
+    "p-value bilateral",
+    "valor p bilateral"
+   ],
+   "descripciones": [
+    "Valor p cuyos resultados acompañantes deben declararse en el contrato.",
+    "Valor p de la prueba t que debe conservarse.",
+    "Valor a reportar, explicado de forma condicional a la hipótesis nula, el diseño y los supuestos.",
+    "Valor p que la conclusión debe reportar.",
+    "Valor p de dos colas que debe reportarse y explicarse correctamente qué representa.",
+    "Medida que debe incluirse en el informe ejecutivo."
+   ],
+   "citas": [
+    "Tarea 1",
+    "Tarea 4",
+    "Tarea 5",
+    "Tarea 7",
+    "Parte 4",
+    "Parte 5"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "prueba exacta por cambio de signo",
+   "nombre": "prueba exacta por cambios de signo",
+   "tipo": "metodo",
+   "alias": [
+    "prueba de cambios de signo",
+    "test exacto de signos",
+    "prueba de signos"
+   ],
+   "descripciones": [
+    "Prueba que enumera las configuraciones de signos y cuenta las medias nulas al menos tan extremas como la observada.",
+    "Prueba exacta basada en cambios de signo cuyo p-value debe reportarse."
+   ],
+   "citas": [
+    "Tarea 5",
+    "Parte 4"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "hipotesi nula",
+   "nombre": "hipótesis nula",
+   "tipo": "concepto",
+   "alias": [
+    "H0",
+    "referencia nula"
+   ],
+   "descripciones": [
+    "Hipótesis a la que debe condicionarse la explicación del p-value en el informe.",
+    "Referencia nula que, junto con la prueba t, no tiene supuestos idénticos."
+   ],
+   "citas": [
+    "Tarea 5",
+    "Parte 4"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "bootstrap pareado",
+   "nombre": "bootstrap pareado",
+   "tipo": "metodo",
+   "alias": [
+    "bootstrap",
+    "intervalo bootstrap",
+    "intervalo bootstrap pareado"
+   ],
+   "descripciones": [
+    "Técnica de remuestreo pareado que se debe realizar en la tarea 6.",
+    "Intervalo bootstrap que el programa debe mostrar como parte de la salida.",
+    "Intervalo que debe reportarse con su semilla y número de remuestras, remuestreando tiendas completas."
+   ],
+   "citas": [
+    "Tarea 6",
+    "Tarea 7",
+    "Parte 4"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "semilla",
+   "nombre": "semilla",
+   "tipo": "restriccion",
+   "alias": [],
+   "descripciones": [
+    "Semilla del bootstrap pareado que debe reportarse."
+   ],
+   "citas": [
+    "Parte 4"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "numero de remuestra",
+   "nombre": "número de remuestras",
+   "tipo": "restriccion",
+   "alias": [
+    "remuestras"
+   ],
+   "descripciones": [
+    "Cantidad de remuestras del bootstrap pareado que debe reportarse."
+   ],
+   "citas": [
+    "Parte 4"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "tienda",
+   "nombre": "tienda",
+   "tipo": "dataset",
+   "alias": [
+    "store",
+    "tiendas",
+    "tiendas completas"
+   ],
+   "descripciones": [
+    "Unidad para la que se muestra una observación con su diferencia en la figura.",
+    "Unidades de datos que se remuestrean completas, no por separado sus errores.",
+    "Unidades que se remuestrean completas en el bootstrap pareado."
+   ],
+   "citas": [
+    "Tarea 3",
+    "Tarea 6",
+    "Parte 4"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  },
+  {
+   "clave": "supuesto",
+   "nombre": "supuestos",
+   "tipo": "concepto",
+   "alias": [
+    "supuestos estadísticos"
+   ],
+   "descripciones": [
+    "Supuestos que deben explicarse en el informe junto con el p-value.",
+    "Supuestos que la referencia nula y la prueba t no comparten de manera idéntica."
+   ],
+   "citas": [
+    "Tarea 5",
+    "Parte 4"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 6
+  }
+ ],
+ "Parte 5": [
+  {
+   "clave": "informe ejecutivo",
+   "nombre": "informe ejecutivo",
+   "tipo": "dataset",
+   "alias": [
+    "conclusión"
+   ],
+   "descripciones": [
+    "Informe de la pregunta 18 que constituye la conclusión y debe incluir unidad, procedencia, métrica, emparejamiento, efecto, incertidumbre, procedimiento, p-value, sensibilidad, al menos dos limitaciones y una frase explícita sobre lo que no puede concluirse.",
+    "Documento que debe redactarse con un máximo de 150 palabras e incluir elementos obligatorios."
+   ],
+   "citas": [
+    "Tarea 7",
+    "Parte 5"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "maximo de 150 palabra",
+   "nombre": "máximo de 150 palabras",
+   "tipo": "restriccion",
+   "alias": [],
+   "descripciones": [
+    "Límite de extensión exigido para la redacción del informe ejecutivo."
+   ],
+   "citas": [
+    "Parte 5"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "unidad",
+   "nombre": "unidad",
+   "tipo": "concepto",
+   "alias": [],
+   "descripciones": [
+    "Unidad de análisis que la conclusión debe incluir.",
+    "Elemento que debe incluirse en el informe ejecutivo."
+   ],
+   "citas": [
+    "Tarea 7",
+    "Parte 5"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "procedencia",
+   "nombre": "procedencia",
+   "tipo": "concepto",
+   "alias": [],
+   "descripciones": [
+    "Elemento que debe incluirse en el informe ejecutivo."
+   ],
+   "citas": [
+    "Parte 5"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "metrica",
+   "nombre": "métrica",
+   "tipo": "metrica",
+   "alias": [],
+   "descripciones": [
+    "Punto del contrato que declara la métrica de evaluación y su dirección.",
+    "Elemento que debe incluirse en el informe ejecutivo."
+   ],
+   "citas": [
+    "Tarea 1",
+    "Parte 5"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "emparejamiento",
+   "nombre": "emparejamiento",
+   "tipo": "metodo",
+   "alias": [],
+   "descripciones": [
+    "Emparejamiento de las observaciones que la conclusión debe indicar.",
+    "Elemento que debe incluirse en el informe ejecutivo."
+   ],
+   "citas": [
+    "Tarea 7",
+    "Parte 5"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "efecto",
+   "nombre": "efecto",
+   "tipo": "metrica",
+   "alias": [],
+   "descripciones": [
+    "Efecto observado que la conclusión debe reportar.",
+    "Cantidad cuyos valores compatibles con los datos deben explicarse bajo el modelo utilizado.",
+    "Elemento que debe incluirse en el informe ejecutivo."
+   ],
+   "citas": [
+    "Tarea 7",
+    "Parte 3",
+    "Parte 5"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "incertidumbre",
+   "nombre": "incertidumbre",
+   "tipo": "concepto",
+   "alias": [],
+   "descripciones": [
+    "Incertidumbre que la conclusión debe incluir.",
+    "Elemento que debe incluirse en el informe ejecutivo."
+   ],
+   "citas": [
+    "Tarea 7",
+    "Parte 5"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "procedimiento",
+   "nombre": "procedimiento",
+   "tipo": "concepto",
+   "alias": [],
+   "descripciones": [
+    "Elemento que debe incluirse en el informe ejecutivo."
+   ],
+   "citas": [
+    "Parte 5"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "p value",
+   "nombre": "p-value",
+   "tipo": "metrica",
+   "alias": [
+    "valor p",
+    "p-value bilateral",
+    "valor p bilateral"
+   ],
+   "descripciones": [
+    "Valor p cuyos resultados acompañantes deben declararse en el contrato.",
+    "Valor p de la prueba t que debe conservarse.",
+    "Valor a reportar, explicado de forma condicional a la hipótesis nula, el diseño y los supuestos.",
+    "Valor p que la conclusión debe reportar.",
+    "Valor p de dos colas que debe reportarse y explicarse correctamente qué representa.",
+    "Medida que debe incluirse en el informe ejecutivo."
+   ],
+   "citas": [
+    "Tarea 1",
+    "Tarea 4",
+    "Tarea 5",
+    "Tarea 7",
+    "Parte 4",
+    "Parte 5"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "analisi de sensibilidad",
+   "nombre": "análisis de sensibilidad",
+   "tipo": "metodo",
+   "alias": [],
+   "descripciones": [
+    "Análisis que debe incluirse en el informe ejecutivo."
+   ],
+   "citas": [
+    "Parte 5"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "limitacion",
+   "nombre": "limitaciones",
+   "tipo": "restriccion",
+   "alias": [],
+   "descripciones": [
+    "La conclusión debe incluir al menos dos limitaciones.",
+    "Se requieren al menos dos limitaciones en el informe ejecutivo."
+   ],
+   "citas": [
+    "Tarea 7",
+    "Parte 5"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "afirmacion de no conclusion",
+   "nombre": "afirmación de no conclusión",
+   "tipo": "restriccion",
+   "alias": [],
+   "descripciones": [
+    "Afirmación explícita sobre lo que no puede concluirse, exigida en el informe."
+   ],
+   "citas": [
+    "Parte 5"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  }
+ ]
+}

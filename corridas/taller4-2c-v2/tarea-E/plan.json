@@ -1,0 +1,16 @@
+{
+ "subtareas": [
+  {
+   "id": "T1",
+   "tipo": "calculo",
+   "secciones": [
+    "Tarea 1"
+   ],
+   "depende_de": [],
+   "objetivo": "Ejecutar código en sandbox que cargue las observaciones [12, 15, 18, 20, 25] y calcule la media, la mediana y la desviación estándar muestral (n-1 en el denominador), reportando cada cifra con sus unidades de observación y una breve interpretación de qué muestra cada medida. Ignorar la nota administrativa, que no forma parte del análisis estadístico.",
+   "criterio": "Existen tres cifras verificables obtenidas por ejecución de código (media, mediana y desviación estándar muestral de las 5 observaciones), cada una acompañada de sus unidades y de una explicación breve de su significado, listas para que el redactor las incluya en la sección de resultados del reporte.md.",
+   "status": "pendiente",
+   "intentos": 0
+  }
+ ]
+}

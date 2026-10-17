@@ -1,0 +1,51 @@
+{
+  "feature_names": [
+    "gpu_utilization",
+    "cpu_utilization",
+    "memory_gb"
+  ],
+  "means": [
+    57.993133333333326,
+    50.54163333333333,
+    29.455333333333336
+  ],
+  "stds": [
+    14.43011728465465,
+    12.69846348968602,
+    6.536801834400537
+  ],
+  "stds_cero": 0,
+  "zscores_shape": [
+    300,
+    3
+  ],
+  "load_score_shape": [
+    300
+  ],
+  "zscores_column_means": [
+    5.684341886080802e-16,
+    2.3684757858670006e-16,
+    -3.315866100213801e-16
+  ],
+  "zscores_column_stds": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "verificaciones": {
+    "means_coinciden_esperado": true,
+    "max_diff_medias_esperadas": 3.333337161848249e-09,
+    "zscores_shape_ok": true,
+    "load_score_shape_ok": true,
+    "media_0_tol_1e-10": true,
+    "std_1_tol_1e-10": true,
+    "load_score_igual_suma_ponderada": true,
+    "max_diff_load_score": 2.220446049250313e-16,
+    "coincide_con_T1": true
+  },
+  "load_score_resumen": {
+    "min": -1.955649651274497,
+    "max": 3.136217861183744,
+    "mean": 2.6053233644537007e-16
+  }
+}

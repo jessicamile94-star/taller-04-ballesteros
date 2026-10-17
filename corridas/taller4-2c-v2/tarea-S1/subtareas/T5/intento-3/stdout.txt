@@ -1,0 +1,8 @@
+Round trip verificado: output/server_analysis.parquet
+Filas: True
+Columnas: True
+Esquema: True
+Valores: True
+Parquet: output/server_analysis.parquet | filas=300 columnas=9 | sin_indice=True
+load_score fila 23 = 3.136217861183744 (enunciado: 3.136218) | coincide=True
+requires_review=True: 49

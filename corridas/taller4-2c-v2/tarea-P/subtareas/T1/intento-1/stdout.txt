@@ -1,0 +1,6 @@
+Importes (USD): [120, 200, 80]
+Total (USD): 400
+Promedio (USD): 133.33333333333334
+Promedio (USD, 2 decimales): 133.33
+Verificacion PII: sin correo ni cedula sinteticos en codigo, salidas ni resultados.json
+resultados.json escrito

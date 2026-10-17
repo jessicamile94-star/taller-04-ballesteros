@@ -1,0 +1,26 @@
+{
+  "subtarea": "T2",
+  "division": "70/30 estratificada por clase, random_state=42 (misma de la Parte 1/T1)",
+  "tamano_entrenamiento": 398,
+  "tamano_prueba": 171,
+  "escalador": "StandardScaler ajustado únicamente con X_train",
+  "escalador_ajustado_solo_con_entrenamiento": true,
+  "max_abs_media_atributos_escalados_entrenamiento": 5.2167929384490864e-15,
+  "max_abs_media_atributos_escalados_prueba": 0.20601978231134427,
+  "tabla": [
+    {
+      "modelo": "Naive Bayes gaussiano",
+      "accuracy": 0.935672514619883,
+      "f1_macro": 0.9306543778801843
+    },
+    {
+      "modelo": "Regresión logística",
+      "accuracy": 0.9883040935672515,
+      "f1_macro": 0.9875146028037383
+    }
+  ],
+  "accuracy_naive_bayes_gaussiano": 0.935672514619883,
+  "f1_macro_naive_bayes_gaussiano": 0.9306543778801843,
+  "accuracy_regresion_logistica": 0.9883040935672515,
+  "f1_macro_regresion_logistica": 0.9875146028037383
+}

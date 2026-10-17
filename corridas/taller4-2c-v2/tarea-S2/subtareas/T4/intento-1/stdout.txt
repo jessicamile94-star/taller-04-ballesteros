@@ -1,0 +1,4 @@
+n=16  mean=0.418750  sample_sd=1.253379  SE=0.313345
+df=15  t=1.336388  p(bilateral)=0.201342
+IC t 95%: (-0.249128, 1.086628)
+Escritos: resultados.json, output/store_differences.csv, output/store_differences.png

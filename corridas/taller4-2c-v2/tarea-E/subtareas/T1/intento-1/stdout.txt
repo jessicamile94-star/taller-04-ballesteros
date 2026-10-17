@@ -1,0 +1,5 @@
+T1 completada. Resultados escritos en resultados.json
+Datos: [12.0, 15.0, 18.0, 20.0, 25.0] (n=5)
+Media: 18.0 unidades de observación (u.o.)
+Mediana: 18.0 unidades de observación (u.o.)
+Desviación estándar muestral (n-1): 4.949747468305833 unidades de observación (u.o.)

@@ -1,0 +1,17 @@
+repr: ServerMeasurements(shape=(300, 3), features=('gpu_utilization', 'cpu_utilization', 'memory_gb'))
+means: [57.99313333 50.54163333 29.45533333]
+stds: [14.43011728 12.69846349  6.53680183]
+zscores.shape: (300, 3) | load_score.shape: (300,)
+zscores col means: [ 5.68434189e-16  2.36847579e-16 -3.31586610e-16] | col stds: [1. 1. 1.]
+load_score min/mean/max: -1.955649651274497 2.6053233644537007e-16 3.136217861183744
+verificaciones: {
+  "means_coinciden_esperado": true,
+  "max_diff_medias_esperadas": 3.333337161848249e-09,
+  "zscores_shape_ok": true,
+  "load_score_shape_ok": true,
+  "media_0_tol_1e-10": true,
+  "std_1_tol_1e-10": true,
+  "load_score_igual_suma_ponderada": true,
+  "max_diff_load_score": 2.220446049250313e-16,
+  "coincide_con_T1": true
+}

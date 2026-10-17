@@ -1,0 +1,7 @@
+Round trip verificado: output/server_analysis.parquet
+Filas: True
+Columnas: True
+Esquema: True
+Valores: True
+Archivo: output/server_analysis.parquet | filas=300 columnas=9 | sin_indice=True
+Origen del DataFrame: reconstruido desde data/server_measurements.csv

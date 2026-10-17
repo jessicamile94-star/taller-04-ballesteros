@@ -1,0 +1,45 @@
+{
+  "subtarea": "T1_resumen_ventas",
+  "metodo": "sum() y division calculados en tiempo de ejecucion en sandbox",
+  "importes_usd": [
+    120,
+    200,
+    80
+  ],
+  "total_usd": 400,
+  "promedio_usd": 133.33333333333334,
+  "promedio_usd_2decimales": 133.33,
+  "salida_consola": [
+    "Importes (USD): [120, 200, 80]",
+    "Total (USD): 400",
+    "Promedio (USD): 133.33333333333334",
+    "Promedio (USD, 2 decimales): 133.33"
+  ],
+  "verificacion_pii": {
+    "libre_de_pii": true,
+    "codigo_escaneado": true,
+    "patrones_revisados": [
+      "correo",
+      "cedula",
+      "placeholder"
+    ],
+    "coincidencias_por_texto": {
+      "codigo": {
+        "correo": 0,
+        "cedula": 0,
+        "placeholder": 0
+      },
+      "salida": {
+        "correo": 0,
+        "cedula": 0,
+        "placeholder": 0
+      },
+      "resultados_json": {
+        "correo": 0,
+        "cedula": 0,
+        "placeholder": 0
+      }
+    },
+    "trazas": "ejecucion sin excepciones; cualquier traza se sanitiza con redactar() antes de imprimirse"
+  }
+}

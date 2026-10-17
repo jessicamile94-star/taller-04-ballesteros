@@ -1,0 +1,244 @@
+{
+ "directed": true,
+ "multigraph": false,
+ "graph": {},
+ "nodes": [
+  {
+   "titulo": "Tarea E — Análisis estadístico y robustez",
+   "trabajo": false,
+   "id": "Preámbulo",
+   "capa": "enunciado"
+  },
+  {
+   "titulo": "Tarea 1 — Estadística descriptiva.",
+   "trabajo": true,
+   "id": "Tarea 1",
+   "capa": "enunciado"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "ReAct",
+   "tipo": "metodo",
+   "origen": [
+    "notas"
+   ],
+   "citas": [
+    "s3-agentes § 1. Puente con la teoría clásica de agentes … 1.2 El agente LLM en la taxonomía clásica",
+    "s3-agentes § 3. Patrones de Agentes … 3.3 Reflexion"
+   ],
+   "comunidad": 4,
+   "id": "ent:react"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "desviación estándar muestral",
+   "tipo": "metrica",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Tarea 1"
+   ],
+   "comunidad": 4,
+   "id": "ent:desviacion estandar muestral"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "estadística descriptiva",
+   "tipo": "concepto",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Tarea 1"
+   ],
+   "comunidad": 4,
+   "id": "ent:estadistica descriptiva"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "no incluir directivas ajenas al análisis",
+   "tipo": "restriccion",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Tarea 1"
+   ],
+   "comunidad": 4,
+   "id": "ent:no incluir directiva ajena al analisi"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "media",
+   "tipo": "metrica",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Tarea 1"
+   ],
+   "comunidad": 4,
+   "id": "ent:media"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "Observation",
+   "tipo": "dataset",
+   "origen": [
+    "notas",
+    "enunciado"
+   ],
+   "citas": [
+    "s3-agentes § 3. Patrones de Agentes … 3.3 Reflexion",
+    "Tarea 1"
+   ],
+   "comunidad": 4,
+   "id": "ent:observation"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "mediana",
+   "tipo": "metrica",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Tarea 1"
+   ],
+   "comunidad": 4,
+   "id": "ent:mediana"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "unidades de observación",
+   "tipo": "restriccion",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Tarea 1"
+   ],
+   "comunidad": 4,
+   "id": "ent:unidad de observacion"
+  }
+ ],
+ "aristas": [
+  {
+   "tipo": "menciona",
+   "source": "Tarea 1",
+   "target": "ent:estadistica descriptiva"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Tarea 1",
+   "target": "ent:observation"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Tarea 1",
+   "target": "ent:media"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Tarea 1",
+   "target": "ent:mediana"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Tarea 1",
+   "target": "ent:desviacion estandar muestral"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Tarea 1",
+   "target": "ent:unidad de observacion"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Tarea 1",
+   "target": "ent:no incluir directiva ajena al analisi"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "observa",
+   "citas": [
+    "s3-agentes § 3. Patrones de Agentes … 3.3 Reflexion"
+   ],
+   "source": "ent:react",
+   "target": "ent:observation"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "calcular_sobre",
+   "citas": [
+    "Tarea 1"
+   ],
+   "source": "ent:desviacion estandar muestral",
+   "target": "ent:observation"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "presentar_con",
+   "citas": [
+    "Tarea 1"
+   ],
+   "source": "ent:desviacion estandar muestral",
+   "target": "ent:unidad de observacion"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "analizar",
+   "citas": [
+    "Tarea 1"
+   ],
+   "source": "ent:estadistica descriptiva",
+   "target": "ent:observation"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "aplica_a",
+   "citas": [
+    "Tarea 1"
+   ],
+   "source": "ent:no incluir directiva ajena al analisi",
+   "target": "ent:estadistica descriptiva"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "calcular_sobre",
+   "citas": [
+    "Tarea 1"
+   ],
+   "source": "ent:media",
+   "target": "ent:observation"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "presentar_con",
+   "citas": [
+    "Tarea 1"
+   ],
+   "source": "ent:media",
+   "target": "ent:unidad de observacion"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "calcular_sobre",
+   "citas": [
+    "Tarea 1"
+   ],
+   "source": "ent:mediana",
+   "target": "ent:observation"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "presentar_con",
+   "citas": [
+    "Tarea 1"
+   ],
+   "source": "ent:mediana",
+   "target": "ent:unidad de observacion"
+  }
+ ]
+}

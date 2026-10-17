@@ -1,0 +1,28 @@
+{
+  "repr_obtenido": "ServerMeasurements(shape=(300, 3), features=('gpu_utilization', 'cpu_utilization', 'memory_gb'))",
+  "repr_esperado": "ServerMeasurements(shape=(300, 3), features=('gpu_utilization', 'cpu_utilization', 'memory_gb'))",
+  "repr_coincide": true,
+  "forma": [
+    300,
+    3
+  ],
+  "feature_names": [
+    "gpu_utilization",
+    "cpu_utilization",
+    "memory_gb"
+  ],
+  "dtype_values": "float64",
+  "n_filas_csv": 300,
+  "timestamp_es_datetime": true,
+  "validaciones_lanzan_valueerror": {
+    "no_bidimensional": true,
+    "columnas_vs_nombres": true,
+    "no_numerico": true
+  },
+  "caso_valido_sin_error": true,
+  "medias_por_feature": {
+    "gpu_utilization": 57.993133333333326,
+    "cpu_utilization": 50.54163333333333,
+    "memory_gb": 29.455333333333336
+  }
+}

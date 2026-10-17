@@ -662,7 +662,7 @@ class Solver:
             with self.traza.corrida_langfuse(f"solver-{entrada.stem}", str(entrada)):
                 traza_id = self.traza.traza_id
                 self.traza.evento("langfuse_trace", traza_id=traza_id,
-                                  session="taller4-ballesteros-base")
+                                  session=self.traza.langfuse_session_id)
                 final = self.app.invoke(
                     {"ruta_entrada": str(Path(ruta_pdf).resolve()), "carpeta_salida": str(carpeta),
                      "motivo_parada": ""},

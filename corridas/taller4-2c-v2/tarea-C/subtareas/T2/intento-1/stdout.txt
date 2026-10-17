@@ -1,0 +1,8 @@
+T2 — TF-IDF vs LSA (TruncatedSVD k=4), 6 consultas
+  TF-IDF                 Hit@1=0.8333  Hit@3=0.8333  MRR=0.8611
+  LSA (TruncatedSVD k=4) Hit@1=0.6667  Hit@3=0.8333  MRR=0.7500
+Diferencia (LSA - TF-IDF): {'hit_at_1': -0.1667, 'hit_at_3': 0.0, 'mrr': -0.1111}
+Varianza explicada por LSA (4 comp.): 0.3953
+Rank del relevante (LSA) por consulta: {'q1': 1, 'q2': 1, 'q3': 1, 'q4': 3, 'q5': 6, 'q6': 1}
+Consistencia con T1: {'metricas_coinciden_con_T1': True, 'diferencias_abs': {'hit_at_1': 0.0, 'hit_at_3': 0.0, 'mrr': 0.0}, 'ranks_por_consulta_coinciden': True}
+Salidas: resultados.json, t2_tabla_metricas.png, t2_comparacion_metricas.png

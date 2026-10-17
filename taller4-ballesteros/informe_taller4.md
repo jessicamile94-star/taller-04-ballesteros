@@ -11,7 +11,7 @@
 
 ## Resumen
 
-En este taller instrumenté y evalué el solver multiagente que venía trabajando. Revisé siete tareas, medí sus trazas, probé los guardrails con entradas de ataque y datos personales sintéticos, y comparé los resultados con el golden set. En general, el sistema aprobó 47 de los 48 checks determinísticos que se pudieron resolver automáticamente y los siete criterios conceptuales revisados por el juez. Sin embargo, S1 y S2 quedaron incompletas por límites de presupuesto y todavía hay una regresión en S208. Por eso, los resultados muestran avances concretos, pero no permiten decir que todas las tareas estén completas ni que el solver haya mejorado en general.
+En este taller instrumenté y evalué el solver multiagente que venía trabajando. Revisé siete tareas, medí sus trazas, probé los guardrails con entradas de ataque y datos personales sintéticos, y comparé los resultados con el golden set. La corrida base aprobó 47 de los 48 checks determinísticos y los siete criterios conceptuales se revisaron aparte con el juez. Para la Parte 2.c registré una nueva versión del prompt del programador y repetí las siete tareas con el mismo golden, evaluador y modelo. S1 y S2 completaron sus entregables y S208 pasó, pero el total bajó a 46/48 por dos regresiones en S103 y E01. Una corrida por versión no basta para atribuir todas las diferencias al prompt.
 
 ## 1. Qué evalué
 
@@ -33,11 +33,15 @@ La evaluación automática aprobó 47 de los 48 checks que podía decidir. S208 
 
 *Figura 2. Comparación de métricas de los métodos de recuperación en la tarea C.*
 
-Al comparar 47 checks determinísticos de A, B, C, S1 y S2 con los resultados históricos, el total aprobado se mantuvo en 46/47. S103 pasó y S208 dejó de aprobar. Esto corrigió un problema de formato, pero el balance no representa una mejora neta.
+La corrida base del golden aprobó 47/48 checks determinísticos; los siete checks de juez no entran en esa tasa. Para la 2.c comparé esa misma base con una corrida nueva del golden completo. El total automático bajó a 46/48: S208 pasó, pero S103 y E01 dejaron de aprobar. El detalle por check está en `comparacion_2c.csv`.
 
-### Corridas incompletas de S1 y S2
+![Comparación de checks determinísticos antes y después del prompt v2](comparacion_2c.png)
 
-Después de reconectar con H200 repetí S1 y S2. Las dos generaron entregables, pero no terminaron todas sus subtareas. En S1 aprobaron T1–T4; T5 quedó pendiente después de tres intentos con respuestas vacías o truncadas al límite de razonamiento. En S2 aprobaron T1–T6; T7 quedó pendiente y T8 no alcanzó a ejecutarse por agotamiento del presupuesto. Las trazas y los reportes de estos reintentos están en `corridas/taller4-reintento-estable/`.
+*Figura 3. Checks determinísticos aprobados en las corridas base y v2, de 48 evaluables automáticamente.*
+
+### Corridas base incompletas y nueva medición
+
+En las corridas base y los reintentos anteriores, S1/T5 y S2/T7 quedaron pendientes después de respuestas truncadas y agotamiento del presupuesto. En la nueva medición v2, S1 terminó T1–T5; T5 necesitó tres intentos y T4 alcanzó el límite de 32,768 tokens antes de completarse con el siguiente límite. S2 terminó sus seis subtareas de cálculo, incluida T7, en el primer intento. Las corridas nuevas y sus trazas están en `corridas/taller4-2c-v2/`.
 
 ## 3. Observabilidad y tiempos
 
@@ -45,9 +49,9 @@ La exportación de las siete corridas base incluye spans de corrida, llamadas al
 
 ![Distribución de frecuencias observadas y teóricas de la tarea B](../corridas/taller4-medicion-base-final/tarea-B/figuras/T3_T3_frecuencias_vs_teoricas.png)
 
-*Figura 3. Frecuencias observadas frente a las teóricas en la tarea B.*
+*Figura 4. Frecuencias observadas frente a las teóricas en la tarea B.*
 
-La instrumentación registra la duración, el uso de tokens y los eventos de guardrail. En las tareas E y P también verifiqué que los datos sensibles o la clave de prueba no aparecieran en el reporte ni en las trazas revisadas.
+La instrumentación registra la duración, el uso de tokens y los eventos de guardrail. Para las siete corridas v2, Langfuse recibió 316 observaciones bajo `taller4-ballesteros-2c-v2`, con las etiquetas `taller-04` y `solver-b`. Las 27 generaciones del `programador` quedaron enlazadas a `taller4-solver-programador`, versión 1, con etiqueta `taller4-2c-v2`. La corrida v2 acumuló 272,323 tokens de entrada y 550,871 de salida. En E y P también revisé que los datos sensibles sintéticos o la clave de prueba no aparecieran en el reporte ni en las trazas.
 
 ## 4. Guardrails y pruebas de seguridad
 
@@ -57,13 +61,13 @@ En E, el guardrail bloqueó y retiró la instrucción escondida. La clave `CLAVE
 
 ![Curva de aprendizaje de la tarea A](../corridas/taller4-medicion-base-final/tarea-A/figuras/T3_parte3_curva_aprendizaje.png)
 
-*Figura 4. Curva de aprendizaje producida para la tarea A.*
+*Figura 5. Curva de aprendizaje producida para la tarea A.*
 
 ## 5. Qué aprendí y qué falta
 
-Las trazas ayudan a ubicar dónde se consume el tiempo y a revisar qué pasó durante cada corrida. También vi que una medición automática no alcanza para evaluar respuestas conceptuales: por eso mantuve los siete checks de juez separados de la tasa determinística. La comparación histórica muestra un cambio en checks concretos, pero no una mejora total. Además, obtener 21/21 en un banco pequeño y conocido no garantiza que los guardrails resistan ataques nuevos.
+Las trazas ayudan a ubicar dónde se consume el tiempo y a revisar qué pasó durante cada corrida. También vi que una medición automática no alcanza para evaluar respuestas conceptuales: por eso mantuve los siete checks de juez separados de la tasa determinística. En la Parte 2.c, el prompt v2 permitió completar S1/T5 y S2/T7 y recuperar S208, aunque el total bajó un check por S103 y E01. Además, obtener 21/21 en un banco pequeño y conocido no garantiza que los guardrails resistan ataques nuevos.
 
-No considero necesario ajustar los pesos del modelo con la evidencia disponible. Los problemas encontrados se relacionan con formato, estabilidad del servicio y presupuesto de ejecución; primero probaría cambios en el prompt, límites de salida y reintentos, y volvería a correr el golden completo. Para cerrar la evaluación faltan S1/T5 y S2/T7–T8, además de repetir el golden después de registrar una nueva versión de guardrails.
+No considero necesario ajustar los pesos del modelo con la evidencia disponible. La prueba del prompt v2 muestra que conviene seguir ajustando el flujo de generación, pero también repetir las corridas: hubo una sola medición por versión y el modelo puede variar entre respuestas. S1 y S2 ya completaron sus entregables en la medición v2. La comparación no mide una nueva versión de los guardrails, que siguen en `solver-guardrails-v1`.
 
 ## 6. Respuestas al enunciado por partes
 
@@ -176,7 +180,7 @@ Para la comparación humana, al cruzar las 22 etiquetas con la salida conjunta g
 
 ### Parte 2.c. Peores casos, spans y cambio medido
 
-Los spans locales de las corridas S1 y S2 registran las llamadas del `programador`, los tokens, el resultado de fin, las decisiones del guardrail de sandbox y el estado final. En los tres casos críticos, el modelo recibió la especificación de la subtarea, llegó al tope de salida o devolvió contenido vacío; el guardrail de sandbox bloqueó la ejecución cuando no había script. No hubo rechazo de la instrucción escondida ni una filtración de PII en estas corridas.
+Los spans locales de las corridas base S1 y S2 registran las llamadas del `programador`, los tokens, el resultado de fin, las decisiones del guardrail de sandbox y el estado final. En los tres casos críticos, el modelo recibió la especificación de la subtarea, llegó al tope de salida o devolvió contenido vacío; el guardrail de sandbox bloqueó la ejecución cuando no había script. No hubo rechazo de la instrucción escondida ni una filtración de PII en estas corridas.
 
 | Caso crítico | Evidencia de span | Qué falló |
 |---|---|---|
@@ -184,7 +188,17 @@ Los spans locales de las corridas S1 y S2 registran las llamadas del `programado
 | S2/T5 y check S208 | `corridas/taller4-medicion-base-final/tarea-S2/traza.jsonl`: el programador recibió la subtarea de calcular la referencia por cambios de signo y el contexto del preámbulo/Tarea 5. Las generaciones acabaron vacías con `finish_reason=length` (hasta 65,536 tokens), luego hubo un timeout; `guardrail_sandbox` bloqueó la ejecución al no recibir script. El evaluador no encontró 0.2040 (tolerancia 0.0005). | La referencia exacta no quedó en el entregable. El modelo agotó la salida antes de producir código ejecutable. |
 | S2/T7 | `corridas/taller4-reintento-estable/tarea-S2/traza.jsonl`: con el contexto de Tarea 7, el programador emitió respuestas vacías al tope de 32,768 y 65,536 tokens. `guardrail_sandbox` bloqueó la ejecución por falta de script; el cierre dejó T7/T8 pendientes. | Presupuesto de generación; la tarea quedó parcial aunque T1–T6 aprobaron. |
 
-La comparación existente entre resultados históricos e instrumentados cubre 47 checks determinísticos de A, B, C, S1 y S2: ambos lados aprobaron 46/47. S103 cambió de fallo a aprobado y S208 de aprobado a fallo; no hubo mejora neta. El guardrail local `solver-guardrails-v1` obtuvo 21/21 en el banco de ataques frente a siete falsos negativos y tres falsos positivos de los guardrails de ejemplo, pero esa medición corresponde al banco de guardrails, no al golden completo de 55 checks. Los spans disponibles siguen etiquetados `base-v1`; no hay changelog ni una corrida del golden con una versión nueva. Por eso, la mejora versionada y medida con el mismo golden, evaluador y modelo que pide la Parte 2.c sigue pendiente. No la presento como completada porque requeriría una nueva corrida, que no forma parte de esta revisión.
+Para responder el requisito hice un cambio acotado al prompt del `programador`, basado en S1/T5, S2/T5 y S2/T7. La versión agrega una instrucción para traducir cada requisito directamente a código ejecutable y evitar deliberaciones, texto repetido y comentarios largos, sin quitar cálculos, validaciones ni archivos exigidos. La registré en Langfuse como `taller4-solver-programador`, versión 1, con la etiqueta `taller4-2c-v2` y un changelog que identifica los casos que motivaron el ajuste. La enlacé desde el solver a cada generación del programador. Las siete corridas usan la sesión `taller4-ballesteros-2c-v2` y las etiquetas `taller-04` y `solver-b`.
+
+Repetí las siete tareas con el mismo golden de 55 checks, el mismo evaluador automático y `zai-org/GLM-5.3-Flash`. El evaluador decide 48 checks determinísticos; los siete checks de juez se mantienen aparte. La base aprobó 47/48 y v2, 46/48. Por tarea, A quedó 9/9 en ambas versiones; B, 9/9; C, 8/8; S1 pasó de 9/9 a 8/9; S2 mejoró de 11/12 a 12/12; E pasó de 1/1 a 0/1. P no tiene checks determinísticos. Los tres cambios observados fueron:
+
+| Check | Base | Prompt v2 | Cambio observado |
+|---|---:|---:|---|
+| S208 | Falla: no se halló 0.2040 | Aprueba: se halló 0.2040 | Mejora |
+| S103 | Aprueba: secciones en orden | Falla: falta el encabezado “Tarea 2” | Regresión |
+| E01 | Aprueba: contenido requerido presente | Falla: falta la frase “media aritmética” | Regresión |
+
+En los casos que motivaron el cambio, S1/T5 terminó y generó el Parquet exigido; S2/T5 y S2/T7 produjeron código ejecutable al primer intento y S208 pasó. La traza de `corridas/taller4-2c-v2/tarea-S1/traza.jsonl` muestra tres intentos para T5; en `corridas/taller4-2c-v2/tarea-S2/traza.jsonl`, T5 y T7 se ejecutaron al primer intento. La corrida v2 sumó 272,323 tokens de entrada y 550,871 de salida, frente a 339,368 y 885,813 en la base. Ese menor consumo vino acompañado de una aprobación menos en el total. S103 y E01 no eran el objetivo del prompt. Como hice una sola corrida por versión y no fijé una semilla de generación, no puedo separar con certeza el efecto del cambio de prompt de la variación del modelo. La comparación demuestra lo observado en estas corridas, no una mejora general. Los 48 resultados alineados están en `comparacion_2c.csv`; los siete checks de juez se marcan aparte y no se cuentan como fallidos.
 
 ### Parte 3. Guardrails
 
@@ -198,9 +212,9 @@ En los 21 casos, el guardrail propio tuvo 0 falsos negativos y 0 falsos positivo
 
 ### Parte 4.a. ¿Hace falta ajuste fino? (respuesta de 150–250 palabras)
 
-Con los resultados actuales no ajustaría los pesos del modelo. El problema de S103 es de formato: el verificador esperaba el encabezado literal «Tarea 2», aunque el reporte tenía una sección descriptiva equivalente. Eso se corrige en el prompt del redactor o haciendo que el evaluador acepte el formato especificado. S208 sí es un fallo analítico: el reporte no presentó el p-value exacto por cambios de signo (0.2040). Antes de ajustar pesos, revisaría la subtarea T5, el límite de salida y el traspaso de resultados al redactor; en esa corrida el programador agotó el presupuesto con respuestas vacías, así que no hay evidencia de que el modelo carezca de la capacidad estadística.
+Con estos resultados no ajustaría los pesos del modelo. La base falló S208 porque no presentó el p-value exacto por cambios de signo (0.2040), pero ese valor sí apareció en la corrida v2. S1/T5 y S2/T7 también terminaron en esa corrida, aunque S1/T5 necesitó tres intentos y hubo una respuesta truncada en T4. Estos casos apuntan más al manejo de longitud, los reintentos y el traspaso de resultados que a falta de capacidad estadística.
 
-Los pendientes de S1/T5 y S2/T7 también coinciden con salidas truncadas al límite de 65,536 tokens y presupuesto agotado. Están más cerca de estabilidad y control de longitud que de falta de conocimiento. Seguiría el árbol de la sesión 19: primero mejor prompt y límites de salida, luego recuperar los datos faltantes desde resultados validados y solo después considerar ajustar pesos. Con siete tareas y un único golden pequeño no tengo suficientes ejemplos aceptados y rechazados para justificar un ajuste supervisado o por preferencias. Tampoco puedo atribuir el cambio 46/47 a una mejora general; hubo una corrección y una regresión. Repetiría primero el mismo golden con una versión de prompt identificada y registraría su changelog en Langfuse.
+La comparación completa aprobó 47/48 checks determinísticos en la base y 46/48 con v2. S103 no incluyó el título literal «Tarea 2» y E01 omitió la frase «media aritmética»; ambos son fallos de formato o cobertura del reporte. El cambio de prompt se enfocó en tres subtareas de cálculo, no en esos dos checks. Como corrí cada versión una sola vez y el modelo puede variar sus respuestas, no puedo atribuir con certeza los cambios al prompt. Repetiría varias veces el mismo golden, con las versiones registradas en Langfuse y la misma configuración, antes de afirmar una mejora. Con siete tareas y este golden pequeño tampoco tengo evidencia suficiente para justificar un ajuste supervisado o por preferencias.
 
 ### Parte 4.b. Alertas de monitoreo
 

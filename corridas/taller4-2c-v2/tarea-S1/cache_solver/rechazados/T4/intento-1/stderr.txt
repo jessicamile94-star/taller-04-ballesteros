@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/Users/jessicaballesteros/Downloads/taller-04-ballesteros/corridas/taller4-2c-v2/tarea-S1/subtareas/T4/intento-1/script.py", line 274, in <module>
+    "fuente_datos": fuente,
+                    ^^^^^^
+NameError: name 'fuente' is not defined. Did you mean: 'ls_fuente'?

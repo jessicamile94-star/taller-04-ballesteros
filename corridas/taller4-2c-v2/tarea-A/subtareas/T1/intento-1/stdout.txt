@@ -1,0 +1,6 @@
+Total ejemplos: 569
+Atributos: 30
+Casos por clase: {np.str_('malignant'): 212, np.str_('benign'): 357}
+Entrenamiento (70%): 398 {np.str_('malignant'): 148, np.str_('benign'): 250}
+Prueba (30%): 171 {np.str_('malignant'): 64, np.str_('benign'): 107}
+Estratificación verificada: True

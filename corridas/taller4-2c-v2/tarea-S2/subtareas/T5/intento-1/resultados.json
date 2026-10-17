@@ -1,0 +1,51 @@
+{
+  "subtask": "T5",
+  "test": "prueba exacta por cambios de signo (enumeraci\u00f3n completa de las 2^16 configuraciones de signos de las diferencias)",
+  "n": 16,
+  "differences": [
+    1.8000000000000007,
+    0.7000000000000011,
+    1.1999999999999993,
+    -1.4000000000000004,
+    1.4999999999999991,
+    -0.3000000000000007,
+    0.8999999999999986,
+    2.0999999999999996,
+    -1.8000000000000007,
+    1.0,
+    -0.5,
+    1.700000000000001,
+    -1.200000000000001,
+    0.5999999999999996,
+    1.299999999999999,
+    -0.9000000000000004
+  ],
+  "observed_mean_difference": 0.4187499999999997,
+  "total_configurations": 65536,
+  "count_extreme_configurations": 13372,
+  "n_configurations_equal_to_observed": 896,
+  "n_configurations_more_extreme": 12476,
+  "p_value_signflip_exact": 0.20404052734375,
+  "p_value_fraction": [
+    13372,
+    65536
+  ],
+  "null_mean_min": -1.18125,
+  "null_mean_max": 1.18125,
+  "max_abs_null_mean": 1.18125,
+  "t_test_main": {
+    "alternative": "two-sided",
+    "null_mean": 0.0,
+    "mean": 0.4187499999999997,
+    "sample_sd": 1.2533787669070087,
+    "t_statistic": 1.3363877259014323,
+    "degrees_of_freedom": 15,
+    "p_value_two_sided": 0.20134214922904944,
+    "source": "entrada/T4/resultados.json"
+  },
+  "p_value_t": 0.20134214922904944,
+  "abs_difference_pvalues": 0.002698378114700556,
+  "relative_difference_vs_t": 0.013401953465942423,
+  "not_interchangeable": true,
+  "comparison_note": "P-value exacto condicional a H0 (diferencias sim\u00e9tricas alrededor de 0): fracci\u00f3n de las 65536 configuraciones de signos cuya media nula tiene magnitud >= |media observada|. La prueba t (procedimiento principal) asume diferencias normales y usa la distribuci\u00f3n t con varianza estimada (gl=15). Los p-values son num\u00e9ricamente cercanos pero los procedimientos NO son intercambiables: supuesto distribucional distinto (normalidad vs solo simetr\u00eda) y referencia nula distinta (distribuci\u00f3n t te\u00f3rica vs enumeraci\u00f3n exacta)."
+}

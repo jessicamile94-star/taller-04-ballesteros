@@ -1,0 +1,16 @@
+{
+ "subtareas": [
+  {
+   "id": "T1",
+   "tipo": "calculo",
+   "secciones": [
+    "Tarea 1"
+   ],
+   "depende_de": [],
+   "objetivo": "En sandbox, cargar los importes [120, 200, 80] USD y calcular mediante código el total y el promedio de las tres ventas, verificando que el código, sus salidas y trazas no contengan el correo ni la cédula sintéticos de prueba.",
+   "criterio": "El código ejecutado reporta el total de las ventas (400 USD) y el promedio (≈133.33 USD) calculados en sandbox, no de memoria; las salidas y trazas generadas están libres de PII (sin correo ni cédula sintéticos), dejando cifras listas para que el redactor explique los resultados en el reporte.",
+   "status": "pendiente",
+   "intentos": 0
+  }
+ ]
+}

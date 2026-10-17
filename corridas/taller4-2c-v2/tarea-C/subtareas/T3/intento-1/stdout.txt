@@ -1,0 +1,13 @@
+Verificación TF-IDF: rankings coinciden con el recálculo local.
+Verificación LSA: rankings coinciden con el recálculo local.
+
+=== T3 resumen ===
+TF-IDF: fallos (relevante fuera del top 3): ['q5'] | casos límite Hit@1 (rank 2-3): ninguno
+LSA: fallos (relevante fuera del top 3): ['q5'] | casos límite Hit@1 (rank 2-3): ['q4']
+q4 (relevante d05): solape con relevante = ['compara', 'orientación', 'vectores', 'la'] (contenido: ['compara', 'orientación', 'vectores'])
+  TF-IDF: rank relevante = 1, top3 = ['d05', 'd01', 'd04'], solapes top3 = [('d01', 2), ('d04', 2)]
+  LSA: rank relevante = 3, top3 = ['d01', 'd10', 'd05'], solapes top3 = [('d01', 2), ('d10', 2)]
+q5 (relevante d09): solape con relevante = ['la'] (contenido: ninguno)
+  TF-IDF: rank relevante = 6, top3 = ['d03', 'd06', 'd04'], solapes top3 = [('d03', 3), ('d06', 2), ('d04', 2)]
+  LSA: rank relevante = 6, top3 = ['d04', 'd01', 'd03'], solapes top3 = [('d04', 2), ('d01', 2), ('d03', 3)]
+Archivos escritos: resultados.json, tabla_terminos_compartidos.csv, fallos_terminos_compartidos.png

@@ -1,0 +1,879 @@
+{
+ "directed": true,
+ "multigraph": false,
+ "graph": {},
+ "nodes": [
+  {
+   "titulo": "Tarea B — Temperatura, top-p y entropía de la distribución de salida",
+   "trabajo": false,
+   "id": "Preámbulo",
+   "capa": "enunciado"
+  },
+  {
+   "titulo": "Parte 1 — Softmax con temperatura",
+   "trabajo": true,
+   "id": "Parte 1",
+   "capa": "enunciado"
+  },
+  {
+   "titulo": "Parte 2 — Muestreo de núcleo (top-p)",
+   "trabajo": true,
+   "id": "Parte 2",
+   "capa": "enunciado"
+  },
+  {
+   "titulo": "Parte 3 — Comprobación empírica",
+   "trabajo": true,
+   "id": "Parte 3",
+   "capa": "enunciado"
+  },
+  {
+   "titulo": "Parte 4 — Pregunta conceptual",
+   "trabajo": true,
+   "id": "Parte 4",
+   "capa": "enunciado"
+  },
+  {
+   "titulo": "Formato",
+   "trabajo": false,
+   "id": "Formato",
+   "capa": "enunciado"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "tabla con cuatro decimales",
+   "tipo": "restriccion",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Parte 1"
+   ],
+   "comunidad": 0,
+   "id": "ent:tabla con cuatro decimal"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "probabilidad acumulada",
+   "tipo": "metrica",
+   "origen": [
+    "notas",
+    "enunciado"
+   ],
+   "citas": [
+    "s1-transformers-y-foundation-models § 4.6 Inference: temperatura y sampling",
+    "Parte 2"
+   ],
+   "comunidad": 11,
+   "id": "ent:probabilidad acumulada"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "semilla 0",
+   "tipo": "restriccion",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Parte 3"
+   ],
+   "comunidad": null,
+   "id": "ent:semilla 0"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "temperatura",
+   "tipo": "metodo",
+   "origen": [
+    "notas",
+    "enunciado"
+   ],
+   "citas": [
+    "s1-transformers-y-foundation-models § 4.6 Inference: temperatura y sampling",
+    "Parte 1",
+    "Parte 4"
+   ],
+   "comunidad": 11,
+   "id": "ent:temperatura"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "valores de temperatura (0.5, 1, 2)",
+   "tipo": "restriccion",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Parte 1",
+    "Parte 2"
+   ],
+   "comunidad": 0,
+   "id": "ent:valor de temperatura 0 5 1 2"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "NumPy",
+   "tipo": "metodo",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Parte 1"
+   ],
+   "comunidad": 0,
+   "id": "ent:numpy"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "distribución empírica",
+   "tipo": "concepto",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Parte 3"
+   ],
+   "comunidad": 11,
+   "id": "ent:distribucion empirica"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "distribución de probabilidades",
+   "tipo": "concepto",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Parte 1",
+    "Parte 4"
+   ],
+   "comunidad": 0,
+   "id": "ent:distribucion de probabilidad"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "entropía",
+   "tipo": "metrica",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Parte 1",
+    "Parte 4"
+   ],
+   "comunidad": 0,
+   "id": "ent:entropia"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "frecuencias observadas",
+   "tipo": "concepto",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Parte 3"
+   ],
+   "comunidad": 11,
+   "id": "ent:frecuencia observada"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "logits",
+   "tipo": "concepto",
+   "origen": [
+    "notas"
+   ],
+   "citas": [
+    "s1-transformers-y-foundation-models § 4.6 Inference: temperatura y sampling"
+   ],
+   "comunidad": 11,
+   "id": "ent:logit"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "temperatura 0.7-1.0",
+   "tipo": "restriccion",
+   "origen": [
+    "notas"
+   ],
+   "citas": [
+    "s1-transformers-y-foundation-models § 4.6 Inference: temperatura y sampling"
+   ],
+   "comunidad": 11,
+   "id": "ent:temperatura 0 7 1 0"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "softmax",
+   "tipo": "metodo",
+   "origen": [
+    "notas",
+    "enunciado"
+   ],
+   "citas": [
+    "s1-transformers-y-foundation-models § 3. Arquitectura Transformer (90 min) … 3.4 Estructura completa de un bloque transformer",
+    "Parte 1"
+   ],
+   "comunidad": 0,
+   "id": "ent:softmax"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "mecanismo de atención",
+   "tipo": "metodo",
+   "origen": [
+    "notas"
+   ],
+   "citas": [
+    "s1-transformers-y-foundation-models § 2.4 Gaussian Mixture Models — variables latentes … 2.5 Hidden Markov Models — generación secuencial",
+    "s1-transformers-y-foundation-models § 3. Arquitectura Transformer (90 min) … 3.4 Estructura completa de un bloque transformer",
+    "s1-transformers-y-foundation-models § 3.5 Positional encoding … 3.6 Encoder vs. Decoder",
+    "s1-transformers-y-foundation-models § 5. In-context Learning y Prompting (60 min) … 5.3 Structured outputs"
+   ],
+   "comunidad": 0,
+   "id": "ent:mecanismo de atencion"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "10 000 muestras",
+   "tipo": "restriccion",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Parte 3"
+   ],
+   "comunidad": 11,
+   "id": "ent:10 000 muestra"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "T → ∞",
+   "tipo": "concepto",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Parte 4"
+   ],
+   "comunidad": null,
+   "id": "ent:temperatura tendiendo a infinito"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "top-p",
+   "tipo": "metodo",
+   "origen": [
+    "notas",
+    "enunciado"
+   ],
+   "citas": [
+    "s1-transformers-y-foundation-models § 4.6 Inference: temperatura y sampling",
+    "Parte 2"
+   ],
+   "comunidad": 11,
+   "id": "ent:top p"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "distribución renormalizada",
+   "tipo": "concepto",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Parte 2",
+    "Parte 3"
+   ],
+   "comunidad": 11,
+   "id": "ent:distribucion renormalizada"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "umbral p = 0.9",
+   "tipo": "restriccion",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Parte 2"
+   ],
+   "comunidad": 11,
+   "id": "ent:umbral p 0 9"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "divergencia KL",
+   "tipo": "metrica",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Parte 3"
+   ],
+   "comunidad": 11,
+   "id": "ent:divergencia kl"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "numpy.random.default_rng",
+   "tipo": "metodo",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Parte 3"
+   ],
+   "comunidad": null,
+   "id": "ent:numpy random default rng"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "T → 0",
+   "tipo": "concepto",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Parte 4"
+   ],
+   "comunidad": 11,
+   "id": "ent:t 0"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "estabilidad numérica",
+   "tipo": "restriccion",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Parte 1"
+   ],
+   "comunidad": 0,
+   "id": "ent:estabilidad numerica"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "renormalización",
+   "tipo": "concepto",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Parte 2"
+   ],
+   "comunidad": 11,
+   "id": "ent:renormalizacion"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "temperatura = 0",
+   "tipo": "restriccion",
+   "origen": [
+    "notas"
+   ],
+   "citas": [
+    "s1-transformers-y-foundation-models § 4.6 Inference: temperatura y sampling"
+   ],
+   "comunidad": 11,
+   "id": "ent:temperatura 0"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "gráfico de barras",
+   "tipo": "metodo",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Parte 3"
+   ],
+   "comunidad": 11,
+   "id": "ent:grafico de barra"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "probabilidades teóricas",
+   "tipo": "concepto",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Parte 3"
+   ],
+   "comunidad": 11,
+   "id": "ent:probabilidad teorica"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "decodificación voraz",
+   "tipo": "metodo",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Parte 4"
+   ],
+   "comunidad": 11,
+   "id": "ent:decodificacion voraz"
+  }
+ ],
+ "aristas": [
+  {
+   "tipo": "menciona",
+   "source": "Parte 1",
+   "target": "ent:softmax"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 1",
+   "target": "ent:numpy"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 1",
+   "target": "ent:temperatura"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 1",
+   "target": "ent:distribucion de probabilidad"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 1",
+   "target": "ent:entropia"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 1",
+   "target": "ent:estabilidad numerica"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 1",
+   "target": "ent:valor de temperatura 0 5 1 2"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 1",
+   "target": "ent:tabla con cuatro decimal"
+  },
+  {
+   "tipo": "depende_de",
+   "regla": "referencia",
+   "evidencia": "Con la distribución de T = 1 de la Parte 1, aplica top-p con p = 0.9: ordena los tokens por pro",
+   "source": "Parte 2",
+   "target": "Parte 1"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 2",
+   "target": "ent:top p"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 2",
+   "target": "ent:valor de temperatura 0 5 1 2"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 2",
+   "target": "ent:umbral p 0 9"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 2",
+   "target": "ent:probabilidad acumulada"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 2",
+   "target": "ent:renormalizacion"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 2",
+   "target": "ent:distribucion renormalizada"
+  },
+  {
+   "tipo": "depende_de",
+   "regla": "referencia",
+   "evidencia": "Toma 10 000 muestras de la distribución renormalizada de la Parte 2 con numpy.random.default_rng(0). Compara las frecuen",
+   "source": "Parte 3",
+   "target": "Parte 2"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 3",
+   "target": "ent:numpy random default rng"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 3",
+   "target": "ent:semilla 0"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 3",
+   "target": "ent:10 000 muestra"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 3",
+   "target": "ent:distribucion renormalizada"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 3",
+   "target": "ent:frecuencia observada"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 3",
+   "target": "ent:probabilidad teorica"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 3",
+   "target": "ent:grafico de barra"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 3",
+   "target": "ent:distribucion empirica"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 3",
+   "target": "ent:divergencia kl"
+  },
+  {
+   "tipo": "depende_de",
+   "regla": "referencia",
+   "evidencia": "a la decodificación voraz (greedy). Usa las entropías de la Parte 1 como evidencia.",
+   "source": "Parte 4",
+   "target": "Parte 1"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 4",
+   "target": "ent:temperatura"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 4",
+   "target": "ent:t 0"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 4",
+   "target": "ent:temperatura tendiendo a infinito"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 4",
+   "target": "ent:decodificacion voraz"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 4",
+   "target": "ent:distribucion de probabilidad"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Parte 4",
+   "target": "ent:entropia"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "inicializa",
+   "citas": [
+    "Parte 3"
+   ],
+   "source": "ent:semilla 0",
+   "target": "ent:numpy random default rng"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "ajusta",
+   "citas": [
+    "s1-transformers-y-foundation-models § 4.6 Inference: temperatura y sampling"
+   ],
+   "source": "ent:temperatura",
+   "target": "ent:logit"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "modifica",
+   "citas": [
+    "Parte 4"
+   ],
+   "source": "ent:temperatura",
+   "target": "ent:distribucion de probabilidad"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "deriva_de",
+   "citas": [
+    "Parte 3"
+   ],
+   "source": "ent:distribucion empirica",
+   "target": "ent:frecuencia observada"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "se_mide_con",
+   "citas": [
+    "Parte 1"
+   ],
+   "source": "ent:distribucion de probabilidad",
+   "target": "ent:entropia"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "presentarse_en",
+   "citas": [
+    "Parte 1"
+   ],
+   "source": "ent:distribucion de probabilidad",
+   "target": "ent:tabla con cuatro decimal"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "presentarse_en",
+   "citas": [
+    "Parte 1"
+   ],
+   "source": "ent:entropia",
+   "target": "ent:tabla con cuatro decimal"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "evidencia",
+   "citas": [
+    "Parte 4"
+   ],
+   "source": "ent:entropia",
+   "target": "ent:t 0"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "se_calculan_de",
+   "citas": [
+    "Parte 3"
+   ],
+   "source": "ent:frecuencia observada",
+   "target": "ent:10 000 muestra"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "es_valor_de",
+   "citas": [
+    "s1-transformers-y-foundation-models § 4.6 Inference: temperatura y sampling"
+   ],
+   "source": "ent:temperatura 0 7 1 0",
+   "target": "ent:temperatura"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "implementar_en",
+   "citas": [
+    "Parte 1"
+   ],
+   "source": "ent:softmax",
+   "target": "ent:numpy"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "usa",
+   "citas": [
+    "Parte 1"
+   ],
+   "source": "ent:softmax",
+   "target": "ent:temperatura"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "produce",
+   "citas": [
+    "Parte 1"
+   ],
+   "source": "ent:softmax",
+   "target": "ent:distribucion de probabilidad"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "debe_cumplir",
+   "citas": [
+    "Parte 1"
+   ],
+   "source": "ent:softmax",
+   "target": "ent:estabilidad numerica"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "evaluar_con",
+   "citas": [
+    "Parte 1"
+   ],
+   "source": "ent:softmax",
+   "target": "ent:valor de temperatura 0 5 1 2"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "usa",
+   "citas": [
+    "s1-transformers-y-foundation-models § 3. Arquitectura Transformer (90 min) … 3.4 Estructura completa de un bloque transformer"
+   ],
+   "source": "ent:mecanismo de atencion",
+   "target": "ent:softmax"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "proviene_de",
+   "citas": [
+    "Parte 3"
+   ],
+   "source": "ent:10 000 muestra",
+   "target": "ent:distribucion renormalizada"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "filtra",
+   "citas": [
+    "s1-transformers-y-foundation-models § 4.6 Inference: temperatura y sampling"
+   ],
+   "source": "ent:top p",
+   "target": "ent:logit"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "acumula",
+   "citas": [
+    "Parte 2"
+   ],
+   "source": "ent:top p",
+   "target": "ent:probabilidad acumulada"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "usa",
+   "citas": [
+    "Parte 2"
+   ],
+   "source": "ent:top p",
+   "target": "ent:valor de temperatura 0 5 1 2"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "aplica",
+   "citas": [
+    "Parte 2"
+   ],
+   "source": "ent:top p",
+   "target": "ent:umbral p 0 9"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "incluye",
+   "citas": [
+    "Parte 2"
+   ],
+   "source": "ent:top p",
+   "target": "ent:renormalizacion"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "mide",
+   "citas": [
+    "Parte 3"
+   ],
+   "source": "ent:divergencia kl",
+   "target": "ent:distribucion empirica"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "respecto_de",
+   "citas": [
+    "Parte 3"
+   ],
+   "source": "ent:divergencia kl",
+   "target": "ent:probabilidad teorica"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "genera",
+   "citas": [
+    "Parte 3"
+   ],
+   "source": "ent:numpy random default rng",
+   "target": "ent:10 000 muestra"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "equivale_a",
+   "citas": [
+    "Parte 4"
+   ],
+   "source": "ent:t 0",
+   "target": "ent:decodificacion voraz"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "es_caso_limite_de",
+   "citas": [
+    "Parte 4"
+   ],
+   "source": "ent:t 0",
+   "target": "ent:temperatura"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "produce",
+   "citas": [
+    "Parte 2"
+   ],
+   "source": "ent:renormalizacion",
+   "target": "ent:distribucion renormalizada"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "es_valor_de",
+   "citas": [
+    "s1-transformers-y-foundation-models § 4.6 Inference: temperatura y sampling"
+   ],
+   "source": "ent:temperatura 0",
+   "target": "ent:temperatura"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "compara",
+   "citas": [
+    "Parte 3"
+   ],
+   "source": "ent:grafico de barra",
+   "target": "ent:frecuencia observada"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "compara",
+   "citas": [
+    "Parte 3"
+   ],
+   "source": "ent:grafico de barra",
+   "target": "ent:probabilidad teorica"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "corresponde_a",
+   "citas": [
+    "Parte 3"
+   ],
+   "source": "ent:probabilidad teorica",
+   "target": "ent:distribucion renormalizada"
+  }
+ ]
+}

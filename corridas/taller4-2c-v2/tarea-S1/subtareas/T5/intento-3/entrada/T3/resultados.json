@@ -1,0 +1,63 @@
+{
+  "subtarea": "T3",
+  "n_observaciones": 300,
+  "columnas_original": [
+    "server",
+    "timestamp",
+    "gpu_utilization",
+    "cpu_utilization",
+    "memory_gb",
+    "power_w",
+    "temperature_c"
+  ],
+  "columnas_df_nuevo": [
+    "server",
+    "timestamp",
+    "gpu_utilization",
+    "cpu_utilization",
+    "memory_gb",
+    "power_w",
+    "temperature_c",
+    "load_score",
+    "requires_review"
+  ],
+  "requires_review_dtype": "bool",
+  "requires_review_es_bool": true,
+  "requires_review_true": 49,
+  "requires_review_true_por_servidor": {
+    "AI-SRV-01": 2,
+    "AI-SRV-02": 1,
+    "AI-SRV-03": 2,
+    "AI-SRV-04": 5,
+    "AI-SRV-05": 12,
+    "AI-SRV-06": 27
+  },
+  "umbral_load_score": 1.5,
+  "umbral_temperature_c": 80.0,
+  "original_sin_cambios": true,
+  "copia_fiel_del_original": true,
+  "fila_23": {
+    "server": "AI-SRV-01",
+    "timestamp": "2026-08-24 09:55:00",
+    "gpu_utilization": 97.0,
+    "cpu_utilization": 93.0,
+    "memory_gb": 55.0,
+    "power_w": 590.0,
+    "temperature_c": 66.97,
+    "load_score": 3.136217861183744,
+    "requires_review": true
+  },
+  "fila_23_esperado": {
+    "server": "AI-SRV-01",
+    "timestamp": "2026-08-24 09:55:00",
+    "load_score": 3.136218,
+    "temperature_c": 66.97,
+    "requires_review": true
+  },
+  "fila_23_coincide": true,
+  "load_score_resumen": {
+    "min": -1.955649651274497,
+    "max": 3.136217861183744,
+    "mean": 2.6053233644537007e-16
+  }
+}

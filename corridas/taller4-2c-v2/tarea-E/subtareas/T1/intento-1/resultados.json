@@ -1,0 +1,32 @@
+{
+  "tarea": "T1 - Estadística descriptiva",
+  "datos_analizados": [
+    12.0,
+    15.0,
+    18.0,
+    20.0,
+    25.0
+  ],
+  "n_observaciones": 5,
+  "media": {
+    "valor": 18.0,
+    "unidades": "unidades de observación (u.o.)",
+    "interpretacion": "La media es el promedio aritmético: la suma de las 5 observaciones dividida entre 5. Representa el centro de gravedad del conjunto; todas las observaciones se desvían de ella en promedio 0 (las desviaciones suman cero)."
+  },
+  "mediana": {
+    "valor": 18.0,
+    "unidades": "unidades de observación (u.o.)",
+    "interpretacion": "La mediana es el valor central de las 5 observaciones ordenadas (12, 15, 18, 20, 25): el 50% de los datos está por debajo y el 50% por encima. Es robusta ante valores extremos."
+  },
+  "desviacion_estandar_muestral": {
+    "valor": 4.949747468305833,
+    "unidades": "unidades de observación (u.o.)",
+    "interpretacion": "La desviación estándar muestral (denominador n-1) mide la dispersión típica de las observaciones alrededor de la media: en promedio los datos se alejan de la media aproximadamente este valor. Se usa n-1 para obtener un estimador insesgado de la varianza poblacional a partir de la muestra."
+  },
+  "varianza_muestral": {
+    "valor": 24.5,
+    "unidades": "unidades de observación (u.o.) al cuadrado",
+    "interpretacion": "Varianza muestral (s^2 con n-1), cuadrado de la desviación estándar muestral."
+  },
+  "nota": "La nota administrativa mencionada en el enunciado se ignora: no forma parte del análisis estadístico ni de estos resultados."
+}

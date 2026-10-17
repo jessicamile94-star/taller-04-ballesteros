@@ -1,0 +1,39 @@
+﻿metodo,consulta,doc,rank,rol,num_terminos_compartidos_con_consulta,num_de_contenido,terminos_compartidos,terminos_de_contenido
+TF-IDF,q1,d04,1,relevante,8,6,frecuencia; léxica; ranking; términos; función; pondera; de; la,frecuencia; léxica; ranking; términos; función; pondera
+TF-IDF,q1,d01,2,top3_no_relevante,3,1,pondera; de; la,pondera
+TF-IDF,q1,d06,3,top3_no_relevante,2,1,función; qué,función
+TF-IDF,q2,d03,1,relevante,3,2,fragmentos; prompt; al,fragmentos; prompt
+TF-IDF,q2,d01,2,top3_no_relevante,0,0,,
+TF-IDF,q2,d02,3,top3_no_relevante,0,0,,
+TF-IDF,q3,d08,1,relevante,5,4,bajo; entrena; matrices; rango; de,bajo; entrena; matrices; rango
+TF-IDF,q3,d06,2,top3_no_relevante,1,0,qué,
+TF-IDF,q3,d04,3,top3_no_relevante,1,0,de,
+TF-IDF,q4,d05,1,relevante,4,3,compara; orientación; vectores; la,compara; orientación; vectores
+TF-IDF,q4,d01,2,top3_no_relevante,2,0,de; la,
+TF-IDF,q4,d04,3,top3_no_relevante,2,0,de; la,
+TF-IDF,q5,d03,1,top3_no_relevante,3,1,modelo; al; la,modelo
+TF-IDF,q5,d06,2,top3_no_relevante,2,0,qué; el,
+TF-IDF,q5,d04,3,top3_no_relevante,2,0,que; la,
+TF-IDF,q5,d09,6,relevante,1,0,la,
+TF-IDF,q6,d02,1,relevante,5,4,autoatención; capas; feed; forward; con,autoatención; capas; feed; forward
+TF-IDF,q6,d06,2,top3_no_relevante,2,0,qué; con,
+TF-IDF,q6,d03,3,top3_no_relevante,1,0,con,
+LSA,q1,d04,1,relevante,8,6,frecuencia; léxica; ranking; términos; función; pondera; de; la,frecuencia; léxica; ranking; términos; función; pondera
+LSA,q1,d01,2,top3_no_relevante,3,1,pondera; de; la,pondera
+LSA,q1,d06,3,top3_no_relevante,2,1,función; qué,función
+LSA,q2,d03,1,relevante,3,2,fragmentos; prompt; al,fragmentos; prompt
+LSA,q2,d07,2,top3_no_relevante,0,0,,
+LSA,q2,d09,3,top3_no_relevante,0,0,,
+LSA,q3,d08,1,relevante,5,4,bajo; entrena; matrices; rango; de,bajo; entrena; matrices; rango
+LSA,q3,d02,2,top3_no_relevante,1,0,de,
+LSA,q3,d06,3,top3_no_relevante,1,0,qué,
+LSA,q4,d01,1,top3_no_relevante,2,0,de; la,
+LSA,q4,d10,2,top3_no_relevante,2,0,de; la,
+LSA,q4,d05,3,relevante,4,3,compara; orientación; vectores; la,compara; orientación; vectores
+LSA,q5,d04,1,top3_no_relevante,2,0,que; la,
+LSA,q5,d01,2,top3_no_relevante,2,0,el; la,
+LSA,q5,d03,3,top3_no_relevante,3,1,modelo; al; la,modelo
+LSA,q5,d09,6,relevante,1,0,la,
+LSA,q6,d02,1,relevante,5,4,autoatención; capas; feed; forward; con,autoatención; capas; feed; forward
+LSA,q6,d08,2,top3_no_relevante,1,0,con,
+LSA,q6,d10,3,top3_no_relevante,0,0,,

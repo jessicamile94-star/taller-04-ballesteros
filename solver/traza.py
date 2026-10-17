@@ -83,6 +83,9 @@ class Traza:
         self._candado = threading.RLock()
         self._langfuse = None
         self._langfuse_habilitado = False
+        self.langfuse_session_id = os.getenv("LANGFUSE_SESSION_ID", "taller4-ballesteros-base")
+        self.prompt_programador = None
+        self.prompt_programador_version = None
         try:
             from dotenv import load_dotenv
             from solver.config import RAIZ
@@ -108,11 +111,23 @@ class Traza:
         stack = ExitStack()
         try:
             from langfuse import propagate_attributes
+            prompt_name = os.getenv("SOLVER_PROGRAMADOR_PROMPT_NAME")
+            prompt_label = os.getenv("SOLVER_PROGRAMADOR_PROMPT_LABEL", "taller4-2c-v2")
+            metadata = {"prompt_version": "base-v1"}
+            if prompt_name:
+                prompt = self._langfuse.get_prompt(
+                    prompt_name, label=prompt_label, type="text", cache_ttl_seconds=0)
+                self.prompt_programador = prompt
+                self.prompt_programador_version = f"{prompt.name}:v{prompt.version}"
+                metadata.update({"programador_prompt": prompt.name,
+                                 "programador_prompt_version": prompt.version,
+                                 "prompt_version": self.prompt_programador_version})
             session = os.getenv("LANGFUSE_SESSION_ID", "taller4-ballesteros-base")
+            self.langfuse_session_id = session
             etiquetas = ["taller-04", "solver-b"]
             stack.enter_context(propagate_attributes(session_id=session, tags=etiquetas))
             root = stack.enter_context(self._langfuse.start_as_current_observation(
-                as_type="span", name=nombre, input=entrada[:20000], metadata={"prompt_version": "base-v1"}
+                as_type="span", name=nombre, input=entrada[:20000], metadata=metadata
             ))
             # Langfuse 4.x preserves session_id on observations, but propagated OTel tags
             # may not populate the trace tag list. Enqueue the trace update explicitly.
@@ -121,6 +136,8 @@ class Traza:
                 self._langfuse._create_trace_tags_via_ingestion(trace_id=traza_id, tags=etiquetas)
         except Exception:
             stack.close()
+            if os.getenv("SOLVER_PROGRAMADOR_PROMPT_NAME"):
+                raise RuntimeError("No se pudo cargar el prompt versionado de Langfuse")
             yield None
             return
         try:
@@ -155,14 +172,16 @@ class Traza:
             cm.__exit__(None, None, None)
 
     @contextmanager
-    def generacion_langfuse(self, agente: str, modelo: str, entrada):
+    def generacion_langfuse(self, agente: str, modelo: str, entrada, prompt=None):
         if self._langfuse is None:
             yield None
             return
         try:
             cm = self._langfuse.start_as_current_observation(
                 as_type="generation", name=agente, model=modelo, input=_limpiar(entrada),
-                metadata={"prompt_version": "base-v1"})
+                prompt=prompt,
+                metadata={"prompt_version": (self.prompt_programador_version
+                                              if prompt is not None else "base-v1")})
             gen = cm.__enter__()
         except Exception:
             yield None

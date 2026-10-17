@@ -1,0 +1,4 @@
+repr obtenido: ServerMeasurements(shape=(300, 3), features=('gpu_utilization', 'cpu_utilization', 'memory_gb'))
+coincide con el esperado: True
+validaciones ValueError (no 2D / columnas / no numérico): {'no_bidimensional': True, 'columnas_vs_nombres': True, 'no_numerico': True}
+forma: [300, 3] | dtype: float64

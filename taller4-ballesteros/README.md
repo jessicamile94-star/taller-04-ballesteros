@@ -1,6 +1,6 @@
 # Taller 4 — LLMOps y solver multiagente
 
-En este repositorio trabajé con la ruta **B — solver multiagente**. Aquí resumo los resultados que pude reproducir y las partes de las corridas que quedaron incompletas. Los datos y archivos mencionados se pueden revisar en el propio repositorio.
+En este repositorio trabajé con la ruta **B — solver multiagente**. Aquí resumo la medición base, la comparación de la Parte 2.c y las corridas que quedaron parciales en los intentos anteriores. Los datos y archivos se pueden revisar en el propio repositorio.
 
 ## Evidencia comprobable en el repositorio
 
@@ -16,11 +16,13 @@ En este repositorio trabajé con la ruta **B — solver multiagente**. Aquí res
 | Resultados por checks | `resultados_solver.csv` tiene 55 checks; `juez_solver.csv`, 36 filas de checks juzgables. |
 | Spans locales | `spans.jsonl` tiene 157 filas de 7 corridas: 7 corrida, 14 guardrail, 108 LLM y 28 herramienta. |
 | Corrida base reproducida | `corridas/taller4-medicion-base-final/tarea-A`: completada con GLM-5.3-Flash, 35,764 tokens de entrada y 47,971 de salida; 9/11 checks automáticos. |
-| Corridas de las siete tareas | A, B y C completadas; E/P completadas; S1/S2 parciales. Todos los artefactos y trazas están en `corridas/taller4-medicion-base-final/`. |
+| Corridas de las siete tareas | La base conserva S1/S2 parciales en `corridas/taller4-medicion-base-final/`. La corrida v2 completó A, B, C, S1, S2, E y P en `corridas/taller4-2c-v2/`. |
 | Evaluación determinística del golden | 47/48 checks decidibles aprobados. S208 falla; los siete checks de juez se excluyen de esta tasa. CSV: `resultados_solver_base_completo.csv`. |
+| Parte 2.c, comparación antes/después | Mismo golden, evaluador y modelo: base 47/48; prompt v2 46/48. S208 pasó; S103 y E01 regresaron. CSV por check: `comparacion_2c.csv`; resultados completos: `resultados_solver_2c_base.csv` y `resultados_solver_2c_v2.csv`. |
+| Prompt versionado | Langfuse `taller4-solver-programador`, versión 1, etiqueta `taller4-2c-v2`; 27 generaciones enlazadas, 7 trazas, 316 observaciones, sesión `taller4-ballesteros-2c-v2` y etiquetas `taller-04`, `solver-b`. |
 | Enlace de resultados con Langfuse | `resultados_solver_base_completo_con_traza.csv` agrega a cada check el `traza_id`, `prompt_version`, `session_id` y etiquetas de la corrida de su tarea. Los siete ids y sus metadatos se comprobaron contra `spans_langfuse_completo.jsonl`. |
 | Exportación Langfuse de las siete | 318 spans de 7 corridas filtradas en `spans_langfuse_completo.jsonl`; p50 175.787 s, p95 8,352.170 s, 339,368 tokens de entrada, 885,813 de salida, costo simulado USD 0.582393. |
-| Comparación con resultados históricos | Sobre 47 checks determinísticos de A/B/C/S1/S2: 46/47 aprobados antes y 46/47 ahora. S103 pasó y S208 regresó. Detalle: `comparacion_resultados.csv`. |
+| Comparación histórica anterior | `comparacion_resultados.csv` registra una medición intermedia, limitada a 47 checks de A/B/C/S1/S2 (46/47 a cada lado). No es la corrida de prompt v2 descrita en la fila anterior. |
 | Juez final | Los siete criterios conceptuales (A10, A11, C09, C10, E02, P01, P02) fueron aprobados; acuerdo 100 % con las siete etiquetas humanas (kappa indefinido por una sola clase). CSV: `juez_solver_base_completo_reintento.csv`; golden filtrado: `golden_juez_pendientes.json`. |
 | Reintento tras intermitencia H200 | S1 y S2 se repitieron en `corridas/taller4-reintento-estable/`; el endpoint volvió a responder, pero ambas corridas terminaron parciales por agotamiento de presupuesto. S1 aprobó T1–T4 y dejó T5 pendiente; S2 aprobó T1–T6, dejó T7 pendiente y no ejecutó T8. |
 | Juez del control A/E/P | 11 veredictos: acuerdo 100 % con 6 checks automáticos y 9 etiquetas humanas. Kappa indefinido en ambas comparaciones porque hay una sola clase. |
@@ -34,12 +36,11 @@ En este repositorio trabajé con la ruta **B — solver multiagente**. Aquí res
 - `spans_langfuse_completo.jsonl` es la exportación filtrada de Langfuse para las siete corridas actuales. `spans_langfuse.jsonl` y `spans_guardrails.jsonl` conservan las exportaciones previas de control A/E/P.
 - E y P ya tienen enunciados sintéticos y corridas reales. E eliminó la directiva escondida; P eliminó la PII antes de enviarla al LLM. Se comprobaron reporte, traza local, caché del enunciado y spans exportados.
 - El banco ya cumple los cuatro casos propios. Su CSV fue comprobado localmente; el CSV guardado puede regenerarse con el comando de abajo.
-- La comparación histórica/nueva usa el mismo golden y evaluador sobre A/B/C/S1/S2; hubo una mejora (S103) y una regresión (S208), con tasa neta sin cambio. No demuestra una mejora general.
-- La versión `solver-guardrails-v1` queda registrada desde ahora; falta ejecutar de nuevo el golden con una versión posterior para completar una comparación antes/después.
-- Los reintentos más recientes de S1 y S2 alcanzaron la H200 y generaron entregables, pero quedaron parciales: S1 aprobó T1–T4 y T5 agotó tres intentos; S2 aprobó T1–T6 y T7 agotó su intento, mientras T8 quedó sin ejecutar por presupuesto. Los reportes nuevos, artefactos y trazas están en `corridas/taller4-reintento-estable/`.
-- El juez conceptual ya tiene siete veredictos y coincide con las etiquetas humanas. Aún falta completar S1/T5 y S2/T7–T8 antes de afirmar cumplimiento total.
-- Las siete trazas tienen `session_id=taller4-ballesteros-base` y las etiquetas `taller-04` y `solver-b`. La sesión ya estaba guardada; añadí las etiquetas a las trazas existentes y volví a exportar los campos de Langfuse. No repetí el solver ni cambié sus métricas.
-- La comparación histórica/instrumentada deja una corrección y una regresión, sin mejora neta. Falta una corrida del golden completo con otra versión; la Parte 2.c sigue pendiente.
+- La comparación de prompt v2 ya cubre las siete tareas. Mejoraron S1/T5, S2/T5 y S2/T7; el balance de checks bajó en uno por las regresiones S103 y E01. Una ejecución por versión no permite atribuir todos los cambios al prompt ni afirmar una mejora general.
+- Un reintento anterior de S1 y S2 alcanzó la H200, pero quedó parcial por presupuesto; esa evidencia se conserva en `corridas/taller4-reintento-estable/`. La medición v2 posterior completó ambas tareas.
+- El juez conceptual de la medición base aprobó los siete criterios y coincidió con las etiquetas humanas. Los siete checks se mantienen fuera de la comparación automática 2.c.
+- Las trazas de la medición base tienen `session_id=taller4-ballesteros-base`. La sesión y las etiquetas de la medición v2 son distintas y están registradas en `corridas/taller4-2c-v2/`.
+- La comparación histórica/instrumentada de `comparacion_resultados.csv` es previa y separada de la 2.c. La nueva comparación completa del prompt está en `comparacion_2c.csv`; una sola ejecución por versión no permite afirmar una mejora general.
 - El Python global es 3.14, pero `uv sync` ya preparó el entorno requerido de Python 3.12. En esta sesión respondieron los endpoints de la H200 y `auth_check()` de Langfuse.
 
 ## Comandos reproducibles
@@ -86,6 +87,21 @@ uv run python Lab-03-Agentes/solver-v2/evaluar_solver.py \
   --golden taller4-ballesteros/golden_base_control.json \
   --solo-evaluar <carpeta-corridas-base> \
   --salida taller4-ballesteros/resultados_solver_base.csv
+
+# Reproducir la medición comparativa 2.c (requiere VPN, credenciales Langfuse y H200)
+uv run python scripts/registrar_prompt_2c.py
+
+USE_LANGFUSE=true \
+SOLVER_PROGRAMADOR_PROMPT_NAME=taller4-solver-programador \
+SOLVER_PROGRAMADOR_PROMPT_LABEL=taller4-2c-v2 \
+LANGFUSE_SESSION_ID=taller4-ballesteros-2c-v2 \
+uv run python scripts/correr_2c.py
+
+uv run python Lab-03-Agentes/solver-v2/evaluar_solver.py \
+  --golden taller4-ballesteros/golden_set.json \
+  --solo-evaluar corridas/taller4-2c-v2 \
+  --salida taller4-ballesteros/resultados_solver_2c_v2.csv
+uv run python scripts/comparar_2c.py
 
 uv run --directory Lab-04-LLMOps python juez_solver.py \
   --golden ../taller4-ballesteros/golden_base_control.json \

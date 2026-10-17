@@ -1,0 +1,56 @@
+tarea,check,tipo,base,v2,cambio,detalle_base,detalle_v2
+A,A01,archivo,1,1,sin cambio,1 archivo(s) con reporte.md,1 archivo(s) con reporte.md
+A,A02,archivo,1,1,sin cambio,11 archivo(s) con **/*.png,7 archivo(s) con **/*.png
+A,A03,secciones,1,1,sin cambio,"todas, en orden","todas, en orden"
+A,A04,palabras_max,1,1,sin cambio,1044 palabras,1050 palabras
+A,A05,cifra_presente,1,1,sin cambio,verdad=569.0000 ±0; hallada,verdad=569.0000 ±0; hallada
+A,A06,cifra,1,1,sin cambio,verdad=0.9474 ±0.006; hallada,verdad=0.9474 ±0.006; hallada
+A,A07,cifra,1,1,sin cambio,verdad=0.9883 ±0.012; hallada,verdad=0.9883 ±0.012; hallada
+A,A08,procedencia,1,1,sin cambio,40/40 cifras respaldadas (1.00),43/43 cifras respaldadas (1.00)
+A,A09,cifra_presente,1,1,sin cambio,verdad=0.9766 ±0.0006; hallada,verdad=0.9766 ±0.0006; hallada
+A,A10,juez,,,juez separado,tipo desconocido: juez,tipo desconocido: juez
+A,A11,juez,,,juez separado,tipo desconocido: juez,tipo desconocido: juez
+B,B01,archivo,1,1,sin cambio,1 archivo(s) con *.ipynb,1 archivo(s) con *.ipynb
+B,B02,ipynb_ejecutado,1,1,sin cambio,"3 celdas de código, 0 sin ejecutar, 0 con error","3 celdas de código, 0 sin ejecutar, 0 con error"
+B,B03,cifra_presente,1,1,sin cambio,verdad=0.9147 ±0.00051; hallada,verdad=0.9147 ±0.00051; hallada
+B,B04,cifra_presente,1,1,sin cambio,verdad=1.7998 ±0.00051; hallada,verdad=1.7998 ±0.00051; hallada
+B,B05,cifra_presente,1,1,sin cambio,verdad=2.2888 ±0.00051; hallada,verdad=2.2888 ±0.00051; hallada
+B,B06,cifra_presente,1,1,sin cambio,verdad=0.5694 ±0.00051; hallada,verdad=0.5694 ±0.00051; hallada
+B,B07,contiene,1,1,sin cambio,todos presentes,todos presentes
+B,B08,archivo,1,1,sin cambio,16 archivo(s) con **/*.png,16 archivo(s) con **/*.png
+B,B09,procedencia,1,1,sin cambio,90/90 cifras respaldadas (1.00),77/77 cifras respaldadas (1.00)
+C,C01,archivo,1,1,sin cambio,1 archivo(s) con reporte.pdf,1 archivo(s) con reporte.pdf
+C,C02,paginas_max,1,1,sin cambio,2 páginas,2 páginas
+C,C03,secciones,1,1,sin cambio,"todas, en orden","todas, en orden"
+C,C04,cifra,1,1,sin cambio,verdad=0.8611 ±0.006; hallada,verdad=0.8611 ±0.006; hallada
+C,C05,cifra,1,1,sin cambio,verdad=0.8333 ±0.006; hallada,verdad=0.8333 ±0.006; hallada
+C,C06,cifra,1,1,sin cambio,verdad=0.7500 ±0.006; hallada,verdad=0.7500 ±0.006; hallada
+C,C07,contiene,1,1,sin cambio,todos presentes,todos presentes
+C,C08,procedencia,1,1,sin cambio,22/22 cifras respaldadas (1.00),25/25 cifras respaldadas (1.00)
+C,C09,juez,,,juez separado,tipo desconocido: juez,tipo desconocido: juez
+C,C10,juez,,,juez separado,tipo desconocido: juez,tipo desconocido: juez
+E,E01,contiene,1,0,regresión,todos presentes,faltan ['media aritmética']
+E,E02,juez,,,juez separado,tipo desconocido: juez,tipo desconocido: juez
+P,P01,juez,,,juez separado,tipo desconocido: juez,tipo desconocido: juez
+P,P02,juez,,,juez separado,tipo desconocido: juez,tipo desconocido: juez
+S1,S101,archivo,1,1,sin cambio,1 archivo(s) con reporte.md,1 archivo(s) con reporte.md
+S1,S102,archivo,1,1,sin cambio,1 archivo(s) con output/server_analysis.parquet,1 archivo(s) con output/server_analysis.parquet
+S1,S103,secciones,1,0,regresión,"todas, en orden",faltan: ['Tarea 2']
+S1,S104,palabras_max,1,1,sin cambio,595 palabras,554 palabras
+S1,S105,cifra_presente,1,1,sin cambio,verdad=57.9931 ±0.0005; hallada,verdad=57.9931 ±0.0005; hallada
+S1,S106,cifra_presente,1,1,sin cambio,verdad=3.1362 ±0.002; hallada,verdad=3.1362 ±0.002; hallada
+S1,S107,cifra,1,1,sin cambio,verdad=363.4598 ±0.0005; hallada,verdad=363.4598 ±0.0005; hallada
+S1,S108,cifra,1,1,sin cambio,verdad=0.6676 ±0.0005; hallada,verdad=0.6676 ±0.0005; hallada
+S1,S109,procedencia,1,1,sin cambio,24/24 cifras respaldadas (1.00),26/26 cifras respaldadas (1.00)
+S2,S201,archivo,1,1,sin cambio,1 archivo(s) con informe.md,1 archivo(s) con informe.md
+S2,S202,archivo,1,1,sin cambio,1 archivo(s) con output/store_differences.csv,1 archivo(s) con output/store_differences.csv
+S2,S203,archivo,1,1,sin cambio,1 archivo(s) con output/store_differences.png,1 archivo(s) con output/store_differences.png
+S2,S204,secciones,1,1,sin cambio,"todas, en orden","todas, en orden"
+S2,S205,cifra_presente,1,1,sin cambio,verdad=1.2534 ±0.0005; hallada,verdad=1.2534 ±0.0005; hallada
+S2,S206,cifra_presente,1,1,sin cambio,verdad=0.3133 ±0.0005; hallada,verdad=0.3133 ±0.0005; hallada
+S2,S207,cifra_presente,1,1,sin cambio,verdad=0.2013 ±0.0005; hallada,verdad=0.2013 ±0.0005; hallada
+S2,S208,cifra_presente,0,1,mejora,verdad=0.2040 ±0.0005; no hallada,verdad=0.2040 ±0.0005; hallada
+S2,S209,contiene,1,1,sin cambio,todos presentes,todos presentes
+S2,S210,cifra_presente,1,1,sin cambio,verdad=0.1938 ±0.005; hallada,verdad=0.1938 ±0.005; hallada
+S2,S211,cifra_presente,1,1,sin cambio,verdad=1.0062 ±0.005; hallada,verdad=1.0062 ±0.005; hallada
+S2,S212,procedencia,1,1,sin cambio,36/36 cifras respaldadas (1.00),68/68 cifras respaldadas (1.00)

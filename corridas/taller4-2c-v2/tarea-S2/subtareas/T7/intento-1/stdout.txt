@@ -1,0 +1,20 @@
+========================================================================
+T7 · Pipeline completo en una sola corrida
+========================================================================
+[1] Datos: data/model_errors.csv · n = 16 tiendas · emparejamiento por store_id verificado: True
+[2] Resumen descriptivo de difference = error_a − error_b:
+    media = 0.418750 · sd muestral = 1.253379 · EE = sd/√n = 0.313345
+    min = -1.8000 · Q1 = -0.6000 · mediana = 0.8000 · Q3 = 1.3500 · max = 2.1000
+    favorecen A = 6 · favorecen B = 10 · empates = 0
+    mayor |diferencia| a favor de B: S08 (+2.1000) · a favor de A: S09 (-1.8000)
+[3] Prueba t pareada (bilateral, H0: media de las diferencias = 0):
+    t = 1.336388 · gl = 15 · p-value = 0.201342
+    IC t 95% = [-0.249128, 1.086628]
+[4] Referencia exacta por cambios de signo:
+    configuraciones = 65536 (2^16) · extremas = 13372 · p-value = 0.204041
+[5] Bootstrap pareado (análisis de sensibilidad):
+    semilla = 20260829 · remuestreos = 10000 · unidad de remuestreo = tienda completa
+    IC 95% percentil = [-0.193750, 1.006250] · reproducible con misma semilla: True
+[6] Archivos generados: output/store_differences.csv · output/store_differences.png · informe.md · resultados.json
+[7] Informe ejecutivo (pregunta 18):
+Unidad: 16 tiendas (S01–S16). Procedencia: data/model_errors.csv. Métrica: error de pronóstico por tienda con dos métodos (error_a, error_b). Emparejamiento: cada tienda recibe ambos métodos; análisis sobre la diferencia pareada error_a − error_b, verificada por store_id. Efecto: media 0.4187 (10 tiendas favorecen a B, 6 a A, 0 empates). Incertidumbre: EE 0.3133; IC t 95% [-0.2491, 1.0866]. Procedimiento: prueba t pareada bilateral (t 1.3364, gl 15), p 0.2013; referencia exacta por cambios de signo (65536 configuraciones), p 0.2040. Sensibilidad: bootstrap pareado (10000 remuestreos de tiendas completas, semilla 20260829), IC 95% percentil [-0.1938, 1.0062]. Limitaciones: (1) n 16, muestra pequeña con potencia limitada; (2) datos observacionales de un solo periodo, sin aleatorización ni control de covariables. No puede concluirse que B reduzca el error significativamente frente a A: p no significativo y todos los intervalos contienen 0.

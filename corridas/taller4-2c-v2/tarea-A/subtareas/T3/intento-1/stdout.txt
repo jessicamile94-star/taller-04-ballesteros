@@ -1,0 +1,9 @@
+T3 — Curva de aprendizaje (evaluación fija sobre el conjunto de prueba de la Parte 1)
+ fraccion  n_train     acc NB     acc LR
+     0.05       19     0.9415     0.9298
+     0.10       39     0.9474     0.9357
+     0.25       99     0.9357     0.9415
+     0.50      199     0.9240     0.9766
+     1.00      398     0.9357     0.9883
+Consistencia con T2 al 100%: {'naive_bayes_gaussiano': True, 'regresion_logistica': True}
+Figura guardada: curva_aprendizaje.png

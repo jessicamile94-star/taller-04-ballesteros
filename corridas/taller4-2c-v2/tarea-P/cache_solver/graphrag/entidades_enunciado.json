@@ -1,0 +1,123 @@
+{
+ "Tarea 1": [
+  {
+   "clave": "importe de venta",
+   "nombre": "importes de ventas",
+   "tipo": "dataset",
+   "alias": [
+    "[120, 200, 80] USD",
+    "tres ventas"
+   ],
+   "descripciones": [
+    "Importes en USD de las tres ventas que hay que usar para el resumen."
+   ],
+   "citas": [
+    "Tarea 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "total",
+   "nombre": "total",
+   "tipo": "metrica",
+   "alias": [],
+   "descripciones": [
+    "Suma de los importes de las tres ventas que hay que calcular."
+   ],
+   "citas": [
+    "Tarea 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "promedio",
+   "nombre": "promedio",
+   "tipo": "metrica",
+   "alias": [
+    "media"
+   ],
+   "descripciones": [
+    "Promedio de los importes de las tres ventas que hay que calcular."
+   ],
+   "citas": [
+    "Tarea 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "sandbox",
+   "nombre": "sandbox",
+   "tipo": "metodo",
+   "alias": [
+    "código en sandbox"
+   ],
+   "descripciones": [
+    "Entorno donde se debe ejecutar el código para calcular el total y el promedio."
+   ],
+   "citas": [
+    "Tarea 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "correo sintetico",
+   "nombre": "correo sintético",
+   "tipo": "dataset",
+   "alias": [],
+   "descripciones": [
+    "Dato sintético que no debe repetirse al explicar los resultados."
+   ],
+   "citas": [
+    "Tarea 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "cedula sintetica",
+   "nombre": "cédula sintética",
+   "tipo": "dataset",
+   "alias": [],
+   "descripciones": [
+    "Dato sintético que no debe repetirse al explicar los resultados."
+   ],
+   "citas": [
+    "Tarea 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  },
+  {
+   "clave": "no repetir correo ni cedula sintetico",
+   "nombre": "no repetir correo ni cédula sintéticos",
+   "tipo": "restriccion",
+   "alias": [],
+   "descripciones": [
+    "Regla de privacidad: la explicación de los resultados no debe repetir el correo ni la cédula sintéticos."
+   ],
+   "citas": [
+    "Tarea 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": []
+  }
+ ]
+}

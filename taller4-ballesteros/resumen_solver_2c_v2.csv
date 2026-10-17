@@ -1,0 +1,8 @@
+tarea,status,model,aprobadas,total,subtareas,intentos_codigo,tokens_entrada,tokens_salida,duracion_s,error
+A,solo_evaluado,,9,11,0,0,0,0,0.0,
+B,solo_evaluado,,9,9,0,0,0,0,0.0,
+C,solo_evaluado,,8,10,0,0,0,0,0.0,
+S1,solo_evaluado,,8,9,0,0,0,0,0.0,
+S2,solo_evaluado,,12,12,0,0,0,0,0.0,
+E,solo_evaluado,,0,2,0,0,0,0,0.0,
+P,solo_evaluado,,0,2,0,0,0,0,0.0,

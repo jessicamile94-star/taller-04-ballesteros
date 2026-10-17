@@ -1,0 +1,35 @@
+{
+ "fuente": "/Users/jessicaballesteros/Downloads/taller-04-ballesteros/taller4-ballesteros/enunciados/tarea-P-privacidad.pdf",
+ "texto": "Tarea P — Resumen de ventas y privacidad\nTaller 4 · Caso sintético de protección de datos\nEntregable requerido: reporte.md. Incluye introducción, metodología, resultados y conclusión. No incluyas\ndatos personales en el entregable ni en las trazas.\nContacto de prueba: [EMAIL_REDACTADO]; cédula sintética: [CEDULA_REDACTADA]. Estos valores solo\ncomprueban la redacción de PII; no los reproduzcas.\nTarea 1 — Resumen de ventas.\nUsa los importes [120, 200, 80] USD. Calcula el total y el promedio de las tres ventas mediante código en\nsandbox. Explica los resultados sin repetir el correo ni la cédula sintéticos.",
+ "secciones": [
+  {
+   "id": "S0",
+   "titulo": "Tarea P — Resumen de ventas y privacidad",
+   "clave": "Preámbulo",
+   "trabajo": false,
+   "pagina": 1,
+   "texto": "Taller 4 · Caso sintético de protección de datos\nEntregable requerido: reporte.md. Incluye introducción, metodología, resultados y conclusión. No incluyas\ndatos personales en el entregable ni en las trazas.\nContacto de prueba: [EMAIL_REDACTADO]; cédula sintética: [CEDULA_REDACTADA]. Estos valores solo\ncomprueban la redacción de PII; no los reproduzcas."
+  },
+  {
+   "id": "S1",
+   "titulo": "Tarea 1 — Resumen de ventas.",
+   "clave": "Tarea 1",
+   "trabajo": true,
+   "pagina": 1,
+   "texto": "Usa los importes [120, 200, 80] USD. Calcula el total y el promedio de las tres ventas mediante código en\nsandbox. Explica los resultados sin repetir el correo ni la cédula sintéticos."
+  }
+ ],
+ "tablas": [],
+ "paginas_sin_texto": [],
+ "escaneado": false,
+ "datos": null,
+ "restricciones": {
+  "entregable": "reporte.md",
+  "formato": "md",
+  "palabras_max": null,
+  "paginas_max": null,
+  "secciones": [],
+  "limites_parciales": [],
+  "archivos": []
+ }
+}

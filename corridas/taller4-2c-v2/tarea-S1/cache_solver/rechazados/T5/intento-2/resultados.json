@@ -1,0 +1,90 @@
+{
+  "subtarea": "T5",
+  "archivo_parquet": "output/server_analysis.parquet",
+  "archivo_existe": true,
+  "mensaje": "Round trip verificado: output/server_analysis.parquet",
+  "verificacion": {
+    "Filas": true,
+    "Columnas": true,
+    "Esquema": true,
+    "Valores": true
+  },
+  "filas_ok": true,
+  "columnas_ok": true,
+  "esquema_ok": true,
+  "valores_ok": true,
+  "round_trip_verificado": true,
+  "guardado_sin_indice": true,
+  "n_filas_antes": 300,
+  "n_filas_despues": 300,
+  "n_columnas_antes": 9,
+  "n_columnas_despues": 9,
+  "columnas": [
+    "server",
+    "timestamp",
+    "gpu_utilization",
+    "cpu_utilization",
+    "memory_gb",
+    "power_w",
+    "temperature_c",
+    "load_score",
+    "requires_review"
+  ],
+  "esquema_antes": [
+    "server: large_string",
+    "timestamp: timestamp[us]",
+    "gpu_utilization: double",
+    "cpu_utilization: double",
+    "memory_gb: double",
+    "power_w: double",
+    "temperature_c: double",
+    "load_score: double",
+    "requires_review: bool"
+  ],
+  "esquema_despues": [
+    "server: large_string",
+    "timestamp: timestamp[us]",
+    "gpu_utilization: double",
+    "cpu_utilization: double",
+    "memory_gb: double",
+    "power_w: double",
+    "temperature_c: double",
+    "load_score: double",
+    "requires_review: bool"
+  ],
+  "dtypes_antes": {
+    "server": "str",
+    "timestamp": "datetime64[us]",
+    "gpu_utilization": "float64",
+    "cpu_utilization": "float64",
+    "memory_gb": "float64",
+    "power_w": "float64",
+    "temperature_c": "float64",
+    "load_score": "float64",
+    "requires_review": "bool"
+  },
+  "dtypes_despues": {
+    "server": "str",
+    "timestamp": "datetime64[us]",
+    "gpu_utilization": "float64",
+    "cpu_utilization": "float64",
+    "memory_gb": "float64",
+    "power_w": "float64",
+    "temperature_c": "float64",
+    "load_score": "float64",
+    "requires_review": "bool"
+  },
+  "origen_dataframe": "reconstruido desde data/server_measurements.csv",
+  "requires_review_true": 52,
+  "fila_23": {
+    "server": "AI-SRV-01",
+    "timestamp": "2026-08-24 09:55:00",
+    "gpu_utilization": 97.0,
+    "cpu_utilization": 93.0,
+    "memory_gb": 55.0,
+    "power_w": 590.0,
+    "temperature_c": 66.97,
+    "load_score": 3.646693174141887,
+    "requires_review": true
+  }
+}

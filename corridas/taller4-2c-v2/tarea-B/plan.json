@@ -1,0 +1,58 @@
+{
+ "subtareas": [
+  {
+   "id": "T1",
+   "tipo": "calculo",
+   "secciones": [
+    "Parte 1"
+   ],
+   "depende_de": [],
+   "objetivo": "Implementar en NumPy la función softmax con temperatura p_i = exp(z_i/T) / Σ_j exp(z_j/T) de forma numéricamente estable (restando el máximo de los logits antes de exponenciar). Con los logits dados (t0..t5 = 2.0, 1.0, 0.5, 0.2, -1.0, -3.0), calcular la distribución para T = 0.5, T = 1 y T = 2 y la entropía en bits de cada una. Presentar las tres distribuciones y las tres entropías en una tabla con cuatro decimales.",
+   "criterio": "Existe una tabla con las tres distribuciones (6 probabilidades por temperatura) y las tres entropías en bits, todas con cuatro decimales; cada distribución suma 1; la entropía crece monotónicamente con T (H(T=0.5) < H(T=1) < H(T=2)).",
+   "status": "pendiente",
+   "intentos": 0
+  },
+  {
+   "id": "T2",
+   "tipo": "calculo",
+   "secciones": [
+    "Parte 2"
+   ],
+   "depende_de": [
+    "T1"
+   ],
+   "objetivo": "Usando la distribución de T = 1 obtenida en la Parte 1, aplicar muestreo de núcleo (top-p) con p = 0.9: ordenar los tokens por probabilidad descendente, conservar el conjunto mínimo cuya probabilidad acumulada alcanza 0.9 y renormalizar las probabilidades de ese conjunto. Reportar qué tokens sobreviven y la distribución renormalizada.",
+   "criterio": "Se lista el conjunto de tokens supervivientes con su probabilidad acumulada (mínimo conjunto con acumulada ≥ 0.9) y se muestra la distribución renormalizada que suma 1; los tokens fuera del núcleo quedan con probabilidad 0.",
+   "status": "pendiente",
+   "intentos": 0
+  },
+  {
+   "id": "T3",
+   "tipo": "calculo",
+   "secciones": [
+    "Parte 3"
+   ],
+   "depende_de": [
+    "T2"
+   ],
+   "objetivo": "Tomar 10,000 muestras de la distribución renormalizada de la Parte 2 usando numpy.random.default_rng(0). Comparar las frecuencias observadas con las probabilidades teóricas en un gráfico de barras y calcular la divergencia KL (en bits) de la distribución empírica respecto de la teórica.",
+   "criterio": "Existe un gráfico de barras que compara frecuencias observadas vs. probabilidades teóricas por token, y se reporta la divergencia KL en bits con valor pequeño (cercano a 0), calculada en el notebook con la semilla 0.",
+   "status": "pendiente",
+   "intentos": 0
+  },
+  {
+   "id": "T4",
+   "tipo": "conceptual",
+   "secciones": [
+    "Parte 4"
+   ],
+   "depende_de": [
+    "T1"
+   ],
+   "objetivo": "Explicar qué le pasa a la distribución cuando T → 0 (toda la masa se concentra en el token de mayor logit, por lo que equivale a la decodificación voraz/greedy, es decir al argmax) y cuando T → ∞ (la distribución tiende a la uniforme sobre el vocabulario). Usar las entropías calculadas en la Parte 1 como evidencia de la tendencia de la entropía al variar T.",
+   "criterio": "Texto que explica ambos límites de la temperatura, justifica por qué T → 0 coincide con greedy (argmax del logit) y cita explícitamente las entropías de la Parte 1 como evidencia cuantitativa.",
+   "status": "pendiente",
+   "intentos": 0
+  }
+ ]
+}

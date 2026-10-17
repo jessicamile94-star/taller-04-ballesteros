@@ -1,0 +1,37 @@
+[
+  {
+    "tarea": "A",
+    "returncode": 0,
+    "corrida": "corridas/taller4-2c-v2/tarea-A"
+  },
+  {
+    "tarea": "B",
+    "returncode": 0,
+    "corrida": "corridas/taller4-2c-v2/tarea-B"
+  },
+  {
+    "tarea": "C",
+    "returncode": 0,
+    "corrida": "corridas/taller4-2c-v2/tarea-C"
+  },
+  {
+    "tarea": "S1",
+    "returncode": 0,
+    "corrida": "corridas/taller4-2c-v2/tarea-S1"
+  },
+  {
+    "tarea": "S2",
+    "returncode": 0,
+    "corrida": "corridas/taller4-2c-v2/tarea-S2"
+  },
+  {
+    "tarea": "E",
+    "returncode": 0,
+    "corrida": "corridas/taller4-2c-v2/tarea-E"
+  },
+  {
+    "tarea": "P",
+    "returncode": 0,
+    "corrida": "corridas/taller4-2c-v2/tarea-P"
+  }
+]

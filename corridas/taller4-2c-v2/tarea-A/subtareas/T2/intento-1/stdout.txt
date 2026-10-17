@@ -1,0 +1,6 @@
+               modelo  accuracy  f1_macro
+Naive Bayes gaussiano  0.935673  0.930654
+  Regresión logística  0.988304  0.987515
+Escalador ajustado solo con entrenamiento: True
+max|media| escalado train=5.22e-15  test=2.06e-01
+Resultados escritos en resultados.json; tabla en tabla_parte2.png
