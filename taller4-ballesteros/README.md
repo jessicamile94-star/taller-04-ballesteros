@@ -1,6 +1,6 @@
-# Taller 4 — estado de cumplimiento y próximos pasos
+# Taller 4 — LLMOps y solver multiagente
 
-Ruta elegida: **B — solver multiagente**. Este archivo refleja los artefactos presentes en el repositorio; el informe narrativo debe actualizarse con resultados nuevos antes de entregar.
+En este repositorio trabajé con la ruta **B — solver multiagente**. Aquí resumo los resultados que pude reproducir y las partes de las corridas que quedaron incompletas. Los datos y archivos mencionados se pueden revisar en el propio repositorio.
 
 ## Evidencia comprobable en el repositorio
 
@@ -56,11 +56,14 @@ USE_LANGFUSE=true uv run python scripts/correr.py \
   taller4-ballesteros/enunciados/tarea-P-privacidad.pdf \
   --salida corridas/taller4-medicion-base-final/tarea-P
 
-python3 Lab-04-LLMOps/probar_guardrails.py \
-  --entrada taller4-ballesteros.guardrails:validar_entrada \
-  --salida taller4-ballesteros.guardrails:validar_salida \
-  --casos taller4-ballesteros/ataques.json \
-  --csv taller4-ballesteros/guardrails.csv
+(
+  cd taller4-ballesteros
+  python3 ../Lab-04-LLMOps/probar_guardrails.py \
+    --entrada guardrails:validar_entrada \
+    --salida guardrails:validar_salida \
+    --casos ataques.json \
+    --csv guardrails.csv
+)
 
 uv run --directory Lab-04-LLMOps python exportar_trazas.py \
   --sesion taller4-ballesteros-base -o ../taller4-ballesteros/spans_exportados.jsonl
