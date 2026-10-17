@@ -1,0 +1,33 @@
+=== T2: Z-score y load_score ===
+means: [57.99313333 50.54163333 29.45533333]
+stds : [14.43011728 12.69846349  6.53680183]
+zscores.shape    -> (300, 3)
+load_score.shape -> (300,)
+pesos: [0.5 0.3 0.2]
+media por columna de zscores (tol 1e-10): [ 5.68434189e-16  2.36847579e-16 -3.31586610e-16]
+std por columna de zscores   (tol 1e-10): [1. 1. 1.]
+max |media_col(zscores)|          = 5.684341886080802e-16
+max |std_col(zscores) - 1|        = 0.0
+max |load_score - suma_ponderada| = 2.220446049250313e-16
+columnas con std == 0: 0
+fuente de values: data/server_measurements.csv (build_measurements de T1: gpu_utilization, cpu_utilization, memory_gb)
+cruce con T1 -> means_match: True | first_row_match: True
+
+Verificaciones:
+  means_impresas_iguales_a_esperado: OK
+  means_coinciden_con_esperado: OK
+  zscores_shape_300x3: OK
+  zscores_shape_coincide_con_T1: OK
+  load_score_shape_300: OK
+  zscores_media_0_tol_1e-10: OK
+  zscores_std_1_tol_1e-10: OK
+  load_score_igual_a_suma_ponderada: OK
+
+Resumen:
+  means = [57.99313333 50.54163333 29.45533333]
+  stds  = [14.43011728 12.69846349  6.53680183]
+  zscores (300, 3) | load_score (300,) | pesos [0.5, 0.3, 0.2]
+  verificaciones OK: True (8/8)
+  load_score: min=-1.955650 max=3.136218 mean=0.000000
+  Parquet escrito en: output/server_analysis.parquet
+  resultados.json escrito con 36 claves.

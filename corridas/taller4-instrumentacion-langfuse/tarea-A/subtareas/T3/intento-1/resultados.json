@@ -1,0 +1,165 @@
+{
+  "subtarea": "T3",
+  "descripcion": "Curva de aprendizaje sobre la división 70/30 de la Parte 1: Naive Bayes gaussiano y regresión logística entrenados con 5%, 10%, 25%, 50% y 100% del entrenamiento (submuestras estratificadas, random_state=42) y evaluados siempre sobre el mismo conjunto de prueba.",
+  "division_usada": {
+    "origen": "reproducida: load_breast_cancer + train_test_split(test_size=0.3, random_state=42, stratify=y)",
+    "test_size": 0.3,
+    "random_state": 42,
+    "estratificada": true,
+    "tamano_entrenamiento": 398,
+    "tamano_prueba": 171
+  },
+  "porcentajes_entrenamiento": [
+    5.0,
+    10.0,
+    25.0,
+    50.0,
+    100.0
+  ],
+  "submuestreo": {
+    "metodo": "train_test_split(train_size=fraccion, stratify=y_train, random_state=42)",
+    "random_state": 42,
+    "detalle_submuestras": [
+      {
+        "porcentaje": 5.0,
+        "n_entrenamiento": 19,
+        "n_malignant": 7,
+        "n_benign": 12
+      },
+      {
+        "porcentaje": 10.0,
+        "n_entrenamiento": 39,
+        "n_malignant": 15,
+        "n_benign": 24
+      },
+      {
+        "porcentaje": 25.0,
+        "n_entrenamiento": 99,
+        "n_malignant": 37,
+        "n_benign": 62
+      },
+      {
+        "porcentaje": 50.0,
+        "n_entrenamiento": 199,
+        "n_malignant": 74,
+        "n_benign": 125
+      },
+      {
+        "porcentaje": 100.0,
+        "n_entrenamiento": 398,
+        "n_malignant": 148,
+        "n_benign": 250
+      }
+    ]
+  },
+  "preprocesamiento": {
+    "escalador": "StandardScaler",
+    "ajustado_solo_con_datos_de_entrenamiento": true,
+    "nota": "El escalador se ajusta en cada punto solo con la submuestra de entrenamiento correspondiente; el conjunto de prueba jamás participa en el ajuste. Con 100% coincide con el ajuste de la Parte 2."
+  },
+  "modelos": {
+    "naive_bayes_gaussiano": {
+      "clase": "sklearn.naive_bayes.GaussianNB",
+      "hiperparametros": "por defecto"
+    },
+    "regresion_logistica": {
+      "clase": "sklearn.linear_model.LogisticRegression",
+      "hiperparametros": {
+        "max_iter": 5000,
+        "random_state": 42
+      }
+    }
+  },
+  "curva_aprendizaje": {
+    "n_entrenamiento": [
+      19,
+      39,
+      99,
+      199,
+      398
+    ],
+    "accuracy_naive_bayes_gaussiano": [
+      0.9415204678362573,
+      0.9473684210526315,
+      0.935672514619883,
+      0.9239766081871345,
+      0.935672514619883
+    ],
+    "accuracy_regresion_logistica": [
+      0.9298245614035088,
+      0.935672514619883,
+      0.9415204678362573,
+      0.9766081871345029,
+      0.9883040935672515
+    ],
+    "f1_macro_naive_bayes_gaussiano": [
+      0.9353056900726393,
+      0.9420055017522704,
+      0.9301703975943869,
+      0.9180460829493088,
+      0.9306543778801843
+    ],
+    "f1_macro_regresion_logistica": [
+      0.9217271895025938,
+      0.9285470085470086,
+      0.9362891207153503,
+      0.97469665581533,
+      0.9875146028037383
+    ]
+  },
+  "accuracy_por_punto": [
+    {
+      "porcentaje": 5.0,
+      "n_entrenamiento": 19,
+      "accuracy_naive_bayes_gaussiano": 0.9415204678362573,
+      "accuracy_regresion_logistica": 0.9298245614035088,
+      "f1_macro_naive_bayes_gaussiano": 0.9353056900726393,
+      "f1_macro_regresion_logistica": 0.9217271895025938
+    },
+    {
+      "porcentaje": 10.0,
+      "n_entrenamiento": 39,
+      "accuracy_naive_bayes_gaussiano": 0.9473684210526315,
+      "accuracy_regresion_logistica": 0.935672514619883,
+      "f1_macro_naive_bayes_gaussiano": 0.9420055017522704,
+      "f1_macro_regresion_logistica": 0.9285470085470086
+    },
+    {
+      "porcentaje": 25.0,
+      "n_entrenamiento": 99,
+      "accuracy_naive_bayes_gaussiano": 0.935672514619883,
+      "accuracy_regresion_logistica": 0.9415204678362573,
+      "f1_macro_naive_bayes_gaussiano": 0.9301703975943869,
+      "f1_macro_regresion_logistica": 0.9362891207153503
+    },
+    {
+      "porcentaje": 50.0,
+      "n_entrenamiento": 199,
+      "accuracy_naive_bayes_gaussiano": 0.9239766081871345,
+      "accuracy_regresion_logistica": 0.9766081871345029,
+      "f1_macro_naive_bayes_gaussiano": 0.9180460829493088,
+      "f1_macro_regresion_logistica": 0.97469665581533
+    },
+    {
+      "porcentaje": 100.0,
+      "n_entrenamiento": 398,
+      "accuracy_naive_bayes_gaussiano": 0.935672514619883,
+      "accuracy_regresion_logistica": 0.9883040935672515,
+      "f1_macro_naive_bayes_gaussiano": 0.9306543778801843,
+      "f1_macro_regresion_logistica": 0.9875146028037383
+    }
+  ],
+  "verificacion_con_parte_2": {
+    "accuracy_100pct_naive_bayes_gaussiano": 0.935672514619883,
+    "accuracy_T2_naive_bayes_gaussiano": 0.935672514619883,
+    "accuracy_100pct_regresion_logistica": 0.9883040935672515,
+    "accuracy_T2_regresion_logistica": 0.9883040935672515,
+    "coincide_con_parte_2": true
+  },
+  "figura_png": "t3_curva_aprendizaje.png",
+  "archivos_generados": [
+    "t3_curva_aprendizaje.png",
+    "t3_curva_aprendizaje.csv",
+    "resultados.json"
+  ]
+}

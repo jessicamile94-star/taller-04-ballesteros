@@ -1,0 +1,14 @@
+================================================================
+T3 — Evidencia por tienda (difference = error_a − error_b)
+Fuente de la tabla pareada: tabla pareada de T2: entrada/T2/resultados.json (tabla_pareada.filas)
+Tiendas analizadas: 16
+Favorecen a A (difference < 0): 6 -> S04, S06, S09, S11, S13, S16
+Favorecen a B (difference > 0): 10 -> S01, S02, S03, S05, S07, S08, S10, S12, S14, S15
+Empates (difference = 0): 0 (no hay empates)
+Mayor diferencia a favor de B: S08 (+2.1000)
+Mayor diferencia a favor de A: S09 (-1.8000)
+Mayor magnitud absoluta: S08 (|difference| = 2.1000, favorece_B)
+Verificación contra data/model_errors.csv: True
+Figura guardada en: output/store_differences.png
+CSV guardado en: output/store_differences.csv
+Cifras escritas en: resultados.json

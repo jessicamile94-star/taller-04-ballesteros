@@ -1,0 +1,9 @@
+División de la Parte 1 reutilizada: 398 entrenamiento / 171 prueba (70/30 estratificada, random_state=42)
+
+=== T2 — Tabla de métricas en el conjunto de prueba ===
+               modelo  accuracy_prueba  f1_macro_prueba
+Naive Bayes gaussiano         0.935673         0.930654
+  Regresión logística         0.988304         0.987515
+
+Verificación del escalador (ajustado solo con entrenamiento): max |media train est.| = 7.32e-16, max |std train est. - 1| = 2.22e-16, max |media test est.| = 2.06e-01 (≠ 0, el test no se usó para ajustar)
+Archivos generados: resultados.json, t2_tabla_metricas.csv, t2_tabla_metricas.png, t2_metricas_modelos.png

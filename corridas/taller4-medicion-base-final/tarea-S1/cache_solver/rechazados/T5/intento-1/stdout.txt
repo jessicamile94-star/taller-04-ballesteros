@@ -1,0 +1,1 @@
+Aviso: no se pudo reconstruir el DataFrame desde las fuentes ([Errno 2] No such file or directory: 'entrada/T2/resultados.json')

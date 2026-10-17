@@ -1,0 +1,20 @@
+==============================================================================
+T4 — Tabla resumen por servidor
+==============================================================================
+   server  observations mean_power_w max_temperature_c mean_load  review_count
+AI-SRV-01            50     363.4598             86.50 -0.614527             2
+AI-SRV-02            50     390.4990             76.47 -0.417730             1
+AI-SRV-03            50     416.6088             86.50 -0.085884             2
+AI-SRV-04            50     434.8684             80.86 -0.003041             5
+AI-SRV-05            50     471.1808             86.50  0.453583            12
+AI-SRV-06            50     495.7276             88.01  0.667600            27
+==============================================================================
+
+Resumen T4:
+  Origen de datos      : data/server_measurements.csv
+  Origen de load_score : reconstruido y validado contra T3 [afin en (gpu_utilization, cpu_utilization, memory_gb, power_w, temperature_c); residuo max=2.31e-14]
+  Filas de entrada     : 300 | Servidores: 6 | A revisar: 49
+  Parquet              : output/server_analysis.parquet (escrito y verificado: True)
+  Figura               : t4_resumen_por_servidor.png
+  Verificacion AI-SRV-01 y estructura: OK
+  Notas: load_score reconstruido: afin en (gpu_utilization, cpu_utilization, memory_gb, power_w, temperature_c); residuo max=2.31e-14; requires_review recalculada: (load_score > 1.5) | (temperature_c > 80)

@@ -1,0 +1,10 @@
+T2 · Resumen
+  CSV validado: data/model_errors.csv (columnas exactas, store_id único/no nulo, errores numéricos, finitos y no negativos)
+  Emparejamiento verificado por store_id: True · pares: 16
+  Favorecen a A (6): ['S04', 'S06', 'S09', 'S11', 'S13', 'S16']
+  Favorecen a B (10): ['S01', 'S02', 'S03', 'S05', 'S07', 'S08', 'S10', 'S12', 'S14', 'S15']
+  Empates: 0
+  Mayor diferencia a favor de B: S08 (+2.1000)
+  Mayor diferencia a favor de A: S09 (-1.8000)
+  CSV original sin modificar (sha256 antes = después): True
+  Archivos generados: output/store_differences.csv, output/store_differences.png, resultados.json

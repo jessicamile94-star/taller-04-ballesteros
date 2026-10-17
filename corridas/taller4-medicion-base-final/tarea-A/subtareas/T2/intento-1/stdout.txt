@@ -1,0 +1,11 @@
+T2 — Parte 2: dos clasificadores sobre la división 70/30 de la Parte 1
+División: reproducida con los parámetros de T1: test_size=0.3, random_state=42, estratificada por clase | coincide con T1: True
+n_entrenamiento=398  n_prueba=171
+Escalador ajustado solo con entrenamiento: dif media vs train=0.00e+00, vs test=1.37e+01
+
+Tabla de métricas en el conjunto de prueba:
+               modelo  accuracy  f1_macro
+Naive Bayes gaussiano  0.935673  0.930654
+  Regresión logística  0.988304  0.987515
+
+Archivos generados: resultados.json, tabla_parte2_metricas.csv, parte2_metricas_prueba.png

@@ -1,0 +1,22 @@
+========================================================================
+T3 — Curva de aprendizaje (Parte 3)
+========================================================================
+División Parte 1: 398 entrenamiento / 171 prueba (validación contra T1: archivo_no_disponible)
+
+Exactitud en el conjunto de prueba (fijo) por tamaño de entrenamiento:
+ fraccion  n_ejemplos_entrenamiento                modelo  accuracy_prueba  f1_macro_prueba
+     0.05                        19 Naive Bayes gaussiano         0.941520         0.935306
+     0.05                        19   Regresión logística         0.929825         0.921727
+     0.10                        39 Naive Bayes gaussiano         0.947368         0.942006
+     0.10                        39   Regresión logística         0.935673         0.928547
+     0.25                        99 Naive Bayes gaussiano         0.935673         0.930170
+     0.25                        99   Regresión logística         0.941520         0.936289
+     0.50                       199 Naive Bayes gaussiano         0.923977         0.918046
+     0.50                       199   Regresión logística         0.976608         0.974697
+     1.00                       398 Naive Bayes gaussiano         0.935673         0.930654
+     1.00                       398   Regresión logística         0.988304         0.987515
+
+Figura guardada: curva_aprendizaje_T3.png
+Tabla guardada:  tabla_T3.csv
+Resultados:      resultados.json
+Punto 100 % vs Parte 2 -> NB coincide: True | LR coincide: True

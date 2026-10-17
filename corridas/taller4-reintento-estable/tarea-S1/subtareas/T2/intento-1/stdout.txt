@@ -1,0 +1,10 @@
+means: [57.99313333 50.54163333 29.45533333]
+zscores.shape    -> (300, 3)
+load_score.shape -> (300,)
+Medias de zscores por columna: [ 5.68434189e-16  2.36847579e-16 -3.31586610e-16]
+Desviaciones de zscores por columna: [1. 1. 1.]
+max|media zscore - 0| = 5.684e-16 (tol 1e-10)
+max|std zscore - 1|   = 0.000e+00 (tol 1e-10)
+max|load_score - zscores@pesos| = 0.000e+00
+load_score: min=-1.955650, max=3.136218, media=0.000000
+Parquet escrito en output/server_analysis.parquet (300 filas).

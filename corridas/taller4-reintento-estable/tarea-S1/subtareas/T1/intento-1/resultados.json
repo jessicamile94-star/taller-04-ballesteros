@@ -1,0 +1,42 @@
+{
+  "subtarea": "T1_representar_mediciones",
+  "archivo_datos": "data/server_measurements.csv",
+  "filas_csv": 300,
+  "shape": [
+    300,
+    3
+  ],
+  "feature_names": [
+    "gpu_utilization",
+    "cpu_utilization",
+    "memory_gb"
+  ],
+  "dtype_values": "float64",
+  "repr": "ServerMeasurements(shape=(300, 3), features=('gpu_utilization', 'cpu_utilization', 'memory_gb'))",
+  "validaciones_valueerror": {
+    "matriz_1d_lanza_valueerror": true,
+    "matriz_3d_lanza_valueerror": true,
+    "columnas_no_coinciden_lanza_valueerror": true,
+    "datos_no_numericos_lanza_valueerror": true
+  },
+  "resumen_estadistico": {
+    "gpu_utilization": {
+      "media": 57.993133333333326,
+      "desviacion_estandar": 14.43011728465465,
+      "minimo": 22.31,
+      "maximo": 97.82
+    },
+    "cpu_utilization": {
+      "media": 50.54163333333333,
+      "desviacion_estandar": 12.69846348968602,
+      "minimo": 19.09,
+      "maximo": 93.0
+    },
+    "memory_gb": {
+      "media": 29.455333333333336,
+      "desviacion_estandar": 6.536801834400537,
+      "minimo": 13.59,
+      "maximo": 55.0
+    }
+  }
+}

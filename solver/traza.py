@@ -22,6 +22,7 @@ import os
 import re
 import threading
 import time
+from contextlib import ExitStack, contextmanager, nullcontext
 from collections import defaultdict
 from pathlib import Path
 
@@ -40,6 +41,13 @@ def _secretos_del_entorno() -> list[str]:
 
 
 def enmascarar(texto: str) -> str:
+    # Los datos personales sintéticos de las tareas P no deben entrar a trazas locales
+    # ni a Langfuse, incluso cuando aparecen en prompts o excepciones.
+    try:
+        from solver.guardrails import redact_pii
+        texto = redact_pii(texto)
+    except Exception:  # la sanitización de trazas no debe impedir el registro de un error
+        pass
     for valor in _secretos_del_entorno():
         texto = texto.replace(valor, "***")
     for patron in _PATRONES:
@@ -54,7 +62,10 @@ def _limpiar(valor):
     if isinstance(valor, str):
         return enmascarar(valor)
     if isinstance(valor, dict):
-        return {k: _limpiar(v) for k, v in valor.items()}
+        # Opaque telemetry IDs are hex strings; a 10-digit substring can look like a
+        # national ID and must not be rewritten, or local and remote trace IDs diverge.
+        return {k: (v if k in {"traza_id", "trace_id"} and isinstance(v, str) else _limpiar(v))
+                for k, v in valor.items()}
     if isinstance(valor, (list, tuple)):
         return [_limpiar(v) for v in valor]
     if isinstance(valor, Path):
@@ -70,10 +81,179 @@ class Traza:
         self._tokens = defaultdict(lambda: [0, 0])   # agente -> [entrada, salida]
         # El indexador llama al LLM en paralelo (capa 2): numerar, sumar y escribir es atómico.
         self._candado = threading.RLock()
+        self._langfuse = None
+        self._langfuse_habilitado = False
+        try:
+            from dotenv import load_dotenv
+            from solver.config import RAIZ
+            load_dotenv(RAIZ / "Lab-04-LLMOps" / ".env", override=False)
+            from langfuse import get_client
+            client = get_client()
+            # Langfuse is opt-in so local tests don't upload fixture traces. Taller 4 runs
+            # explicitly set USE_LANGFUSE=true in the local environment.
+            if (os.getenv("USE_LANGFUSE", "false").lower() == "true"
+                    and not os.getenv("PYTEST_CURRENT_TEST")
+                    and os.getenv("LANGFUSE_PUBLIC_KEY") and os.getenv("LANGFUSE_SECRET_KEY")):
+                self._langfuse = client
+                self._langfuse_habilitado = True
+        except Exception:
+            self._langfuse = None
+
+    @contextmanager
+    def corrida_langfuse(self, nombre: str, entrada: str = ""):
+        """Raíz Langfuse de la corrida; si no hay credenciales mantiene el flujo local."""
+        if self._langfuse is None:
+            yield None
+            return
+        stack = ExitStack()
+        try:
+            from langfuse import propagate_attributes
+            session = os.getenv("LANGFUSE_SESSION_ID", "taller4-ballesteros-base")
+            stack.enter_context(propagate_attributes(session_id=session, tags=["taller-04", "solver-b"]))
+            root = stack.enter_context(self._langfuse.start_as_current_observation(
+                as_type="span", name=nombre, input=entrada[:20000], metadata={"prompt_version": "base-v1"}
+            ))
+        except Exception:
+            stack.close()
+            yield None
+            return
+        try:
+            yield root
+        except BaseException as exc:
+            try:
+                root.update(level="ERROR", status_message=f"{type(exc).__name__}: {exc}")
+            except Exception:
+                pass
+            stack.__exit__(type(exc), exc, exc.__traceback__)
+            raise
+        else:
+            stack.close()
+
+    @contextmanager
+    def agente_langfuse(self, nombre: str):
+        if self._langfuse is None:
+            yield
+            return
+        try:
+            cm = self._langfuse.start_as_current_observation(as_type="agent", name=nombre)
+            agent_span = cm.__enter__()
+        except Exception:
+            yield
+            return
+        try:
+            yield
+        except BaseException as exc:
+            cm.__exit__(type(exc), exc, exc.__traceback__)
+            raise
+        else:
+            cm.__exit__(None, None, None)
+
+    @contextmanager
+    def generacion_langfuse(self, agente: str, modelo: str, entrada):
+        if self._langfuse is None:
+            yield None
+            return
+        try:
+            cm = self._langfuse.start_as_current_observation(
+                as_type="generation", name=agente, model=modelo, input=_limpiar(entrada),
+                metadata={"prompt_version": "base-v1"})
+            gen = cm.__enter__()
+        except Exception:
+            yield None
+            return
+        try:
+            yield gen
+        except BaseException as exc:
+            try:
+                gen.update(level="ERROR", status_message=f"{type(exc).__name__}: {exc}")
+            except Exception:
+                pass
+            cm.__exit__(type(exc), exc, exc.__traceback__)
+            raise
+        else:
+            cm.__exit__(None, None, None)
+
+    @contextmanager
+    def herramienta_langfuse(self, nombre: str, entrada):
+        if self._langfuse is None:
+            yield None
+            return
+        try:
+            cm = self._langfuse.start_as_current_observation(
+                as_type="tool", name=nombre, input=_limpiar(entrada))
+            span = cm.__enter__()
+        except Exception:
+            yield None
+            return
+        try:
+            yield span
+        except BaseException as exc:
+            try:
+                span.update(level="ERROR", status_message=f"{type(exc).__name__}: {exc}")
+            except Exception:
+                pass
+            cm.__exit__(type(exc), exc, exc.__traceback__)
+            raise
+        else:
+            cm.__exit__(None, None, None)
+
+    def actualizar_input_corrida(self, texto: str) -> None:
+        if self._langfuse is None:
+            return
+        try:
+            if self.traza_id:
+                self._langfuse.update_current_span(input=texto[:20000])
+        except Exception:
+            pass
+
+    def actualizar_output_corrida(self, datos: dict) -> None:
+        if self._langfuse is None:
+            return
+        try:
+            self._langfuse.update_current_span(output=_limpiar(datos))
+        except Exception:
+            pass
+
+    @property
+    def traza_id(self) -> str | None:
+        if self._langfuse is None:
+            return None
+        try:
+            return self._langfuse.get_current_trace_id()
+        except Exception:
+            return None
+
+    def flush_langfuse(self) -> None:
+        if self._langfuse is not None:
+            try:
+                self._langfuse.flush()
+            except Exception:
+                pass
+
+    def _observar(self, tipo: str, campos: dict) -> None:
+        if self._langfuse is None or tipo != "guardrail":
+            return
+        clase = "guardrail"
+        nombre = campos.get("agente") or campos.get("decision") or tipo
+        datos = {k: v for k, v in campos.items() if k not in {"agente", "tokens_entrada", "tokens_salida"}}
+        datos = _limpiar(datos)
+        try:
+            kwargs = {"as_type": clase, "name": str(nombre), "input": datos.get("entrada")}
+            with self._langfuse.start_as_current_observation(**kwargs) as span:
+                span.update(output=datos.get("salida") or datos.get("decision") or datos.get("archivos"),
+                            metadata={k: v for k, v in datos.items() if k not in {"entrada", "salida"}})
+                if datos.get("error"):
+                    span.update(level="ERROR", status_message=str(datos["error"])[:500])
+        except Exception:
+            pass
 
     # ------------------------------------------------------------------ escritura
     def evento(self, tipo: str, **campos) -> dict:
+        if tipo == "guardrail":
+            from solver.guardrails import GUARDRAIL_VERSION
+            campos.setdefault("guardrail_version", GUARDRAIL_VERSION)
         campos = _limpiar(campos)
+        self._observar(tipo, campos)
         with self._candado:
             self._seq += 1
             fila = {"seq": self._seq, "ts": round(time.time(), 3), "tipo": tipo, **campos}

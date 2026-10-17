@@ -1,0 +1,5 @@
+ServerMeasurements(shape=(300, 3), features=('gpu_utilization', 'cpu_utilization', 'memory_gb'))
+Validaciones (True = lanzan ValueError): {'matriz_no_bidimensional_lanza_valueerror': True, 'num_columnas_distinto_de_num_nombres_lanza_valueerror': True, 'datos_no_numericos_lanza_valueerror': True}
+repr coincide con el esperado: True
+CSV de entrada sin modificar: True
+Resultados escritos en resultados.json

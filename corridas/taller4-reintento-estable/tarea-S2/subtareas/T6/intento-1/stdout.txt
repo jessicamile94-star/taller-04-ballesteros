@@ -1,0 +1,8 @@
+=== T6: Bootstrap pareado ===
+Semilla: 20260829 | Remuestras: 10000 | Tiendas: 16
+Media observada de diferencias: 0.418750 (DE muestral = 1.253379)
+IC95% percentil: [-0.193750, 1.006250]
+Reproducibilidad (misma semilla): corrida 2 = [-0.193750, 1.006250] -> intervalos idénticos: True; distribuciones idénticas: True
+Contraste semilla 20260830: intervalo = [-0.187500, 0.987500] (distinto: True)
+Proporción de remuestras <= 0: 0.0881
+Archivos: output/store_differences.csv, output/store_differences.png, bootstrap_media_diferencias.png, resultados.json

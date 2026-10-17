@@ -1,0 +1,51 @@
+{
+  "subtarea": "T1",
+  "dataset": "Breast Cancer Wisconsin (Diagnostic)",
+  "n_ejemplos_total": 569,
+  "n_atributos": 30,
+  "nombres_clases": [
+    "malignant",
+    "benign"
+  ],
+  "codificacion_clases": {
+    "malignant": 0,
+    "benign": 1
+  },
+  "conteo_clases_total": {
+    "malignant": 212,
+    "benign": 357
+  },
+  "proporcion_clases_total": {
+    "malignant": 0.37258347978910367,
+    "benign": 0.6274165202108963
+  },
+  "tamano_entrenamiento": 398,
+  "tamano_prueba": 171,
+  "fraccion_entrenamiento": 0.6994727592267135,
+  "fraccion_prueba": 0.30052724077328646,
+  "conteo_clases_entrenamiento": {
+    "malignant": 148,
+    "benign": 250
+  },
+  "conteo_clases_prueba": {
+    "malignant": 64,
+    "benign": 107
+  },
+  "proporcion_clases_entrenamiento": {
+    "malignant": 0.37185929648241206,
+    "benign": 0.628140703517588
+  },
+  "proporcion_clases_prueba": {
+    "malignant": 0.3742690058479532,
+    "benign": 0.6257309941520468
+  },
+  "max_diferencia_proporciones_vs_total": 0.001685526058849529,
+  "estratificacion_verificada": true,
+  "parametros_division": {
+    "test_size": 0.3,
+    "train_size": 0.7,
+    "estratificar_por_clase": true,
+    "random_state": 42
+  },
+  "archivo_division": "division_T1.npz"
+}

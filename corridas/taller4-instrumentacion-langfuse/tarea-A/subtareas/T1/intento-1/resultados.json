@@ -1,0 +1,90 @@
+{
+  "subtarea": "T1",
+  "dataset": "Breast Cancer Wisconsin (Diagnostic)",
+  "total_ejemplos": 569,
+  "numero_atributos": 30,
+  "nombres_atributos": [
+    "mean radius",
+    "mean texture",
+    "mean perimeter",
+    "mean area",
+    "mean smoothness",
+    "mean compactness",
+    "mean concavity",
+    "mean concave points",
+    "mean symmetry",
+    "mean fractal dimension",
+    "radius error",
+    "texture error",
+    "perimeter error",
+    "area error",
+    "smoothness error",
+    "compactness error",
+    "concavity error",
+    "concave points error",
+    "symmetry error",
+    "fractal dimension error",
+    "worst radius",
+    "worst texture",
+    "worst perimeter",
+    "worst area",
+    "worst smoothness",
+    "worst compactness",
+    "worst concavity",
+    "worst concave points",
+    "worst symmetry",
+    "worst fractal dimension"
+  ],
+  "nombres_clases": [
+    "malignant",
+    "benign"
+  ],
+  "codificacion_clases": {
+    "malignant": 0,
+    "benign": 1
+  },
+  "conteo_clases_total": {
+    "malignant": 212,
+    "benign": 357
+  },
+  "conteo_clases_entrenamiento": {
+    "malignant": 148,
+    "benign": 250
+  },
+  "conteo_clases_prueba": {
+    "malignant": 64,
+    "benign": 107
+  },
+  "proporcion_clases_total": {
+    "malignant": 0.37258347978910367,
+    "benign": 0.6274165202108963
+  },
+  "proporcion_clases_entrenamiento": {
+    "malignant": 0.37185929648241206,
+    "benign": 0.628140703517588
+  },
+  "proporcion_clases_prueba": {
+    "malignant": 0.3742690058479532,
+    "benign": 0.6257309941520468
+  },
+  "tamano_entrenamiento": 398,
+  "tamano_prueba": 171,
+  "porcentaje_entrenamiento": 69.94727592267135,
+  "porcentaje_prueba": 30.052724077328648,
+  "estratificacion": {
+    "estratificada_por_clase": true,
+    "max_diferencia_proporciones": 0.001685526058849529,
+    "verificada": true
+  },
+  "parametros_division": {
+    "test_size": 0.3,
+    "random_state": 42,
+    "stratify": "target"
+  },
+  "archivos_generados": [
+    "t1_datos_completos.csv",
+    "t1_entrenamiento.csv",
+    "t1_prueba.csv",
+    "t1_distribucion_clases.png"
+  ]
+}

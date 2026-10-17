@@ -1,0 +1,12 @@
+================================================================
+T2 — Naive Bayes gaussiano vs. regresión logística (conjunto de prueba)
+================================================================
+                                  modelo  accuracy_test  f1_macro_test
+      Naive Bayes gaussiano (GaussianNB)       0.935673       0.930654
+Regresión logística (LogisticRegression)       0.988304       0.987515
+----------------------------------------------------------------
+Escalador ajustado solo con entrenamiento: True
+  max|media_escalador - media_entrenamiento| = 0.000e+00
+  max|media_escalador - media_prueba|        = 1.366e+01
+n_entrenamiento=398, n_prueba=171, coincide_con_T1=True
+Archivos generados: resultados.json, T2_tabla_metricas_test.csv, T2_metricas_modelos.png

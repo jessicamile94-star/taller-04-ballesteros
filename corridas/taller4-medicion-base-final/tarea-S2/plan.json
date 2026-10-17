@@ -1,0 +1,109 @@
+{
+ "subtareas": [
+  {
+   "id": "T1",
+   "tipo": "conceptual",
+   "secciones": [
+    "Tarea 1"
+   ],
+   "depende_de": [],
+   "objetivo": "Responder las preguntas 1 a 10 del contrato de análisis previo, antes de cualquier cálculo: modelos comparados (A y B), proceso objetivo propuesto y qué impide tratar los datos sintéticos como evidencia de una población real, métrica principal (error absoluto en unidades vendidas, menor es mejor), unidad de análisis (la tienda pareada), por qué las observaciones están emparejadas y cómo se verificarán los pares (store_id), estimando Δ=E(d_i) con d_i=e_A(i)−e_B(i) y significado de una diferencia positiva (favorece a B), hipótesis H0: Δ=0 frente a H1: Δ≠0, procedimiento principal (prueba t de una muestra sobre las diferencias, bilateral) y sus supuestos, resultados que se reportarán junto al p-value, y afirmaciones que este diseño no permite.",
+   "criterio": "Existen las 10 respuestas en el orden y numeración del Anexo, citan d_i=e_A−e_B, la regla 'diferencia positiva favorece a B', H0/H1 y la prueba t bilateral como procedimiento principal, aclaran el límite de los datos sintéticos y no contienen cifras calculadas (se responde antes de ejecutar la comparación).",
+   "status": "pendiente",
+   "intentos": 0
+  },
+  {
+   "id": "T2",
+   "tipo": "calculo",
+   "secciones": [
+    "Tarea 2",
+    "Parte 2"
+   ],
+   "depende_de": [],
+   "objetivo": "Cargar data/model_errors.csv validando que tenga exactamente las columnas store_id, error_a, error_b; que cada store_id sea único y no nulo (ValueError que mencione el identificador si falla) y que los errores sean numéricos, finitos y no negativos (ValueError si falla), sin modificar el CSV original. Verificar el emparejamiento mediante store_id (no solo la longitud de los vectores) y construir la tabla pareada de 16 filas conservando las tres columnas originales y añadiendo difference = error_a − error_b y favors ('B' si difference>0, 'A' si difference<0).",
+   "criterio": "Tabla pareada con 16 filas y columnas store_id, error_a, error_b, difference, favors; validaciones ejecutadas sin error y emparejamiento confirmado por store_id.",
+   "status": "pendiente",
+   "intentos": 0
+  },
+  {
+   "id": "T3",
+   "tipo": "calculo",
+   "secciones": [
+    "Tarea 3",
+    "Parte 2"
+   ],
+   "depende_de": [
+    "T2"
+   ],
+   "objetivo": "Crear una figura con una observación por tienda que muestre el signo y la magnitud de difference con una referencia visible en cero, y guardarla en output/store_differences.png. A partir de la tabla pareada, contar cuántas tiendas favorecen a A, cuántas favorecen a B y si existen empates, e identificar las diferencias de mayor magnitud en cada dirección con sus tiendas.",
+   "criterio": "output/store_differences.png existe y muestra las 16 tiendas, el signo/magnitud de difference y la línea de referencia en cero; se reportan los conteos de tiendas que favorecen a A y a B, la presencia o ausencia de empates y las diferencias extremas positiva y negativa.",
+   "status": "pendiente",
+   "intentos": 0
+  },
+  {
+   "id": "T4",
+   "tipo": "calculo",
+   "secciones": [
+    "Tarea 4",
+    "Parte 3",
+    "Parte 4"
+   ],
+   "depende_de": [
+    "T2"
+   ],
+   "objetivo": "Sobre el vector de diferencias de la tabla pareada, reportar exactamente n, mean, sample_sd (desviación estándar muestral) y standard_error = sd/√n. Con scipy.stats calcular la prueba t de una muestra bilateral sobre las diferencias (estadístico, p-value, grados de libertad) y el intervalo t bilateral del 95 % para la media pareada.",
+   "criterio": "Se reportan n, mean, sample_sd, SE=sd/√n, grados de libertad, estadístico t, p-value bilateral y el IC t del 95 %, todos obtenidos de la ejecución sobre las 16 diferencias.",
+   "status": "pendiente",
+   "intentos": 0
+  },
+  {
+   "id": "T5",
+   "tipo": "calculo",
+   "secciones": [
+    "Tarea 5",
+    "Parte 4"
+   ],
+   "depende_de": [
+    "T2"
+   ],
+   "objetivo": "Ejecutar la referencia nula exacta por cambios de signo: enumerar las 2^16 = 65 536 configuraciones de signos del vector de diferencias, calcular la media bajo cada configuración y contar cuántas tienen magnitud al menos tan extrema como la media observada; reportar el total de configuraciones, el conteo de extremas y el p-value exacto.",
+   "criterio": "Se reportan las 65 536 configuraciones evaluadas, el conteo de configuraciones extremas y el p-value exacto por cambios de signo, junto a la media observada usada como referencia.",
+   "status": "pendiente",
+   "intentos": 0
+  },
+  {
+   "id": "T6",
+   "tipo": "calculo",
+   "secciones": [
+    "Tarea 6",
+    "Parte 4"
+   ],
+   "depende_de": [
+    "T2"
+   ],
+   "objetivo": "Realizar el bootstrap pareado con np.random.default_rng(SEED=20260829) y BOOTSTRAP_RESAMPLES=10_000: remuestrear tiendas completas mediante el vector de diferencias (nunca error_a y error_b por separado) y reportar el intervalo percentil del 95 % de la media como análisis de sensibilidad aproximado.",
+   "criterio": "Se reportan el IC percentil del 95 %, la semilla 20260829 y las 10 000 remuestras; dos ejecuciones con la misma semilla producen el mismo intervalo.",
+   "status": "pendiente",
+   "intentos": 0
+  },
+  {
+   "id": "T7",
+   "tipo": "calculo",
+   "secciones": [
+    "Tarea 7",
+    "Parte 5"
+   ],
+   "depende_de": [
+    "T2",
+    "T3",
+    "T4",
+    "T5",
+    "T6"
+   ],
+   "objetivo": "Integrar todo en un pipeline ejecutable de principio a fin: validar y cargar los datos, construir la tabla pareada, generar la figura, calcular descriptivos, prueba t, referencia por cambios de signo y bootstrap; guardar output/store_differences.csv y output/store_differences.png y mostrar por pantalla el resumen, la prueba t, la referencia por cambios de signo y el intervalo bootstrap, usando las constantes SEED=20260829 y BOOTSTRAP_RESAMPLES=10_000.",
+   "criterio": "Una sola ejecución produce ambos archivos en output/ e imprime los cuatro bloques de resultados (descriptivos, prueba t con df/estadístico/p/IC, cambios de signo con total/extremas/p, bootstrap con semilla y remuestras), con cifras idénticas a las de T2–T6, que sirven de insumo para las preguntas 11 a 18.",
+   "status": "pendiente",
+   "intentos": 0
+  }
+ ]
+}

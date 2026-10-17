@@ -1,0 +1,932 @@
+{
+  "subtarea": "T5_referencia_nula_exacta_cambios_de_signo",
+  "fuente_diferencias": "data/model_errors.csv (difference = error_a - error_b, pareada por store_id)",
+  "definicion_diferencia": "difference = error_a - error_b, pareada por store_id",
+  "n": 16,
+  "diferencias": [
+    1.8000000000000007,
+    0.7000000000000011,
+    1.1999999999999993,
+    -1.4000000000000004,
+    1.4999999999999991,
+    -0.3000000000000007,
+    0.8999999999999986,
+    2.0999999999999996,
+    -1.8000000000000007,
+    1.0,
+    -0.5,
+    1.700000000000001,
+    -1.200000000000001,
+    0.5999999999999996,
+    1.299999999999999,
+    -0.9000000000000004
+  ],
+  "tabla_diferencias": [
+    {
+      "store_id": "S01",
+      "difference": 1.8000000000000007
+    },
+    {
+      "store_id": "S02",
+      "difference": 0.7000000000000011
+    },
+    {
+      "store_id": "S03",
+      "difference": 1.1999999999999993
+    },
+    {
+      "store_id": "S04",
+      "difference": -1.4000000000000004
+    },
+    {
+      "store_id": "S05",
+      "difference": 1.4999999999999991
+    },
+    {
+      "store_id": "S06",
+      "difference": -0.3000000000000007
+    },
+    {
+      "store_id": "S07",
+      "difference": 0.8999999999999986
+    },
+    {
+      "store_id": "S08",
+      "difference": 2.0999999999999996
+    },
+    {
+      "store_id": "S09",
+      "difference": -1.8000000000000007
+    },
+    {
+      "store_id": "S10",
+      "difference": 1.0
+    },
+    {
+      "store_id": "S11",
+      "difference": -0.5
+    },
+    {
+      "store_id": "S12",
+      "difference": 1.700000000000001
+    },
+    {
+      "store_id": "S13",
+      "difference": -1.200000000000001
+    },
+    {
+      "store_id": "S14",
+      "difference": 0.5999999999999996
+    },
+    {
+      "store_id": "S15",
+      "difference": 1.299999999999999
+    },
+    {
+      "store_id": "S16",
+      "difference": -0.9000000000000004
+    }
+  ],
+  "suma_observada": 6.699999999999995,
+  "media_observada": 0.4187499999999997,
+  "suma_observada_en_decimas": 67,
+  "media_observada_exacta": 0.41875,
+  "total_configuraciones": 65536,
+  "conteo_configuraciones_extremas": 13372,
+  "p_value_exacto_cambios_de_signo": 0.20404052734375,
+  "estadistico_t_T4": 1.3363877259014323,
+  "grados_de_libertad_t_T4": 15,
+  "p_value_t_T4": 0.20134214922904944,
+  "referencia_nula_cambios_de_signo": {
+    "descripcion": "Enumeración exhaustiva de las 2^16 configuraciones de signos s_i en {-1,+1} aplicadas al vector de diferencias observado; estadístico de cada configuración: m(s) = (1/n) * sum_i s_i * d_i.",
+    "estadistico_observado": 0.4187499999999997,
+    "total_configuraciones": 65536,
+    "media_de_las_medias_nulas": 0.0,
+    "sd_de_las_medias_nulas": 0.3209483019116942,
+    "sd_teorica_sqrt_suma_d2_sobre_n": 0.3209483019116942,
+    "min_media_nula": -1.18125,
+    "max_media_nula": 1.18125,
+    "numero_de_sumas_nulas_distintas": 184,
+    "distribucion_suma_decimas_cuenta": [
+      [
+        -189,
+        1
+      ],
+      [
+        -183,
+        1
+      ],
+      [
+        -179,
+        1
+      ],
+      [
+        -177,
+        1
+      ],
+      [
+        -175,
+        1
+      ],
+      [
+        -173,
+        1
+      ],
+      [
+        -171,
+        3
+      ],
+      [
+        -169,
+        2
+      ],
+      [
+        -167,
+        1
+      ],
+      [
+        -165,
+        5
+      ],
+      [
+        -163,
+        3
+      ],
+      [
+        -161,
+        4
+      ],
+      [
+        -159,
+        7
+      ],
+      [
+        -157,
+        5
+      ],
+      [
+        -155,
+        7
+      ],
+      [
+        -153,
+        11
+      ],
+      [
+        -151,
+        9
+      ],
+      [
+        -149,
+        9
+      ],
+      [
+        -147,
+        17
+      ],
+      [
+        -145,
+        15
+      ],
+      [
+        -143,
+        15
+      ],
+      [
+        -141,
+        23
+      ],
+      [
+        -139,
+        21
+      ],
+      [
+        -137,
+        24
+      ],
+      [
+        -135,
+        34
+      ],
+      [
+        -133,
+        31
+      ],
+      [
+        -131,
+        32
+      ],
+      [
+        -129,
+        48
+      ],
+      [
+        -127,
+        45
+      ],
+      [
+        -125,
+        47
+      ],
+      [
+        -123,
+        62
+      ],
+      [
+        -121,
+        61
+      ],
+      [
+        -119,
+        67
+      ],
+      [
+        -117,
+        83
+      ],
+      [
+        -115,
+        82
+      ],
+      [
+        -113,
+        86
+      ],
+      [
+        -111,
+        111
+      ],
+      [
+        -109,
+        110
+      ],
+      [
+        -107,
+        112
+      ],
+      [
+        -105,
+        140
+      ],
+      [
+        -103,
+        140
+      ],
+      [
+        -101,
+        150
+      ],
+      [
+        -99,
+        176
+      ],
+      [
+        -97,
+        175
+      ],
+      [
+        -95,
+        187
+      ],
+      [
+        -93,
+        220
+      ],
+      [
+        -91,
+        222
+      ],
+      [
+        -89,
+        228
+      ],
+      [
+        -87,
+        266
+      ],
+      [
+        -85,
+        271
+      ],
+      [
+        -83,
+        283
+      ],
+      [
+        -81,
+        320
+      ],
+      [
+        -79,
+        321
+      ],
+      [
+        -77,
+        338
+      ],
+      [
+        -75,
+        382
+      ],
+      [
+        -73,
+        382
+      ],
+      [
+        -71,
+        396
+      ],
+      [
+        -69,
+        443
+      ],
+      [
+        -67,
+        448
+      ],
+      [
+        -65,
+        464
+      ],
+      [
+        -63,
+        508
+      ],
+      [
+        -61,
+        510
+      ],
+      [
+        -59,
+        532
+      ],
+      [
+        -57,
+        581
+      ],
+      [
+        -55,
+        579
+      ],
+      [
+        -53,
+        595
+      ],
+      [
+        -51,
+        649
+      ],
+      [
+        -49,
+        650
+      ],
+      [
+        -47,
+        666
+      ],
+      [
+        -45,
+        715
+      ],
+      [
+        -43,
+        711
+      ],
+      [
+        -41,
+        734
+      ],
+      [
+        -39,
+        784
+      ],
+      [
+        -37,
+        774
+      ],
+      [
+        -35,
+        791
+      ],
+      [
+        -33,
+        843
+      ],
+      [
+        -31,
+        835
+      ],
+      [
+        -29,
+        848
+      ],
+      [
+        -27,
+        894
+      ],
+      [
+        -25,
+        882
+      ],
+      [
+        -23,
+        897
+      ],
+      [
+        -21,
+        944
+      ],
+      [
+        -19,
+        921
+      ],
+      [
+        -17,
+        932
+      ],
+      [
+        -15,
+        978
+      ],
+      [
+        -13,
+        956
+      ],
+      [
+        -11,
+        961
+      ],
+      [
+        -9,
+        999
+      ],
+      [
+        -7,
+        974
+      ],
+      [
+        -5,
+        980
+      ],
+      [
+        -3,
+        1015
+      ],
+      [
+        -1,
+        980
+      ],
+      [
+        1,
+        980
+      ],
+      [
+        3,
+        1015
+      ],
+      [
+        5,
+        980
+      ],
+      [
+        7,
+        974
+      ],
+      [
+        9,
+        999
+      ],
+      [
+        11,
+        961
+      ],
+      [
+        13,
+        956
+      ],
+      [
+        15,
+        978
+      ],
+      [
+        17,
+        932
+      ],
+      [
+        19,
+        921
+      ],
+      [
+        21,
+        944
+      ],
+      [
+        23,
+        897
+      ],
+      [
+        25,
+        882
+      ],
+      [
+        27,
+        894
+      ],
+      [
+        29,
+        848
+      ],
+      [
+        31,
+        835
+      ],
+      [
+        33,
+        843
+      ],
+      [
+        35,
+        791
+      ],
+      [
+        37,
+        774
+      ],
+      [
+        39,
+        784
+      ],
+      [
+        41,
+        734
+      ],
+      [
+        43,
+        711
+      ],
+      [
+        45,
+        715
+      ],
+      [
+        47,
+        666
+      ],
+      [
+        49,
+        650
+      ],
+      [
+        51,
+        649
+      ],
+      [
+        53,
+        595
+      ],
+      [
+        55,
+        579
+      ],
+      [
+        57,
+        581
+      ],
+      [
+        59,
+        532
+      ],
+      [
+        61,
+        510
+      ],
+      [
+        63,
+        508
+      ],
+      [
+        65,
+        464
+      ],
+      [
+        67,
+        448
+      ],
+      [
+        69,
+        443
+      ],
+      [
+        71,
+        396
+      ],
+      [
+        73,
+        382
+      ],
+      [
+        75,
+        382
+      ],
+      [
+        77,
+        338
+      ],
+      [
+        79,
+        321
+      ],
+      [
+        81,
+        320
+      ],
+      [
+        83,
+        283
+      ],
+      [
+        85,
+        271
+      ],
+      [
+        87,
+        266
+      ],
+      [
+        89,
+        228
+      ],
+      [
+        91,
+        222
+      ],
+      [
+        93,
+        220
+      ],
+      [
+        95,
+        187
+      ],
+      [
+        97,
+        175
+      ],
+      [
+        99,
+        176
+      ],
+      [
+        101,
+        150
+      ],
+      [
+        103,
+        140
+      ],
+      [
+        105,
+        140
+      ],
+      [
+        107,
+        112
+      ],
+      [
+        109,
+        110
+      ],
+      [
+        111,
+        111
+      ],
+      [
+        113,
+        86
+      ],
+      [
+        115,
+        82
+      ],
+      [
+        117,
+        83
+      ],
+      [
+        119,
+        67
+      ],
+      [
+        121,
+        61
+      ],
+      [
+        123,
+        62
+      ],
+      [
+        125,
+        47
+      ],
+      [
+        127,
+        45
+      ],
+      [
+        129,
+        48
+      ],
+      [
+        131,
+        32
+      ],
+      [
+        133,
+        31
+      ],
+      [
+        135,
+        34
+      ],
+      [
+        137,
+        24
+      ],
+      [
+        139,
+        21
+      ],
+      [
+        141,
+        23
+      ],
+      [
+        143,
+        15
+      ],
+      [
+        145,
+        15
+      ],
+      [
+        147,
+        17
+      ],
+      [
+        149,
+        9
+      ],
+      [
+        151,
+        9
+      ],
+      [
+        153,
+        11
+      ],
+      [
+        155,
+        7
+      ],
+      [
+        157,
+        5
+      ],
+      [
+        159,
+        7
+      ],
+      [
+        161,
+        4
+      ],
+      [
+        163,
+        3
+      ],
+      [
+        165,
+        5
+      ],
+      [
+        167,
+        1
+      ],
+      [
+        169,
+        2
+      ],
+      [
+        171,
+        3
+      ],
+      [
+        173,
+        1
+      ],
+      [
+        175,
+        1
+      ],
+      [
+        177,
+        1
+      ],
+      [
+        179,
+        1
+      ],
+      [
+        183,
+        1
+      ],
+      [
+        189,
+        1
+      ]
+    ]
+  },
+  "prueba_exacta_cambios_de_signo": {
+    "criterio": "|media nula| >= |media observada| (bilateral, incluye la igualdad)",
+    "media_observada": 0.4187499999999997,
+    "total_configuraciones": 65536,
+    "conteo_extremas": 13372,
+    "p_value_exacto": 0.20404052734375,
+    "p_value_fraccion": "13372/65536",
+    "p_value_fraccion_simplificada": "3343/16384",
+    "cola_derecha_media_ge_observada": 6686,
+    "cola_izquierda_media_le_menos_observada": 6686,
+    "configuracion_observada_incluida_en_conteo": true,
+    "configuracion_espejo_incluida_en_conteo": true
+  },
+  "prueba_t_T4_procedimiento_principal": {
+    "fuente": "entrada/T4/resultados.json (procedimiento principal de T4)",
+    "metodo": "prueba t de una muestra bilateral sobre las diferencias (popmean=0)",
+    "estadistico_t": 1.3363877259014323,
+    "grados_de_libertad": 15,
+    "p_value_bilateral": 0.20134214922904944,
+    "media": 0.4187499999999997,
+    "sample_sd": 1.2533787669070087,
+    "standard_error": 0.31334469172675217,
+    "ic95_bilateral": [
+      -0.24912840078455428,
+      1.0866284007845537
+    ],
+    "recalculado": false
+  },
+  "comparacion": {
+    "p_value_t": 0.20134214922904944,
+    "p_value_cambios_de_signo": 0.20404052734375,
+    "diferencia_absoluta": 0.002698378114700556,
+    "razon_p_signos_sobre_p_t": 1.0134019534659424,
+    "estadistico_t": 1.3363877259014323,
+    "cociente_media_sobre_sd_referencia_signos": 1.304727264502601,
+    "misma_decision_cualitativa_al_5pct": true,
+    "misma_decision_cualitativa_al_10pct": true,
+    "decision": "Ambos p-values (0.204041 exacto por cambios de signo; 0.201342 t bilateral) superan 0.05: ninguna de las dos referencias nulas rechaza H0 al 5 % (ni al 10 %). Coinciden cualitativamente, pero provienen de referencias distintas (t continua con 15 gl frente a enumeración discreta de 65536 configuraciones), por lo que no son procedimientos intercambiables."
+  },
+  "verificacion_independiente_dp_entera": {
+    "aplicable": true,
+    "metodo": "programación dinámica exacta sobre sumas en décimas (enteros); equivalente a enumerar los 2^16 signos sin aritmética flotante",
+    "suma_cuentas": 65536,
+    "conteo_extremas": 13372,
+    "cola_derecha": 6686,
+    "cola_izquierda": 6686,
+    "numero_sumas_distintas": 184,
+    "suma_max_abs_decimas": 189,
+    "umbral_decimas": 67
+  },
+  "verificaciones": {
+    "n_diferencias_16": true,
+    "total_configuraciones_65536": true,
+    "enumeracion_cubre_2_n_configuraciones": true,
+    "colas_suman_conteo_extremas": true,
+    "distribucion_nula_simetrica_respecto_de_0": true,
+    "media_de_las_medias_nulas_cero": true,
+    "configuracion_observada_contada": true,
+    "configuracion_espejo_contada": true,
+    "dp_aplicable": true,
+    "dp_suma_cuentas_65536": true,
+    "dp_coincide_con_enumeracion": true,
+    "p_value_exacto_en_rango_0_1": true,
+    "procedimiento_determinista_sin_semilla": true
+  },
+  "discusion": {
+    "p_value_condicional_a_h0": "El p-value se interpreta SOLO de forma condicional a la hipótesis nula: SI H0 fuera cierta (tendencia central 0 en las diferencias pareadas y signos intercambiables, es decir, cada d_i con la misma probabilidad de observarse como +d_i o como -d_i), la probabilidad de que una configuración de signos produzca una media con magnitud >= |media observada| = 0.41875 sería 13372/65536 = 0.204041. El p-value NO es la probabilidad de que H0 sea cierta ni la probabilidad de que el resultado se deba al azar: es una frecuencia relativa dentro de la referencia nula frente al resultado observado.",
+    "diseno": "Diseño pareado por tienda: cada una de las 16 tiendas aporta un par (error_a, error_b) verificado por store_id; la unidad de análisis es la diferencia d_i = error_a - error_b y el estadístico es su media. La referencia por cambios de signo NO remuestrea tiendas ni reordena pares: solo reasigna signos a las 16 magnitudes observadas (2^16 configuraciones), por lo que es condicional a los datos observados.",
+    "supuestos_prueba_t": "La prueba t de una muestra sobre las diferencias (T4) asume que estas son una muestra aleatoria de una población normal, o apela al TCL si n es grande; estima la dispersión con la varianza muestral respecto a la media (sd = 1.2534, SE = sd/sqrt(n) = 0.3133) y compara t = media/SE = 1.3364 con una distribución t continua con 15 grados de libertad (p = 0.201342; IC95 [-0.2491, 1.0866] (contiene 0)). Su p-value solo es exacto si la población de diferencias es normal; en otro caso es una aproximación asintótica.",
+    "supuestos_cambios_de_signo": "La prueba exacta por cambios de signo solo asume que, bajo H0, el signo de cada diferencia es intercambiable (simetría de cada d_i respecto de 0, p. ej. por emparejamiento o aleatorización equilibrada). No requiere normalidad ni TCL: la referencia es la distribución discreta y finita de las 65536 medias obtenidas reasignando signos, y el p-value es exacto (múltiplo de 1/65536) bajo ese supuesto. A cambio, la inferencia es condicional a las 16 magnitudes observadas y no modela el muestreo de otras tiendas de una población.",
+    "por_que_no_son_intercambiables": "Usan los mismos datos pero referencias nulas, supuestos y estadísticos distintos: (1) Referencia: la t compara con una ley continua t(15) derivada del modelo de muestreo normal; los cambios de signo comparan con una ley discreta de 65536 valores generada al reasignar signos a las diferencias observadas. (2) Dispersión: la t estandariza la media por SE = 0.3133 (varianza respecto a la media, con corrección n-1); la referencia de signos deja la media sin estandarizar y su dispersión natural es sqrt(sum(d_i^2))/n = 0.3209 (segundo momento respecto a 0): por eso t = 1.3364 mientras que el cociente análogo bajo la referencia de signos es 0.41875/0.3209 = 1.3047. (3) Naturaleza del p-value: el de cambios de signo es exacto bajo su nula (fracción 13372/65536, sin aproximación asintótica); el de la t es aproximado salvo normalidad exacta de las diferencias. (4) Hipótesis nula distinta: 'la media de las diferencias proviene de una población normal con media 0' no es lo mismo que 'los signos de las diferencias observadas son intercambiables'. Con diferencias asimétricas, valores atípicos o n pequeño, ambos procedimientos pueden divergir sustancialmente; aquí, con n = 16 y diferencias razonablemente simétricas, resultan numéricamente cercanos (t = 0.201342 frente a signos = 0.204041) y coinciden en la decisión al 5 %, pero la cercanía numérica no los vuelve intercambiables: cada p-value responde a la pregunta de su propia referencia nula.",
+    "lectura_conjunta": "Ambos procedimientos coinciden en la decisión cualitativa (p >= 0.05: no rechazar H0; IC t del 95 % [-0.2491, 1.0866] (contiene 0)), pero el soporte es de naturaleza distinta: la t cuantifica la evidencia bajo un modelo poblacional normal (aproximado), y los cambios de signo ofrecen una garantía exacta bajo un supuesto de intercambiabilidad de signos que no usa distribuciones paramétricas. Reportar los dos p-values hace explícito qué parte de la conclusión depende de los supuestos."
+  },
+  "figuras": [
+    "t5_distribucion_nula_cambios_signo.png",
+    "t5_comparacion_p_values.png",
+    "output/store_differences.png"
+  ],
+  "archivos_exigidos_enunciado": {
+    "output/store_differences.csv": "tabla pareada con difference y favors (regenerada)",
+    "output/store_differences.png": "figura de diferencias por tienda (regenerada)"
+  },
+  "nota_aleatoriedad": "Procedimiento determinista: enumeración exhaustiva de las 2^16 configuraciones, sin remuestreo ni simulación; no requiere semilla."
+}

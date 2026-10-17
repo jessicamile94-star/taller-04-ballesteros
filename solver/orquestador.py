@@ -35,6 +35,8 @@ from solver.agentes import critico, ejecutor, indexador, investigador, lector, p
 from solver.cliente_llm import ClienteLLM, PresupuestoAgotado
 from solver.config import RAIZ, Config
 from solver.estado import Estado
+from solver.guardrails import (detect_prompt_injection, quitar_instrucciones_inyectadas,
+                               redact_pii, validar_salida)
 from solver.procedencia import MARCA, marcar
 from solver.procedencia import verificar as verificar_procedencia
 from solver.traza import Traza
@@ -118,14 +120,15 @@ class Solver:
         traza y en motivo_parada, y los enrutadores deciden a dónde ir (redactar o cerrar)."""
         @functools.wraps(fn)
         def envuelto(estado: Estado) -> dict:
-            try:
-                return fn(estado) or {}
-            except PresupuestoAgotado as err:
-                self.traza.decision("orquestador", "presupuesto_agotado", str(err), nodo=nombre)
-                return {"motivo_parada": "presupuesto"}
-            except Exception as err:
-                self.traza.error(nombre, err, subtarea=estado.get("actual"))
-                return {"motivo_parada": f"error en {nombre}: {type(err).__name__}: {err}"}
+            with self.traza.agente_langfuse(nombre):
+                try:
+                    return fn(estado) or {}
+                except PresupuestoAgotado as err:
+                    self.traza.decision("orquestador", "presupuesto_agotado", str(err), nodo=nombre)
+                    return {"motivo_parada": "presupuesto"}
+                except Exception as err:
+                    self.traza.error(nombre, err, subtarea=estado.get("actual"))
+                    return {"motivo_parada": f"error en {nombre}: {type(err).__name__}: {err}"}
         return envuelto
 
     # ================================================================ enrutadores
@@ -189,6 +192,21 @@ class Solver:
     # ================================================================ nodos
     def _leer(self, estado: Estado) -> dict:
         doc = lector.leer(estado["ruta_entrada"])
+        texto = doc.get("texto", "")
+        # El PDF es contenido no confiable. Revisa el texto extraído antes de indexarlo,
+        # guardarlo en caché, pasarlo al modelo o añadirlo a la traza.
+        inyeccion = detect_prompt_injection(texto)
+        doc["texto"] = redact_pii(quitar_instrucciones_inyectadas(texto) if inyeccion else texto)
+        self.traza.actualizar_input_corrida(doc["texto"])
+        for seccion in doc.get("secciones", []):
+            for clave in ("texto", "contenido", "cuerpo"):
+                if isinstance(seccion.get(clave), str):
+                    contenido = seccion[clave]
+                    seccion[clave] = redact_pii(quitar_instrucciones_inyectadas(contenido)
+                                                 if inyeccion else contenido)
+        self.traza.evento("guardrail", agente="guardrail_entrada", decision="bloqueada" if inyeccion else
+                          ("redactada" if doc["texto"] != texto else "ok"),
+                          motivo="inyección en texto extraído" if inyeccion else "", canal="enunciado")
         ruta = _guardar(self._salida(estado) / INTERNO / "enunciado_leido.json", doc)
         trabajo = [s["clave"] for s in doc["secciones"] if s["trabajo"]]
         self.traza.decision("lector", "leido", f"{len(doc['secciones'])} secciones; de trabajo: {trabajo}; "
@@ -325,11 +343,15 @@ class Solver:
         s = self._subtarea(estado, estado["actual"])
         carpeta = self._salida(estado) / "subtareas" / s["id"] / f"intento-{s['intentos']}"
         if not estado.get("codigo"):                # el programador no entregó script
+            self.traza.evento("guardrail", agente="guardrail_sandbox", decision="bloqueada",
+                              motivo="el programador no produjo script", canal="sandbox", subtarea=s["id"])
             return {"ejecucion": {"huella": "", "carpeta": str(carpeta), "sin_script": True,
                                   "error": "sin script: el modelo no respondió en este intento",
                                   "returncode": None, "archivos": [], "violaciones": []}}
         huella = ejecutor.huella(estado["codigo"])
         if huella in (estado.get("rechazadas") or {}).get(s["id"], []):      # freno: repetición
+            self.traza.evento("guardrail", agente="guardrail_sandbox", decision="bloqueada",
+                              motivo="script repetido rechazado", canal="sandbox", subtarea=s["id"])
             self.traza.decision("ejecutor", "script_repetido",
                                 f"idéntico ({huella}) a uno ya rechazado: no se ejecuta", subtarea=s["id"])
             return {"ejecucion": {"huella": huella, "carpeta": str(carpeta), "repetido": True,
@@ -337,10 +359,24 @@ class Solver:
                                   "returncode": None, "archivos": [], "violaciones": []}}
         entradas = {d: Path(self._subtarea(estado, d)["carpeta"]) for d in s.get("depende_de") or []
                     if self._subtarea(estado, d).get("carpeta")}
-        r = ejecutor.ejecutar(estado["codigo"], carpeta, entradas=entradas,
-                              datos=_cargar(estado["documento"]).get("datos"),
-                              timeout_s=self.cfg.timeout_s, confirmar=self.cfg.confirmar, subtarea=s["id"],
-                              tmp=self._salida(estado) / INTERNO / "tmp" / s["id"])
+        tool_input = {"subtarea": s["id"], "script_sha256": huella, "timeout_s": self.cfg.timeout_s}
+        with self.traza.herramienta_langfuse("sandbox", tool_input) as tool_span:
+            r = ejecutor.ejecutar(estado["codigo"], carpeta, entradas=entradas,
+                                  datos=_cargar(estado["documento"]).get("datos"),
+                                  timeout_s=self.cfg.timeout_s, confirmar=self.cfg.confirmar, subtarea=s["id"],
+                                  tmp=self._salida(estado) / INTERNO / "tmp" / s["id"])
+            if tool_span is not None:
+                tool_span.update(output={"returncode": r.get("returncode"), "archivos": r.get("archivos"),
+                                         "error": r.get("error")},
+                                 metadata={"duracion_s": r.get("duracion_s"),
+                                           "violaciones": r.get("violaciones"),
+                                           "timeout": r.get("timeout")})
+        falló_control = bool(r.get("violaciones") or r.get("timeout") or r.get("error"))
+        self.traza.evento("guardrail", agente="guardrail_sandbox",
+                          decision="bloqueada" if falló_control else "ok",
+                          motivo="; ".join(r.get("violaciones") or []) or r.get("error") or
+                                  ("timeout" if r.get("timeout") else ""),
+                          canal="sandbox", subtarea=s["id"])
         if r.get("confirmacion"):
             self.traza.decision("ejecutor", "confirmacion_red", r["confirmacion"]["motivo"], subtarea=s["id"],
                                 aprobado=r["confirmacion"]["aprobado"])
@@ -434,6 +470,9 @@ class Solver:
         publicados = self._publicar_exigidos(estado, doc, plan, aprobadas)
         texto = redactor.redactar(self.llm, doc, plan, figuras, estado.get("problemas_redaccion"),
                                   estado.get("borrador"), self._notas(estado))
+        ok_salida, texto = validar_salida(texto)
+        self.traza.evento("guardrail", agente="guardrail_salida", decision="ok" if ok_salida else "bloqueada",
+                          motivo="" if ok_salida else "posible credencial", canal="entregable")
         destino = self._construir(estado, doc, plan, aprobadas, texto)
         return {"borrador": texto, "entregables": [str(destino)] + publicados,
                 "intentos_redaccion": estado.get("intentos_redaccion", 0) + 1}
@@ -619,15 +658,27 @@ class Solver:
             return {"status": "fallido", "entregables": [], "subtareas": [],
                     "usage": {"tokens_entrada": 0, "tokens_salida": 0}, "model": "",
                     "trace": str(traza_ruta), "error": f"{type(err).__name__}: {err}"}
-        final = self.app.invoke(
-            {"ruta_entrada": str(Path(ruta_pdf).resolve()), "carpeta_salida": str(carpeta), "motivo_parada": ""},
-            config={"configurable": {"thread_id": f"{self.variante}-{uuid.uuid4().hex[:8]}"},
-                    "recursion_limit": 2000})
+        try:
+            with self.traza.corrida_langfuse(f"solver-{entrada.stem}", str(entrada)):
+                traza_id = self.traza.traza_id
+                self.traza.evento("langfuse_trace", traza_id=traza_id,
+                                  session="taller4-ballesteros-base")
+                final = self.app.invoke(
+                    {"ruta_entrada": str(Path(ruta_pdf).resolve()), "carpeta_salida": str(carpeta),
+                     "motivo_parada": ""},
+                    config={"configurable": {"thread_id": f"{self.variante}-{uuid.uuid4().hex[:8]}"},
+                            "recursion_limit": 2000})
+                self.traza.actualizar_output_corrida({"status": final.get("status", "fallido"),
+                                                      "usage": self.traza.tokens_totales})
+        finally:
+            # La raíz debe haberse cerrado antes de flush para que Langfuse reciba su end time.
+            self.traza.flush_langfuse()
         return {"status": final.get("status", "fallido"),
                 "entregables": final.get("entregables") or [],
                 "subtareas": [{"id": s["id"], "tipo": s["tipo"], "status": s["status"],
                                "intentos": s.get("intentos", 0)} for s in final.get("plan") or []],
                 "usage": self.traza.tokens_totales, "model": self.llm.modelo, "trace": str(traza_ruta),
+                "traza_id": traza_id,
                 "motivo_parada": final.get("motivo_parada", ""),
                 "procedencia": final.get("procedencia"), "duracion_s": round(time.perf_counter() - t0, 1)}
 
@@ -639,7 +690,7 @@ class Solver:
         if r["entregables"]:
             answer = Path(r["entregables"][0]).read_text(encoding="utf-8")
         return {"answer": answer, "trace": r["trace"], "status": r["status"], "model": r["model"],
-                "usage": r["usage"]}
+                "usage": r["usage"], "traza_id": r.get("traza_id")}
 
 
 class SolverSinGrafo(Solver):

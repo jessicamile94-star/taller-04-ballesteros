@@ -1,0 +1,8 @@
+=== T1: Breast Cancer Wisconsin (Diagnostic) ===
+Ejemplos totales : 569
+Atributos        : 30
+Clases           : {'malignant': 212, 'benign': 357}
+Entrenamiento 70%: 398 -> {'malignant': 148, 'benign': 250}
+Prueba 30%       : 171 -> {'malignant': 64, 'benign': 107}
+Estratificación verificada: True (máx. diferencia de proporciones vs total = 0.0017)
+Archivos escritos: resultados.json, division_T1.npz, T1_distribucion_clases.png, entrada/T1/ (copias)

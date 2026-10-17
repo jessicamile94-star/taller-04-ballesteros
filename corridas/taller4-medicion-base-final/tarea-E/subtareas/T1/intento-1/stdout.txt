@@ -1,0 +1,7 @@
+=== T1 — Estadística descriptiva ===
+Observaciones: [12.0, 15.0, 18.0, 20.0, 25.0]  (n = 5)
+Media                          = 18.000000 unidades de observación (u)
+Mediana                        = 18.000000 unidades de observación (u)
+Desviación estándar muestral   = 4.949747 unidades de observación (u)  (ddof=1)
+Varianza muestral              = 24.500000
+Resultados escritos en: /Users/jessicaballesteros/Downloads/taller-04-ballesteros/corridas/taller4-medicion-base-final/tarea-E/subtareas/T1/intento-1/resultados.json

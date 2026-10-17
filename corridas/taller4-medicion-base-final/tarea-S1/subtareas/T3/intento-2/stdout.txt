@@ -1,0 +1,128 @@
+=== DataFrame original ===
+Forma: (300, 7)
+Columnas: ['server', 'timestamp', 'gpu_utilization', 'cpu_utilization', 'memory_gb', 'power_w', 'temperature_c']
+
+=== Copia enriquecida (df_review) — primeras filas ===
+      server           timestamp  gpu_utilization  cpu_utilization  memory_gb  power_w  temperature_c  load_score  requires_review
+0  AI-SRV-01 2026-08-24 08:00:00            59.61            59.61      24.87   405.77          65.17    0.129970            False
+1  AI-SRV-01 2026-08-24 08:05:00            49.49            52.64      27.73   364.47          72.55   -0.297846            False
+2  AI-SRV-01 2026-08-24 08:10:00            65.62            47.06      26.34   420.07          72.41    0.086699            False
+3  AI-SRV-01 2026-08-24 08:15:00            26.19            63.44      17.71   295.92          61.29   -1.156608            False
+4  AI-SRV-01 2026-08-24 08:20:00            53.98            21.25      24.66   380.11          68.49   -0.977784            False
+
+Forma de la copia: (300, 9)
+Dtypes de las columnas nuevas:
+load_score         float64
+requires_review       bool
+
+=== Fila(s) que requieren revisión (load_score > 1.5 o temperature_c > 80.0) ===
+        server           timestamp  load_score  temperature_c  requires_review
+23   AI-SRV-01 2026-08-24 09:55:00    3.136218          66.97             True
+42   AI-SRV-01 2026-08-24 11:30:00   -0.043064          86.50             True
+78   AI-SRV-02 2026-08-24 10:20:00    3.136218          69.90             True
+121  AI-SRV-03 2026-08-24 09:45:00    3.136218          73.24             True
+146  AI-SRV-03 2026-08-24 11:50:00   -0.103646          86.50             True
+162  AI-SRV-04 2026-08-24 09:00:00    1.521069          79.55             True
+171  AI-SRV-04 2026-08-24 09:45:00    0.321935          80.86             True
+176  AI-SRV-04 2026-08-24 10:10:00    3.136218          70.88             True
+189  AI-SRV-04 2026-08-24 11:15:00    0.291676          80.42             True
+192  AI-SRV-04 2026-08-24 11:30:00   -0.124601          80.11             True
+201  AI-SRV-05 2026-08-24 08:05:00   -0.277784          86.50             True
+211  AI-SRV-05 2026-08-24 08:55:00    1.009773          80.69             True
+212  AI-SRV-05 2026-08-24 09:00:00    0.939609          81.34             True
+213  AI-SRV-05 2026-08-24 09:05:00    1.298046          82.02             True
+219  AI-SRV-05 2026-08-24 09:35:00    0.373533          81.18             True
+223  AI-SRV-05 2026-08-24 09:55:00    1.414196          84.42             True
+225  AI-SRV-05 2026-08-24 10:05:00    0.691131          81.39             True
+240  AI-SRV-05 2026-08-24 11:20:00    1.512742          82.36             True
+241  AI-SRV-05 2026-08-24 11:25:00    1.603461          75.90             True
+246  AI-SRV-05 2026-08-24 11:50:00    1.022895          83.97             True
+247  AI-SRV-05 2026-08-24 11:55:00    1.311191          80.85             True
+249  AI-SRV-05 2026-08-24 12:05:00    3.136218          82.66             True
+251  AI-SRV-06 2026-08-24 08:05:00    0.702065          81.57             True
+252  AI-SRV-06 2026-08-24 08:10:00    1.241641          83.62             True
+253  AI-SRV-06 2026-08-24 08:15:00    1.101258          86.73             True
+254  AI-SRV-06 2026-08-24 08:20:00    0.832947          81.80             True
+256  AI-SRV-06 2026-08-24 08:30:00    1.383295          88.01             True
+259  AI-SRV-06 2026-08-24 08:45:00    0.699139          82.68             True
+260  AI-SRV-06 2026-08-24 08:50:00    1.153279          83.43             True
+261  AI-SRV-06 2026-08-24 08:55:00    0.546724          84.55             True
+263  AI-SRV-06 2026-08-24 09:05:00    0.544596          84.33             True
+264  AI-SRV-06 2026-08-24 09:10:00    1.175529          80.50             True
+266  AI-SRV-06 2026-08-24 09:20:00    0.767003          82.45             True
+268  AI-SRV-06 2026-08-24 09:30:00    1.202924          86.50             True
+269  AI-SRV-06 2026-08-24 09:35:00    0.923535          82.39             True
+273  AI-SRV-06 2026-08-24 09:55:00    1.191387          86.34             True
+274  AI-SRV-06 2026-08-24 10:00:00    1.314207          82.59             True
+276  AI-SRV-06 2026-08-24 10:10:00    0.532583          82.33             True
+278  AI-SRV-06 2026-08-24 10:20:00    0.666355          81.74             True
+281  AI-SRV-06 2026-08-24 10:35:00    0.643370          81.38             True
+282  AI-SRV-06 2026-08-24 10:40:00    0.879482          80.81             True
+283  AI-SRV-06 2026-08-24 10:45:00   -0.014638          83.23             True
+287  AI-SRV-06 2026-08-24 11:05:00    3.136218          77.37             True
+288  AI-SRV-06 2026-08-24 11:10:00    1.290041          84.03             True
+290  AI-SRV-06 2026-08-24 11:20:00    0.791127          80.41             True
+292  AI-SRV-06 2026-08-24 11:30:00    0.318545          80.41             True
+293  AI-SRV-06 2026-08-24 11:35:00    0.568173          83.91             True
+295  AI-SRV-06 2026-08-24 11:45:00    0.983317          80.42             True
+298  AI-SRV-06 2026-08-24 12:00:00    0.189810          82.12             True
+
+=== Resumen T3 ===
+Filas procesadas: 300
+DataFrame original intacto (sin columnas nuevas): True
+Copia con 'load_score' y 'requires_review': True
+Tipo de 'requires_review': bool
+Filas que requieren revisión: 49
+   {'index': 23, 'server': 'AI-SRV-01', 'timestamp': '2026-08-24 09:55:00', 'load_score': 3.136217861183744, 'temperature_c': 66.97, 'requires_review': True}
+   {'index': 42, 'server': 'AI-SRV-01', 'timestamp': '2026-08-24 11:30:00', 'load_score': -0.043064228429197604, 'temperature_c': 86.5, 'requires_review': True}
+   {'index': 78, 'server': 'AI-SRV-02', 'timestamp': '2026-08-24 10:20:00', 'load_score': 3.136217861183744, 'temperature_c': 69.9, 'requires_review': True}
+   {'index': 121, 'server': 'AI-SRV-03', 'timestamp': '2026-08-24 09:45:00', 'load_score': 3.136217861183744, 'temperature_c': 73.24, 'requires_review': True}
+   {'index': 146, 'server': 'AI-SRV-03', 'timestamp': '2026-08-24 11:50:00', 'load_score': -0.10364649252906025, 'temperature_c': 86.5, 'requires_review': True}
+   {'index': 162, 'server': 'AI-SRV-04', 'timestamp': '2026-08-24 09:00:00', 'load_score': 1.5210688370725718, 'temperature_c': 79.55, 'requires_review': True}
+   {'index': 171, 'server': 'AI-SRV-04', 'timestamp': '2026-08-24 09:45:00', 'load_score': 0.32193530476168875, 'temperature_c': 80.86, 'requires_review': True}
+   {'index': 176, 'server': 'AI-SRV-04', 'timestamp': '2026-08-24 10:10:00', 'load_score': 3.136217861183744, 'temperature_c': 70.88, 'requires_review': True}
+   {'index': 189, 'server': 'AI-SRV-04', 'timestamp': '2026-08-24 11:15:00', 'load_score': 0.29167619082925494, 'temperature_c': 80.42, 'requires_review': True}
+   {'index': 192, 'server': 'AI-SRV-04', 'timestamp': '2026-08-24 11:30:00', 'load_score': -0.1246014995652891, 'temperature_c': 80.11, 'requires_review': True}
+   {'index': 201, 'server': 'AI-SRV-05', 'timestamp': '2026-08-24 08:05:00', 'load_score': -0.2777835834391999, 'temperature_c': 86.5, 'requires_review': True}
+   {'index': 211, 'server': 'AI-SRV-05', 'timestamp': '2026-08-24 08:55:00', 'load_score': 1.0097732946470002, 'temperature_c': 80.69, 'requires_review': True}
+   {'index': 212, 'server': 'AI-SRV-05', 'timestamp': '2026-08-24 09:00:00', 'load_score': 0.9396089555012611, 'temperature_c': 81.34, 'requires_review': True}
+   {'index': 213, 'server': 'AI-SRV-05', 'timestamp': '2026-08-24 09:05:00', 'load_score': 1.2980464970676748, 'temperature_c': 82.02, 'requires_review': True}
+   {'index': 219, 'server': 'AI-SRV-05', 'timestamp': '2026-08-24 09:35:00', 'load_score': 0.37353307826891274, 'temperature_c': 81.18, 'requires_review': True}
+   {'index': 223, 'server': 'AI-SRV-05', 'timestamp': '2026-08-24 09:55:00', 'load_score': 1.4141955855707893, 'temperature_c': 84.42, 'requires_review': True}
+   {'index': 225, 'server': 'AI-SRV-05', 'timestamp': '2026-08-24 10:05:00', 'load_score': 0.6911312812730316, 'temperature_c': 81.39, 'requires_review': True}
+   {'index': 240, 'server': 'AI-SRV-05', 'timestamp': '2026-08-24 11:20:00', 'load_score': 1.5127416440396473, 'temperature_c': 82.36, 'requires_review': True}
+   {'index': 241, 'server': 'AI-SRV-05', 'timestamp': '2026-08-24 11:25:00', 'load_score': 1.6034613264831044, 'temperature_c': 75.9, 'requires_review': True}
+   {'index': 246, 'server': 'AI-SRV-05', 'timestamp': '2026-08-24 11:50:00', 'load_score': 1.022895061846023, 'temperature_c': 83.97, 'requires_review': True}
+   {'index': 247, 'server': 'AI-SRV-05', 'timestamp': '2026-08-24 11:55:00', 'load_score': 1.3111913760423561, 'temperature_c': 80.85, 'requires_review': True}
+   {'index': 249, 'server': 'AI-SRV-05', 'timestamp': '2026-08-24 12:05:00', 'load_score': 3.136217861183744, 'temperature_c': 82.66, 'requires_review': True}
+   {'index': 251, 'server': 'AI-SRV-06', 'timestamp': '2026-08-24 08:05:00', 'load_score': 0.7020653071118642, 'temperature_c': 81.57, 'requires_review': True}
+   {'index': 252, 'server': 'AI-SRV-06', 'timestamp': '2026-08-24 08:10:00', 'load_score': 1.2416413460143843, 'temperature_c': 83.62, 'requires_review': True}
+   {'index': 253, 'server': 'AI-SRV-06', 'timestamp': '2026-08-24 08:15:00', 'load_score': 1.1012579032546501, 'temperature_c': 86.73, 'requires_review': True}
+   {'index': 254, 'server': 'AI-SRV-06', 'timestamp': '2026-08-24 08:20:00', 'load_score': 0.8329472808218908, 'temperature_c': 81.8, 'requires_review': True}
+   {'index': 256, 'server': 'AI-SRV-06', 'timestamp': '2026-08-24 08:30:00', 'load_score': 1.3832952621906627, 'temperature_c': 88.01, 'requires_review': True}
+   {'index': 259, 'server': 'AI-SRV-06', 'timestamp': '2026-08-24 08:45:00', 'load_score': 0.6991387434613258, 'temperature_c': 82.68, 'requires_review': True}
+   {'index': 260, 'server': 'AI-SRV-06', 'timestamp': '2026-08-24 08:50:00', 'load_score': 1.1532791011065981, 'temperature_c': 83.43, 'requires_review': True}
+   {'index': 261, 'server': 'AI-SRV-06', 'timestamp': '2026-08-24 08:55:00', 'load_score': 0.5467244433515844, 'temperature_c': 84.55, 'requires_review': True}
+   {'index': 263, 'server': 'AI-SRV-06', 'timestamp': '2026-08-24 09:05:00', 'load_score': 0.5445961411664024, 'temperature_c': 84.33, 'requires_review': True}
+   {'index': 264, 'server': 'AI-SRV-06', 'timestamp': '2026-08-24 09:10:00', 'load_score': 1.1755293697545344, 'temperature_c': 80.5, 'requires_review': True}
+   {'index': 266, 'server': 'AI-SRV-06', 'timestamp': '2026-08-24 09:20:00', 'load_score': 0.7670033204587094, 'temperature_c': 82.45, 'requires_review': True}
+   {'index': 268, 'server': 'AI-SRV-06', 'timestamp': '2026-08-24 09:30:00', 'load_score': 1.2029235970883685, 'temperature_c': 86.5, 'requires_review': True}
+   {'index': 269, 'server': 'AI-SRV-06', 'timestamp': '2026-08-24 09:35:00', 'load_score': 0.923535398693613, 'temperature_c': 82.39, 'requires_review': True}
+   {'index': 273, 'server': 'AI-SRV-06', 'timestamp': '2026-08-24 09:55:00', 'load_score': 1.1913871114829737, 'temperature_c': 86.34, 'requires_review': True}
+   {'index': 274, 'server': 'AI-SRV-06', 'timestamp': '2026-08-24 10:00:00', 'load_score': 1.3142070585217605, 'temperature_c': 82.59, 'requires_review': True}
+   {'index': 276, 'server': 'AI-SRV-06', 'timestamp': '2026-08-24 10:10:00', 'load_score': 0.5325827969808308, 'temperature_c': 82.33, 'requires_review': True}
+   {'index': 278, 'server': 'AI-SRV-06', 'timestamp': '2026-08-24 10:20:00', 'load_score': 0.6663552497865135, 'temperature_c': 81.74, 'requires_review': True}
+   {'index': 281, 'server': 'AI-SRV-06', 'timestamp': '2026-08-24 10:35:00', 'load_score': 0.6433698819145935, 'temperature_c': 81.38, 'requires_review': True}
+   {'index': 282, 'server': 'AI-SRV-06', 'timestamp': '2026-08-24 10:40:00', 'load_score': 0.8794815581644082, 'temperature_c': 80.81, 'requires_review': True}
+   {'index': 283, 'server': 'AI-SRV-06', 'timestamp': '2026-08-24 10:45:00', 'load_score': -0.014637664328363054, 'temperature_c': 83.23, 'requires_review': True}
+   {'index': 287, 'server': 'AI-SRV-06', 'timestamp': '2026-08-24 11:05:00', 'load_score': 3.136217861183744, 'temperature_c': 77.37, 'requires_review': True}
+   {'index': 288, 'server': 'AI-SRV-06', 'timestamp': '2026-08-24 11:10:00', 'load_score': 1.290041323517232, 'temperature_c': 84.03, 'requires_review': True}
+   {'index': 290, 'server': 'AI-SRV-06', 'timestamp': '2026-08-24 11:20:00', 'load_score': 0.7911270472533465, 'temperature_c': 80.41, 'requires_review': True}
+   {'index': 292, 'server': 'AI-SRV-06', 'timestamp': '2026-08-24 11:30:00', 'load_score': 0.3185449533130407, 'temperature_c': 80.41, 'requires_review': True}
+   {'index': 293, 'server': 'AI-SRV-06', 'timestamp': '2026-08-24 11:35:00', 'load_score': 0.5681731657994397, 'temperature_c': 83.91, 'requires_review': True}
+   {'index': 295, 'server': 'AI-SRV-06', 'timestamp': '2026-08-24 11:45:00', 'load_score': 0.9833170826196531, 'temperature_c': 80.42, 'requires_review': True}
+   {'index': 298, 'server': 'AI-SRV-06', 'timestamp': '2026-08-24 12:00:00', 'load_score': 0.18981001120660668, 'temperature_c': 82.12, 'requires_review': True}
+load_score coincide con T2: True
+Parquet escrito en: output/server_analysis.parquet (roundtrip OK: True)
+Criterio de éxito (fila 23 = AI-SRV-01, load_score≈3.136218, temperature_c=66.97, requires_review=True): CUMPLE
+Resultados escritos en: resultados.json

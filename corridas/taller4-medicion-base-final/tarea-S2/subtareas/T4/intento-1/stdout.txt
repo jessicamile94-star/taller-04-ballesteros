@@ -1,0 +1,13 @@
+================================================================
+T4 — Efecto e incertidumbre (diferencias pareadas, n = 16)
+================================================================
+n               = 16
+mean            = 0.4187499999999997
+sample_sd       = 1.2533787669070087
+standard_error  = 0.31334469172675217  (sd/sqrt(n))
+df              = 15
+t statistic     = 1.3363877259014323
+p (bilateral)   = 0.20134214922904944
+IC t 95 %       = [-0.24912840078455428, 1.0866284007845537]  (t_crit = 2.131449545559776)
+0 en el IC 95 % = True
+Archivos: output/store_differences.csv , output/store_differences.png , resultados.json

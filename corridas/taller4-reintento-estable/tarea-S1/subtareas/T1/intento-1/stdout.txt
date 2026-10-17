@@ -1,0 +1,8 @@
+ServerMeasurements(shape=(300, 3), features=('gpu_utilization', 'cpu_utilization', 'memory_gb'))
+
+Resumen T1:
+  Filas leídas del CSV: 300
+  Objeto construido: ServerMeasurements(shape=(300, 3), features=('gpu_utilization', 'cpu_utilization', 'memory_gb'))
+  dtype de values: float64
+  Validaciones ValueError correctas: {'matriz_1d_lanza_valueerror': True, 'matriz_3d_lanza_valueerror': True, 'columnas_no_coinciden_lanza_valueerror': True, 'datos_no_numericos_lanza_valueerror': True}
+  Resultados guardados en resultados.json

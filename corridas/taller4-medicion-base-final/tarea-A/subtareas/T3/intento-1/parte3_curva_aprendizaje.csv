@@ -1,0 +1,11 @@
+modelo,fraccion,n_ejemplos_entrenamiento,accuracy,f1_macro,composicion_submuestra
+Naive Bayes gaussiano,0.05,19,0.9415204678362573,0.9353056900726393,"{'malignant': 7, 'benign': 12}"
+Regresión logística,0.05,19,0.935672514619883,0.9285470085470086,"{'malignant': 7, 'benign': 12}"
+Naive Bayes gaussiano,0.1,39,0.9473684210526315,0.9420055017522704,"{'malignant': 15, 'benign': 24}"
+Regresión logística,0.1,39,0.935672514619883,0.9285470085470086,"{'malignant': 15, 'benign': 24}"
+Naive Bayes gaussiano,0.25,99,0.935672514619883,0.9301703975943869,"{'malignant': 37, 'benign': 62}"
+Regresión logística,0.25,99,0.9473684210526315,0.942866688940862,"{'malignant': 37, 'benign': 62}"
+Naive Bayes gaussiano,0.5,199,0.9239766081871345,0.9180460829493088,"{'malignant': 74, 'benign': 125}"
+Regresión logística,0.5,199,0.9766081871345029,0.97469665581533,"{'malignant': 74, 'benign': 125}"
+Naive Bayes gaussiano,1.0,398,0.935672514619883,0.9306543778801843,"{'malignant': 148, 'benign': 250}"
+Regresión logística,1.0,398,0.9883040935672515,0.9875146028037383,"{'malignant': 148, 'benign': 250}"

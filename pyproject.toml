@@ -10,6 +10,8 @@ requires-python = ">=3.12,<3.13"
 dependencies = [
     # --- LLM y orquestacion (cliente: solver-v2/h200.py, solo stdlib) ---
     "langgraph==1.2.12",         # version fijada por el laboratorio
+    "langfuse==4.17.0",           # spans obligatorios del Taller 4; misma versión que Lab-04
+    "openai==3.22.1",             # cliente del juez LLM de Lab-04-LLMOps
     "python-dotenv>=1.0",
     "pydantic>=2.7",             # esquemas: plan, subtareas, veredicto del critico
     # --- Lector (PDF -> texto + tablas, con PyMuPDF como el evaluador) ---

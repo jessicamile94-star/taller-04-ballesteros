@@ -1,0 +1,53 @@
+{
+  "subtask": "T1",
+  "repr": "ServerMeasurements(shape=(300, 3), features=('gpu_utilization', 'cpu_utilization', 'memory_gb'))",
+  "repr_matches_expected": true,
+  "shape": [
+    300,
+    3
+  ],
+  "feature_names": [
+    "gpu_utilization",
+    "cpu_utilization",
+    "memory_gb"
+  ],
+  "values_dtype": "float64",
+  "values_is_numpy_2d": true,
+  "feature_names_is_tuple": true,
+  "n_rows": 300,
+  "n_columns": 3,
+  "dataframe_shape": [
+    300,
+    7
+  ],
+  "dataframe_columns": [
+    "server",
+    "timestamp",
+    "gpu_utilization",
+    "cpu_utilization",
+    "memory_gb",
+    "power_w",
+    "temperature_c"
+  ],
+  "timestamp_dtype": "datetime64[us]",
+  "n_servers": 6,
+  "first_row_values": [
+    59.61,
+    59.61,
+    24.87
+  ],
+  "column_means": {
+    "gpu_utilization": 57.993133333333326,
+    "cpu_utilization": 50.54163333333333,
+    "memory_gb": 29.455333333333336
+  },
+  "validation_tests": {
+    "matriz_no_bidimensional_lanza_valueerror": true,
+    "num_columnas_distinto_de_num_nombres_lanza_valueerror": true,
+    "datos_no_numericos_lanza_valueerror": true
+  },
+  "all_validations_raise_valueerror": true,
+  "csv_md5_before": "cb92a6b1ea5705f6af2eb1463a0f20ff",
+  "csv_md5_after": "cb92a6b1ea5705f6af2eb1463a0f20ff",
+  "csv_unmodified": true
+}

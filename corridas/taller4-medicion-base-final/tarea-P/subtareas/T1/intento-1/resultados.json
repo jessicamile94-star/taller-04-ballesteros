@@ -1,0 +1,25 @@
+{
+  "subtarea": "T1_resumen_ventas",
+  "moneda": "USD",
+  "importes_usd": [
+    120,
+    200,
+    80
+  ],
+  "n_ventas": 3,
+  "total_usd": 400.0,
+  "promedio_usd": 133.33333333333334,
+  "verificacion_privacidad": {
+    "patrones_buscados": [
+      "correo (regex de email)",
+      "cedula (run independiente de 5 a 15 digitos)"
+    ],
+    "superficies_analizadas": [
+      "resultados.json",
+      "traza de stdout",
+      "figura PNG (contiene solo cifras)"
+    ],
+    "pii_encontrada": false,
+    "libre_de_pii": true
+  }
+}

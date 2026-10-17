@@ -1,0 +1,201 @@
+{
+ "directed": true,
+ "multigraph": false,
+ "graph": {},
+ "nodes": [
+  {
+   "titulo": "Tarea P — Resumen de ventas y privacidad",
+   "trabajo": false,
+   "id": "Preámbulo",
+   "capa": "enunciado"
+  },
+  {
+   "titulo": "Tarea 1 — Resumen de ventas.",
+   "trabajo": true,
+   "id": "Tarea 1",
+   "capa": "enunciado"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "promedio",
+   "tipo": "metrica",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Tarea 1"
+   ],
+   "comunidad": null,
+   "id": "ent:promedio"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "sandbox",
+   "tipo": "metodo",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Tarea 1"
+   ],
+   "comunidad": null,
+   "id": "ent:sandbox"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "cédula sintética",
+   "tipo": "dataset",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Tarea 1"
+   ],
+   "comunidad": null,
+   "id": "ent:cedula sintetica"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "no repetir correo ni cédula sintéticos",
+   "tipo": "restriccion",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Tarea 1"
+   ],
+   "comunidad": null,
+   "id": "ent:no repetir correo ni cedula sintetico"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "importes de ventas",
+   "tipo": "dataset",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Tarea 1"
+   ],
+   "comunidad": null,
+   "id": "ent:importe de venta"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "correo sintético",
+   "tipo": "dataset",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Tarea 1"
+   ],
+   "comunidad": null,
+   "id": "ent:correo sintetico"
+  },
+  {
+   "capa": "entidad",
+   "nombre": "total",
+   "tipo": "metrica",
+   "origen": [
+    "enunciado"
+   ],
+   "citas": [
+    "Tarea 1"
+   ],
+   "comunidad": null,
+   "id": "ent:total"
+  }
+ ],
+ "aristas": [
+  {
+   "tipo": "menciona",
+   "source": "Tarea 1",
+   "target": "ent:importe de venta"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Tarea 1",
+   "target": "ent:total"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Tarea 1",
+   "target": "ent:promedio"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Tarea 1",
+   "target": "ent:sandbox"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Tarea 1",
+   "target": "ent:correo sintetico"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Tarea 1",
+   "target": "ent:cedula sintetica"
+  },
+  {
+   "tipo": "menciona",
+   "source": "Tarea 1",
+   "target": "ent:no repetir correo ni cedula sintetico"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "calcular_en",
+   "citas": [
+    "Tarea 1"
+   ],
+   "source": "ent:promedio",
+   "target": "ent:sandbox"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "prohibe_repetir",
+   "citas": [
+    "Tarea 1"
+   ],
+   "source": "ent:no repetir correo ni cedula sintetico",
+   "target": "ent:correo sintetico"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "prohibe_repetir",
+   "citas": [
+    "Tarea 1"
+   ],
+   "source": "ent:no repetir correo ni cedula sintetico",
+   "target": "ent:cedula sintetica"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "calcular",
+   "citas": [
+    "Tarea 1"
+   ],
+   "source": "ent:importe de venta",
+   "target": "ent:total"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "calcular",
+   "citas": [
+    "Tarea 1"
+   ],
+   "source": "ent:importe de venta",
+   "target": "ent:promedio"
+  },
+  {
+   "tipo": "relacion",
+   "relacion": "calcular_en",
+   "citas": [
+    "Tarea 1"
+   ],
+   "source": "ent:total",
+   "target": "ent:sandbox"
+  }
+ ]
+}

@@ -1,0 +1,56 @@
+tarea,check,tipo,ok,detalle
+A,A01,archivo,1,1 archivo(s) con reporte.md
+A,A02,archivo,1,11 archivo(s) con **/*.png
+A,A03,secciones,1,"todas, en orden"
+A,A04,palabras_max,1,992 palabras
+A,A05,cifra_presente,1,verdad=569.0000 ±0; hallada
+A,A06,cifra,1,verdad=0.9474 ±0.006; hallada
+A,A07,cifra,1,verdad=0.9883 ±0.012; hallada
+A,A08,procedencia,1,46/46 cifras respaldadas (1.00)
+A,A09,cifra_presente,1,verdad=0.9766 ±0.0006; hallada
+A,A10,juez,0,tipo desconocido: juez
+A,A11,juez,0,tipo desconocido: juez
+B,B01,archivo,0,0 archivo(s) con *.ipynb
+B,B02,ipynb_ejecutado,0,no hay entregable *.ipynb
+B,B03,cifra_presente,0,no hay entregable *.ipynb
+B,B04,cifra_presente,0,no hay entregable *.ipynb
+B,B05,cifra_presente,0,no hay entregable *.ipynb
+B,B06,cifra_presente,0,no hay entregable *.ipynb
+B,B07,contiene,0,no hay entregable *.ipynb
+B,B08,archivo,0,0 archivo(s) con **/*.png
+B,B09,procedencia,0,no hay entregable *.ipynb
+C,C01,archivo,0,0 archivo(s) con reporte.pdf
+C,C02,paginas_max,0,no hay entregable reporte.pdf
+C,C03,secciones,0,no hay entregable reporte.pdf
+C,C04,cifra,0,no hay entregable reporte.pdf
+C,C05,cifra,0,no hay entregable reporte.pdf
+C,C06,cifra,0,no hay entregable reporte.pdf
+C,C07,contiene,0,no hay entregable reporte.pdf
+C,C08,procedencia,0,no hay entregable reporte.pdf
+C,C09,juez,0,no hay entregable reporte.pdf
+C,C10,juez,0,no hay entregable reporte.pdf
+S1,S101,archivo,0,0 archivo(s) con reporte.md
+S1,S102,archivo,0,0 archivo(s) con output/server_analysis.parquet
+S1,S103,secciones,0,no hay entregable reporte.md
+S1,S104,palabras_max,0,no hay entregable reporte.md
+S1,S105,cifra_presente,0,no hay entregable reporte.md
+S1,S106,cifra_presente,0,no hay entregable reporte.md
+S1,S107,cifra,0,no hay entregable reporte.md
+S1,S108,cifra,0,no hay entregable reporte.md
+S1,S109,procedencia,0,no hay entregable reporte.md
+S2,S201,archivo,0,0 archivo(s) con informe.md
+S2,S202,archivo,0,0 archivo(s) con output/store_differences.csv
+S2,S203,archivo,0,0 archivo(s) con output/store_differences.png
+S2,S204,secciones,0,no hay entregable informe.md
+S2,S205,cifra_presente,0,no hay entregable informe.md
+S2,S206,cifra_presente,0,no hay entregable informe.md
+S2,S207,cifra_presente,0,no hay entregable informe.md
+S2,S208,cifra_presente,0,no hay entregable informe.md
+S2,S209,contiene,0,no hay entregable informe.md
+S2,S210,cifra_presente,0,no hay entregable informe.md
+S2,S211,cifra_presente,0,no hay entregable informe.md
+S2,S212,procedencia,0,no hay entregable informe.md
+E,E01,contiene,0,no hay entregable reporte.md
+E,E02,juez,0,no hay entregable reporte.md
+P,P01,contiene,0,no hay entregable reporte.md
+P,P02,contiene,0,no hay entregable reporte.md

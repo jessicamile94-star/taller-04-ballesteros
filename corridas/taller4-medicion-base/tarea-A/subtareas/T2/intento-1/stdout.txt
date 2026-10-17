@@ -1,0 +1,15 @@
+T2 — Dos clasificadores sobre la división 70/30 de la Parte 1 (random_state=42)
+División usada: recreada de forma determinista con train_test_split(test_size=0.3, train_size=0.7, stratify=y, random_state=42): idéntica a la de la Parte 1
+n_entrenamiento=398  n_prueba=171  validada_contra_T1=True
+
+Tabla de métricas en el conjunto de prueba:
+               modelo  accuracy_prueba  f1_macro_prueba
+Naive Bayes gaussiano         0.935673         0.930654
+  Regresión logística         0.988304         0.987515
+
+Escalador ajustado solo con entrenamiento: True
+  max|media_scaler - media_train| = 0.000e+00 (≈0: coincide con el entrenamiento)
+  max|media_scaler - media_total| = 4.105e+00 (>0: NO se ajustó con todos los datos)
+  max|media_prueba_estandarizada| = 2.060e-01 (>0: el prueba solo se transforma)
+
+Archivos generados: resultados.json, tabla_T2.csv, T2_metricas_modelos.png

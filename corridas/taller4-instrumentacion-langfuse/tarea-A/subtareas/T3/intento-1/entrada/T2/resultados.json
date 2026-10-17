@@ -1,0 +1,83 @@
+{
+  "subtarea": "T2",
+  "descripcion": "Naive Bayes gaussiano y regresión logística entrenados sobre la división 70/30 de la Parte 1 (atributos estandarizados, escalador ajustado solo con el entrenamiento); accuracy y F1 macro medidas sobre el conjunto de prueba.",
+  "division_usada": {
+    "origen": "entrada/T1 (Parte 1)",
+    "test_size": 0.3,
+    "random_state": 42,
+    "estratificada": true,
+    "tamano_entrenamiento": 398,
+    "tamano_prueba": 171
+  },
+  "preprocesamiento": {
+    "escalador": "StandardScaler",
+    "ajustado_solo_con_entrenamiento": true,
+    "verificacion": {
+      "max_abs_media_atributos_entrenamiento_estandarizado": 7.319661348282439e-16,
+      "max_abs_std_menos_1_atributos_entrenamiento_estandarizado": 2.220446049250313e-16,
+      "max_abs_media_atributos_prueba_estandarizado": 0.2060197823113441,
+      "nota": "La media del entrenamiento estandarizado es ~0 y su desviación estándar ~1, lo que confirma que el escalador se ajustó solo con el entrenamiento; la media del test estandarizado NO es exactamente 0, prueba de que el test no participó en el ajuste del escalador."
+    }
+  },
+  "modelos": {
+    "naive_bayes_gaussiano": {
+      "clase": "sklearn.naive_bayes.GaussianNB",
+      "hiperparametros": "por defecto"
+    },
+    "regresion_logistica": {
+      "clase": "sklearn.linear_model.LogisticRegression",
+      "hiperparametros": {
+        "max_iter": 5000,
+        "random_state": 42
+      }
+    }
+  },
+  "tabla_metricas_prueba": [
+    {
+      "modelo": "Naive Bayes gaussiano",
+      "accuracy": 0.935672514619883,
+      "f1_macro": 0.9306543778801843
+    },
+    {
+      "modelo": "Regresión logística",
+      "accuracy": 0.9883040935672515,
+      "f1_macro": 0.9875146028037383
+    }
+  ],
+  "accuracy_naive_bayes_gaussiano": 0.935672514619883,
+  "f1_macro_naive_bayes_gaussiano": 0.9306543778801843,
+  "accuracy_regresion_logistica": 0.9883040935672515,
+  "f1_macro_regresion_logistica": 0.9875146028037383,
+  "matrices_de_confusion_prueba": {
+    "clases": [
+      "malignant",
+      "benign"
+    ],
+    "naive_bayes_gaussiano": [
+      [
+        57,
+        7
+      ],
+      [
+        4,
+        103
+      ]
+    ],
+    "regresion_logistica": [
+      [
+        63,
+        1
+      ],
+      [
+        1,
+        106
+      ]
+    ]
+  },
+  "archivos_generados": [
+    "resultados.json",
+    "t2_tabla_metricas.csv",
+    "t2_tabla_metricas.png",
+    "t2_metricas_modelos.png"
+  ]
+}

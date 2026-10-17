@@ -1,0 +1,190 @@
+{
+  "subtarea": "T6_bootstrap_pareado_intervalo_percentil_95",
+  "metodo": {
+    "descripcion": "Bootstrap pareado: se remuestrean tiendas completas (filas del vector de diferencias, difference = error_a - error_b) con reemplazo y se calcula la media de cada remuestra; nunca se remuestrean error_a y error_b por separado.",
+    "unidad_de_remuestreo": "tienda completa (par pareado)",
+    "estadistico": "media de las diferencias",
+    "tipo_de_intervalo": "percentil",
+    "generador_aleatorio": "np.random.default_rng"
+  },
+  "semilla": 20260829,
+  "bootstrap_resamples": 10000,
+  "n_tiendas": 16,
+  "ic95_percentil_limite_inferior": -0.19375000000000037,
+  "ic95_percentil_limite_superior": 1.0062499999999996,
+  "estadisticos_observados": {
+    "media_diferencias": 0.4187499999999997,
+    "mediana_diferencias": 0.7999999999999998,
+    "desviacion_estandar_diferencias_ddof1": 1.2533787669070087,
+    "error_estandar_teorico_de_la_media": 0.31334469172675217
+  },
+  "intervalo_percentil_95": {
+    "nivel": 0.95,
+    "percentiles_usados": [
+      2.5,
+      97.5
+    ],
+    "limite_inferior": -0.19375000000000037,
+    "limite_superior": 1.0062499999999996,
+    "longitud": 1.2,
+    "contiene_cero": true,
+    "interpretacion": "IC percentil del 95 % de la media de las diferencias = [-0.19375000000000037, 1.0062499999999996]; incluye 0, por lo que este análisis de sensibilidad aproximado no descarta una media de diferencias nula."
+  },
+  "distribucion_bootstrap": {
+    "media": 0.4209674999999998,
+    "error_estandar_bootstrap": 0.3055936070813965,
+    "sesgo_vs_media_observada": 0.0022175000000000944,
+    "p2_5": -0.19375000000000037,
+    "p50": 0.425,
+    "p97_5": 1.0062499999999996,
+    "minimo": -0.9125000000000005,
+    "maximo": 1.36875
+  },
+  "reproducibilidad": {
+    "criterio": "dos ejecuciones con la misma semilla producen el mismo intervalo",
+    "verificado": true,
+    "semilla": 20260829,
+    "remuestras_por_ejecucion": 10000,
+    "intervalo_ejecucion_1": [
+      -0.19375000000000037,
+      1.0062499999999996
+    ],
+    "intervalo_ejecucion_2": [
+      -0.19375000000000037,
+      1.0062499999999996
+    ],
+    "intervalos_identicos": true,
+    "distribuciones_bootstrap_identicas": true,
+    "nota": "Cada ejecución crea su propio np.random.default_rng(SEED); con la misma semilla y los mismos datos, las 10 000 remuestras y el intervalo son idénticos entre ejecuciones."
+  },
+  "consistencia_con_T2": {
+    "archivo_consultado": "entrada/T2/results.json",
+    "disponible": false,
+    "diferencias_coinciden": null
+  },
+  "diferencias_por_tienda": [
+    {
+      "store_id": "S01",
+      "error_a": 12.4,
+      "error_b": 10.6,
+      "difference": 1.8000000000000007,
+      "favors": "B"
+    },
+    {
+      "store_id": "S02",
+      "error_a": 9.8,
+      "error_b": 9.1,
+      "difference": 0.7000000000000011,
+      "favors": "B"
+    },
+    {
+      "store_id": "S03",
+      "error_a": 15.1,
+      "error_b": 13.9,
+      "difference": 1.1999999999999993,
+      "favors": "B"
+    },
+    {
+      "store_id": "S04",
+      "error_a": 11.0,
+      "error_b": 12.4,
+      "difference": -1.4000000000000004,
+      "favors": "A"
+    },
+    {
+      "store_id": "S05",
+      "error_a": 8.7,
+      "error_b": 7.2,
+      "difference": 1.4999999999999991,
+      "favors": "B"
+    },
+    {
+      "store_id": "S06",
+      "error_a": 13.6,
+      "error_b": 13.9,
+      "difference": -0.3000000000000007,
+      "favors": "A"
+    },
+    {
+      "store_id": "S07",
+      "error_a": 10.2,
+      "error_b": 9.3,
+      "difference": 0.8999999999999986,
+      "favors": "B"
+    },
+    {
+      "store_id": "S08",
+      "error_a": 14.9,
+      "error_b": 12.8,
+      "difference": 2.0999999999999996,
+      "favors": "B"
+    },
+    {
+      "store_id": "S09",
+      "error_a": 7.5,
+      "error_b": 9.3,
+      "difference": -1.8000000000000007,
+      "favors": "A"
+    },
+    {
+      "store_id": "S10",
+      "error_a": 16.0,
+      "error_b": 15.0,
+      "difference": 1.0,
+      "favors": "B"
+    },
+    {
+      "store_id": "S11",
+      "error_a": 9.3,
+      "error_b": 9.8,
+      "difference": -0.5,
+      "favors": "A"
+    },
+    {
+      "store_id": "S12",
+      "error_a": 12.8,
+      "error_b": 11.1,
+      "difference": 1.700000000000001,
+      "favors": "B"
+    },
+    {
+      "store_id": "S13",
+      "error_a": 11.7,
+      "error_b": 12.9,
+      "difference": -1.200000000000001,
+      "favors": "A"
+    },
+    {
+      "store_id": "S14",
+      "error_a": 8.9,
+      "error_b": 8.3,
+      "difference": 0.5999999999999996,
+      "favors": "B"
+    },
+    {
+      "store_id": "S15",
+      "error_a": 13.2,
+      "error_b": 11.9,
+      "difference": 1.299999999999999,
+      "favors": "B"
+    },
+    {
+      "store_id": "S16",
+      "error_a": 10.6,
+      "error_b": 11.5,
+      "difference": -0.9000000000000004,
+      "favors": "A"
+    }
+  ],
+  "explicaciones": {
+    "por_que_se_remuestrean_tiendas_completas": "El diseño es pareado: cada tienda aporta un par (error_a, error_b) medido sobre los mismos datos y la unidad independiente de análisis es la tienda. El estadístico de interés es la media de las diferencias dentro del par, y la correlación entre error_a y error_b solo se preserva si la fila completa se remuestrea como una unidad. Remuestrear error_a y error_b por separado rompería el emparejamiento: las diferencias reconstruidas mezclarían errores de tiendas distintas, se destruiría la correlación dentro del par y el intervalo respondería a la pregunta de dos muestras independientes, no a la comparación pareada.",
+    "que_problema_no_puede_corregir_el_bootstrap": "El bootstrap solo genera variabilidad remuestreando la muestra observada, por lo que hereda sus limitaciones: no corrige un sesgo de selección ni la falta de representatividad (p. ej., que las 16 tiendas no sean una muestra aleatoria de la población de interés), no corrige dependencias entre tiendas (estructura jerárquica, espacial o temporal) ni errores de medición sistemáticos compartidos por ambos modelos, y no crea información que no esté en los datos. Además, con n = 16 los extremos de la distribución remuestreada dependen de pocos puntos y los valores atípicos entran en el intervalo con la misma frecuencia con que aparecen en la muestra original.",
+    "por_que_es_un_analisis_de_sensibilidad_aproximado": "El método percentil aproxima la distribución muestral de la media sin suponer normalidad, pero su cobertura real puede desviarse del 95 % nominal en muestras pequeñas; por eso el intervalo se reporta como análisis de sensibilidad aproximado que complementa (no sustituye) las referencias nulas exactas y paramétricas."
+  },
+  "archivos_generados": [
+    "output/store_differences.csv",
+    "output/store_differences.png",
+    "bootstrap_percentil95.png",
+    "resultados.json"
+  ]
+}

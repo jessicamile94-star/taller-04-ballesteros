@@ -1,0 +1,452 @@
+{
+  "subtask": "T3",
+  "data_source": "data/server_measurements.csv",
+  "n_rows": 300,
+  "n_cols_original": 7,
+  "original_columns": [
+    "server",
+    "timestamp",
+    "gpu_utilization",
+    "cpu_utilization",
+    "memory_gb",
+    "power_w",
+    "temperature_c"
+  ],
+  "original_unchanged": true,
+  "original_has_new_columns": false,
+  "copy_is_independent_object": true,
+  "copy_columns": [
+    "server",
+    "timestamp",
+    "gpu_utilization",
+    "cpu_utilization",
+    "memory_gb",
+    "power_w",
+    "temperature_c",
+    "load_score",
+    "requires_review"
+  ],
+  "copy_has_load_score": true,
+  "copy_has_requires_review": true,
+  "load_score_dtype": "float64",
+  "requires_review_dtype": "bool",
+  "load_score_source": "entrada/T2/resultados.json::load_score",
+  "load_score_matches_T2": true,
+  "condition": "requires_review = (load_score > 1.5) | (temperature_c > 80)",
+  "thresholds": {
+    "load_score": 1.5,
+    "temperature_c": 80.0
+  },
+  "breakdown": {
+    "n_load_score_gt_1_5_only": 7,
+    "n_temperature_gt_80_only": 40,
+    "n_both_conditions": 2,
+    "n_requires_review_total": 49
+  },
+  "n_requires_review": 49,
+  "review_rows": [
+    {
+      "index": 23,
+      "server": "AI-SRV-01",
+      "timestamp": "2026-08-24 09:55:00",
+      "load_score": 3.136217861183744,
+      "temperature_c": 66.97,
+      "requires_review": true
+    },
+    {
+      "index": 42,
+      "server": "AI-SRV-01",
+      "timestamp": "2026-08-24 11:30:00",
+      "load_score": -0.043064228429197604,
+      "temperature_c": 86.5,
+      "requires_review": true
+    },
+    {
+      "index": 78,
+      "server": "AI-SRV-02",
+      "timestamp": "2026-08-24 10:20:00",
+      "load_score": 3.136217861183744,
+      "temperature_c": 69.9,
+      "requires_review": true
+    },
+    {
+      "index": 121,
+      "server": "AI-SRV-03",
+      "timestamp": "2026-08-24 09:45:00",
+      "load_score": 3.136217861183744,
+      "temperature_c": 73.24,
+      "requires_review": true
+    },
+    {
+      "index": 146,
+      "server": "AI-SRV-03",
+      "timestamp": "2026-08-24 11:50:00",
+      "load_score": -0.10364649252906025,
+      "temperature_c": 86.5,
+      "requires_review": true
+    },
+    {
+      "index": 162,
+      "server": "AI-SRV-04",
+      "timestamp": "2026-08-24 09:00:00",
+      "load_score": 1.5210688370725718,
+      "temperature_c": 79.55,
+      "requires_review": true
+    },
+    {
+      "index": 171,
+      "server": "AI-SRV-04",
+      "timestamp": "2026-08-24 09:45:00",
+      "load_score": 0.32193530476168875,
+      "temperature_c": 80.86,
+      "requires_review": true
+    },
+    {
+      "index": 176,
+      "server": "AI-SRV-04",
+      "timestamp": "2026-08-24 10:10:00",
+      "load_score": 3.136217861183744,
+      "temperature_c": 70.88,
+      "requires_review": true
+    },
+    {
+      "index": 189,
+      "server": "AI-SRV-04",
+      "timestamp": "2026-08-24 11:15:00",
+      "load_score": 0.29167619082925494,
+      "temperature_c": 80.42,
+      "requires_review": true
+    },
+    {
+      "index": 192,
+      "server": "AI-SRV-04",
+      "timestamp": "2026-08-24 11:30:00",
+      "load_score": -0.1246014995652891,
+      "temperature_c": 80.11,
+      "requires_review": true
+    },
+    {
+      "index": 201,
+      "server": "AI-SRV-05",
+      "timestamp": "2026-08-24 08:05:00",
+      "load_score": -0.2777835834391999,
+      "temperature_c": 86.5,
+      "requires_review": true
+    },
+    {
+      "index": 211,
+      "server": "AI-SRV-05",
+      "timestamp": "2026-08-24 08:55:00",
+      "load_score": 1.0097732946470002,
+      "temperature_c": 80.69,
+      "requires_review": true
+    },
+    {
+      "index": 212,
+      "server": "AI-SRV-05",
+      "timestamp": "2026-08-24 09:00:00",
+      "load_score": 0.9396089555012611,
+      "temperature_c": 81.34,
+      "requires_review": true
+    },
+    {
+      "index": 213,
+      "server": "AI-SRV-05",
+      "timestamp": "2026-08-24 09:05:00",
+      "load_score": 1.2980464970676748,
+      "temperature_c": 82.02,
+      "requires_review": true
+    },
+    {
+      "index": 219,
+      "server": "AI-SRV-05",
+      "timestamp": "2026-08-24 09:35:00",
+      "load_score": 0.37353307826891274,
+      "temperature_c": 81.18,
+      "requires_review": true
+    },
+    {
+      "index": 223,
+      "server": "AI-SRV-05",
+      "timestamp": "2026-08-24 09:55:00",
+      "load_score": 1.4141955855707893,
+      "temperature_c": 84.42,
+      "requires_review": true
+    },
+    {
+      "index": 225,
+      "server": "AI-SRV-05",
+      "timestamp": "2026-08-24 10:05:00",
+      "load_score": 0.6911312812730316,
+      "temperature_c": 81.39,
+      "requires_review": true
+    },
+    {
+      "index": 240,
+      "server": "AI-SRV-05",
+      "timestamp": "2026-08-24 11:20:00",
+      "load_score": 1.5127416440396473,
+      "temperature_c": 82.36,
+      "requires_review": true
+    },
+    {
+      "index": 241,
+      "server": "AI-SRV-05",
+      "timestamp": "2026-08-24 11:25:00",
+      "load_score": 1.6034613264831044,
+      "temperature_c": 75.9,
+      "requires_review": true
+    },
+    {
+      "index": 246,
+      "server": "AI-SRV-05",
+      "timestamp": "2026-08-24 11:50:00",
+      "load_score": 1.022895061846023,
+      "temperature_c": 83.97,
+      "requires_review": true
+    },
+    {
+      "index": 247,
+      "server": "AI-SRV-05",
+      "timestamp": "2026-08-24 11:55:00",
+      "load_score": 1.3111913760423561,
+      "temperature_c": 80.85,
+      "requires_review": true
+    },
+    {
+      "index": 249,
+      "server": "AI-SRV-05",
+      "timestamp": "2026-08-24 12:05:00",
+      "load_score": 3.136217861183744,
+      "temperature_c": 82.66,
+      "requires_review": true
+    },
+    {
+      "index": 251,
+      "server": "AI-SRV-06",
+      "timestamp": "2026-08-24 08:05:00",
+      "load_score": 0.7020653071118642,
+      "temperature_c": 81.57,
+      "requires_review": true
+    },
+    {
+      "index": 252,
+      "server": "AI-SRV-06",
+      "timestamp": "2026-08-24 08:10:00",
+      "load_score": 1.2416413460143843,
+      "temperature_c": 83.62,
+      "requires_review": true
+    },
+    {
+      "index": 253,
+      "server": "AI-SRV-06",
+      "timestamp": "2026-08-24 08:15:00",
+      "load_score": 1.1012579032546501,
+      "temperature_c": 86.73,
+      "requires_review": true
+    },
+    {
+      "index": 254,
+      "server": "AI-SRV-06",
+      "timestamp": "2026-08-24 08:20:00",
+      "load_score": 0.8329472808218908,
+      "temperature_c": 81.8,
+      "requires_review": true
+    },
+    {
+      "index": 256,
+      "server": "AI-SRV-06",
+      "timestamp": "2026-08-24 08:30:00",
+      "load_score": 1.3832952621906627,
+      "temperature_c": 88.01,
+      "requires_review": true
+    },
+    {
+      "index": 259,
+      "server": "AI-SRV-06",
+      "timestamp": "2026-08-24 08:45:00",
+      "load_score": 0.6991387434613258,
+      "temperature_c": 82.68,
+      "requires_review": true
+    },
+    {
+      "index": 260,
+      "server": "AI-SRV-06",
+      "timestamp": "2026-08-24 08:50:00",
+      "load_score": 1.1532791011065981,
+      "temperature_c": 83.43,
+      "requires_review": true
+    },
+    {
+      "index": 261,
+      "server": "AI-SRV-06",
+      "timestamp": "2026-08-24 08:55:00",
+      "load_score": 0.5467244433515844,
+      "temperature_c": 84.55,
+      "requires_review": true
+    },
+    {
+      "index": 263,
+      "server": "AI-SRV-06",
+      "timestamp": "2026-08-24 09:05:00",
+      "load_score": 0.5445961411664024,
+      "temperature_c": 84.33,
+      "requires_review": true
+    },
+    {
+      "index": 264,
+      "server": "AI-SRV-06",
+      "timestamp": "2026-08-24 09:10:00",
+      "load_score": 1.1755293697545344,
+      "temperature_c": 80.5,
+      "requires_review": true
+    },
+    {
+      "index": 266,
+      "server": "AI-SRV-06",
+      "timestamp": "2026-08-24 09:20:00",
+      "load_score": 0.7670033204587094,
+      "temperature_c": 82.45,
+      "requires_review": true
+    },
+    {
+      "index": 268,
+      "server": "AI-SRV-06",
+      "timestamp": "2026-08-24 09:30:00",
+      "load_score": 1.2029235970883685,
+      "temperature_c": 86.5,
+      "requires_review": true
+    },
+    {
+      "index": 269,
+      "server": "AI-SRV-06",
+      "timestamp": "2026-08-24 09:35:00",
+      "load_score": 0.923535398693613,
+      "temperature_c": 82.39,
+      "requires_review": true
+    },
+    {
+      "index": 273,
+      "server": "AI-SRV-06",
+      "timestamp": "2026-08-24 09:55:00",
+      "load_score": 1.1913871114829737,
+      "temperature_c": 86.34,
+      "requires_review": true
+    },
+    {
+      "index": 274,
+      "server": "AI-SRV-06",
+      "timestamp": "2026-08-24 10:00:00",
+      "load_score": 1.3142070585217605,
+      "temperature_c": 82.59,
+      "requires_review": true
+    },
+    {
+      "index": 276,
+      "server": "AI-SRV-06",
+      "timestamp": "2026-08-24 10:10:00",
+      "load_score": 0.5325827969808308,
+      "temperature_c": 82.33,
+      "requires_review": true
+    },
+    {
+      "index": 278,
+      "server": "AI-SRV-06",
+      "timestamp": "2026-08-24 10:20:00",
+      "load_score": 0.6663552497865135,
+      "temperature_c": 81.74,
+      "requires_review": true
+    },
+    {
+      "index": 281,
+      "server": "AI-SRV-06",
+      "timestamp": "2026-08-24 10:35:00",
+      "load_score": 0.6433698819145935,
+      "temperature_c": 81.38,
+      "requires_review": true
+    },
+    {
+      "index": 282,
+      "server": "AI-SRV-06",
+      "timestamp": "2026-08-24 10:40:00",
+      "load_score": 0.8794815581644082,
+      "temperature_c": 80.81,
+      "requires_review": true
+    },
+    {
+      "index": 283,
+      "server": "AI-SRV-06",
+      "timestamp": "2026-08-24 10:45:00",
+      "load_score": -0.014637664328363054,
+      "temperature_c": 83.23,
+      "requires_review": true
+    },
+    {
+      "index": 287,
+      "server": "AI-SRV-06",
+      "timestamp": "2026-08-24 11:05:00",
+      "load_score": 3.136217861183744,
+      "temperature_c": 77.37,
+      "requires_review": true
+    },
+    {
+      "index": 288,
+      "server": "AI-SRV-06",
+      "timestamp": "2026-08-24 11:10:00",
+      "load_score": 1.290041323517232,
+      "temperature_c": 84.03,
+      "requires_review": true
+    },
+    {
+      "index": 290,
+      "server": "AI-SRV-06",
+      "timestamp": "2026-08-24 11:20:00",
+      "load_score": 0.7911270472533465,
+      "temperature_c": 80.41,
+      "requires_review": true
+    },
+    {
+      "index": 292,
+      "server": "AI-SRV-06",
+      "timestamp": "2026-08-24 11:30:00",
+      "load_score": 0.3185449533130407,
+      "temperature_c": 80.41,
+      "requires_review": true
+    },
+    {
+      "index": 293,
+      "server": "AI-SRV-06",
+      "timestamp": "2026-08-24 11:35:00",
+      "load_score": 0.5681731657994397,
+      "temperature_c": 83.91,
+      "requires_review": true
+    },
+    {
+      "index": 295,
+      "server": "AI-SRV-06",
+      "timestamp": "2026-08-24 11:45:00",
+      "load_score": 0.9833170826196531,
+      "temperature_c": 80.42,
+      "requires_review": true
+    },
+    {
+      "index": 298,
+      "server": "AI-SRV-06",
+      "timestamp": "2026-08-24 12:00:00",
+      "load_score": 0.18981001120660668,
+      "temperature_c": 82.12,
+      "requires_review": true
+    }
+  ],
+  "expected_row_23": {
+    "index_label": 23,
+    "server": "AI-SRV-01",
+    "timestamp": "2026-08-24 09:55:00",
+    "load_score": 3.136217861183744,
+    "temperature_c": 66.97,
+    "requires_review": true
+  },
+  "success_criteria_row23_ok": true,
+  "parquet_written": "output/server_analysis.parquet",
+  "parquet_roundtrip_ok": true
+}

@@ -1,0 +1,9 @@
+==========================================================================
+T4 · Efecto e incertidumbre sobre las diferencias pareadas
+Fuente de las diferencias : data/model_errors.csv (difference = error_a - error_b recalculada)
+n = 16 | mean = 0.418750 | sample_sd = 1.253379 | SE = sd/sqrt(n) = 0.313345
+Prueba t de una muestra (bilateral, popmean=0): t(15) = 1.336388 | p = 0.201342
+IC t 95% media pareada: [-0.249128, 1.086628] (t_crit = 2.131450, margen = 0.667878)
+Verificaciones: {'n_es_16': True, 'se_igual_sd_sobre_sqrt_n': True, 'se_coincide_con_scipy_sem': True, 'p_value_coincide_con_2_sf': True, 'ic_coincide_con_mean_pm_tcrit_se': True, 'ttest_rel_mismo_estadistico': True, 'ic_contiene_cero': True}
+Archivos escritos: resultados.json, output/store_differences.csv, output/store_differences.png
+==========================================================================

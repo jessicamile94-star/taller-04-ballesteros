@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/Users/jessicaballesteros/Downloads/taller-04-ballesteros/corridas/taller4-medicion-base-final/tarea-S1/subtareas/T5/intento-3/script.py", line 666, in <module>
+    main()
+  File "/Users/jessicaballesteros/Downloads/taller-04-ballesteros/corridas/taller4-medicion-base-final/tarea-S1/subtareas/T5/intento-3/script.py", line 659, in main
+    df, desc, info, reports, t3 = build_analyzed_dataframe()
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jessicaballesteros/Downloads/taller-04-ballesteros/corridas/taller4-medicion-base-final/tarea-S1/subtareas/T5/intento-3/script.py", line 478, in build_analyzed_dataframe
+    ls = weighted_zscore_per_server(df_csv, w, ddof=ddof)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jessicaballesteros/Downloads/taller-04-ballesteros/corridas/taller4-medicion-base-final/tarea-S1/subtareas/T5/intento-3/script.py", line 266, in weighted_zscore_per_server
+    if bool((sd <= 0).any()) or bool(sd.isna().any()):
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jessicaballesteros/Downloads/taller-04-ballesteros/.venv/lib/python3.12/site-packages/pandas/core/generic.py", line 1501, in __bool__
+    raise ValueError(
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+ERROR: fallo inesperado en T5; no se guardo un Parquet no verificado.

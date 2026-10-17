@@ -1,0 +1,60 @@
+{
+  "subtarea": "T2_dos_clasificadores",
+  "dataset": "Breast Cancer Wisconsin (Diagnostic)",
+  "division_usada": {
+    "origen": "reproducida con los parámetros de T1: test_size=0.3, random_state=42, estratificada por clase",
+    "coincide_con_T1": true,
+    "random_state": 42,
+    "test_size": 0.3,
+    "estratificada": true,
+    "n_entrenamiento": 398,
+    "n_prueba": 171
+  },
+  "escalador": {
+    "tipo": "StandardScaler",
+    "ajustado_solo_con_entrenamiento": true,
+    "verificacion": {
+      "max_dif_media_scaler_vs_media_entrenamiento": 0.0,
+      "max_dif_media_scaler_vs_media_prueba": 13.65910399953043,
+      "nota": "La media del escalador coincide con la media del entrenamiento (dif ~ 0) y difiere de la media de prueba, evidencia de que se ajustó únicamente con entrenamiento."
+    }
+  },
+  "modelos": {
+    "Naive Bayes gaussiano": {
+      "clase": "sklearn.naive_bayes.GaussianNB",
+      "atributos": "estandarizados"
+    },
+    "Regresión logística": {
+      "clase": "sklearn.linear_model.LogisticRegression",
+      "max_iter": 1000,
+      "random_state": 42,
+      "atributos": "estandarizados"
+    }
+  },
+  "tabla_metricas_prueba": [
+    {
+      "modelo": "Naive Bayes gaussiano",
+      "accuracy": 0.935672514619883,
+      "f1_macro": 0.9306543778801843
+    },
+    {
+      "modelo": "Regresión logística",
+      "accuracy": 0.9883040935672515,
+      "f1_macro": 0.9875146028037383
+    }
+  ],
+  "accuracy_nb_gaussiano": 0.935672514619883,
+  "f1_macro_nb_gaussiano": 0.9306543778801843,
+  "accuracy_regresion_logistica": 0.9883040935672515,
+  "f1_macro_regresion_logistica": 0.9875146028037383,
+  "mejor_modelo": {
+    "por_accuracy": "Regresión logística",
+    "por_f1_macro": "Regresión logística"
+  },
+  "tabla_markdown": "| modelo | accuracy | f1_macro |\n|---|---|---|\n| Naive Bayes gaussiano | 0.935673 | 0.930654 |\n| Regresión logística | 0.988304 | 0.987515 |",
+  "archivos_generados": [
+    "resultados.json",
+    "tabla_parte2_metricas.csv",
+    "parte2_metricas_prueba.png"
+  ]
+}

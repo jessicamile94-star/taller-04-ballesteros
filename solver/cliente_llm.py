@@ -122,7 +122,14 @@ class ClienteLLM:
             intento += 1
             t0 = time.perf_counter()
             try:
-                r = self.llm.chat(mensajes, tools=tools, json_mode=json_mode, max_tokens=max_tokens)
+                with self.traza.generacion_langfuse(agente, self.modelo, mensajes) as generacion:
+                    r = self.llm.chat(mensajes, tools=tools, json_mode=json_mode, max_tokens=max_tokens)
+                    if generacion is not None:
+                        uso_actual = r.get("uso") or {}
+                        generacion.update(
+                            output=sin_pensamiento(r.get("contenido") or ""),
+                            usage_details={"input": int(uso_actual.get("prompt_tokens", 0)),
+                                           "output": int(uso_actual.get("completion_tokens", 0))})
             except Exception as err:                  # red, HTTP, VPN caída…
                 self.traza.llamada(agente, modelo=self.modelo, tokens_entrada=0, tokens_salida=0,
                                    latencia_s=round(time.perf_counter() - t0, 2), fin=None,

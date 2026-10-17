@@ -1,0 +1,16 @@
+tarea,check,tipo,ok,detalle
+A,A01,archivo,1,1 archivo(s) con reporte.md
+A,A02,archivo,1,11 archivo(s) con **/*.png
+A,A03,secciones,1,"todas, en orden"
+A,A04,palabras_max,1,1044 palabras
+A,A05,cifra_presente,1,verdad=569.0000 ±0; hallada
+A,A06,cifra,1,verdad=0.9474 ±0.006; hallada
+A,A07,cifra,1,verdad=0.9883 ±0.012; hallada
+A,A08,procedencia,1,40/40 cifras respaldadas (1.00)
+A,A09,cifra_presente,1,verdad=0.9766 ±0.0006; hallada
+A,A10,juez,0,tipo desconocido: juez
+A,A11,juez,0,tipo desconocido: juez
+E,E01,contiene,1,todos presentes
+E,E02,juez,0,tipo desconocido: juez
+P,P01,juez,0,tipo desconocido: juez
+P,P02,juez,0,tipo desconocido: juez

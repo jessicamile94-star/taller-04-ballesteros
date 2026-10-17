@@ -1,0 +1,10 @@
+=== T1: Breast Cancer Wisconsin (Diagnostic) ===
+Ejemplos totales: 569 | Atributos: 30
+Conteo por clase (total): {np.str_('malignant'): 212, np.str_('benign'): 357}
+Entrenamiento (70%): 398 ejemplos -> {np.str_('malignant'): 148, np.str_('benign'): 250}
+Prueba (30%): 171 ejemplos -> {np.str_('malignant'): 64, np.str_('benign'): 107}
+Proporciones entrenamiento: {np.str_('malignant'): 0.37185929648241206, np.str_('benign'): 0.628140703517588}
+Proporciones prueba:        {np.str_('malignant'): 0.3742690058479532, np.str_('benign'): 0.6257309941520468}
+Estratificación verificada: True (máx. diferencia de proporciones = 0.001686)
+División guardada en t1_entrenamiento.csv / t1_prueba.csv (random_state=42, única división de la tarea).
+Archivos generados: t1_datos_completos.csv, t1_entrenamiento.csv, t1_prueba.csv, t1_distribucion_clases.png

@@ -1,0 +1,98 @@
+{
+  "subtarea": "T6_bootstrap_pareado",
+  "semilla": 20260829,
+  "remuestras_bootstrap": 10000,
+  "n_tiendas": 16,
+  "vector_diferencias": [
+    1.8000000000000007,
+    0.7000000000000011,
+    1.1999999999999993,
+    -1.4000000000000004,
+    1.4999999999999991,
+    -0.3000000000000007,
+    0.8999999999999986,
+    2.0999999999999996,
+    -1.8000000000000007,
+    1.0,
+    -0.5,
+    1.700000000000001,
+    -1.200000000000001,
+    0.5999999999999996,
+    1.299999999999999,
+    -0.9000000000000004
+  ],
+  "estadisticas_observadas": {
+    "media_diferencias": 0.4187499999999997,
+    "mediana_diferencias": 0.7999999999999998,
+    "desv_est_muestral_ddof1": 1.2533787669070087,
+    "error_estandar_media_t": 0.31334469172675217
+  },
+  "intervalo_percentil_95": {
+    "limite_inferior": -0.19375000000000037,
+    "limite_superior": 1.0062499999999996,
+    "metodo": "percentil",
+    "nivel": 0.95,
+    "percentiles_usados": [
+      2.5,
+      97.5
+    ]
+  },
+  "ic95_percentil": [
+    -0.19375000000000037,
+    1.0062499999999996
+  ],
+  "bootstrap_distribucion_media": {
+    "media": 0.4209674999999998,
+    "mediana": 0.425,
+    "desv_est": 0.3055936070813965,
+    "min": -0.9125000000000005,
+    "max": 1.36875,
+    "sesgo_vs_observado": 0.0022175000000000944,
+    "prop_remuestras_menores_iguales_cero": 0.0881,
+    "cuantiles": {
+      "p0": -0.9125000000000005,
+      "p5": -0.09375000000000056,
+      "p25": 0.21874999999999994,
+      "p50": 0.425,
+      "p75": 0.6249999999999999,
+      "p95": 0.9187499999999997,
+      "p100": 1.36875
+    }
+  },
+  "reproducibilidad_misma_semilla": {
+    "semilla": 20260829,
+    "corrida_1_intervalo": [
+      -0.19375000000000037,
+      1.0062499999999996
+    ],
+    "corrida_2_intervalo": [
+      -0.19375000000000037,
+      1.0062499999999996
+    ],
+    "intervalos_exactamente_iguales": true,
+    "distribuciones_bootstrap_exactamente_iguales": true
+  },
+  "contraste_semilla_distinta": {
+    "semilla": 20260830,
+    "intervalo": [
+      -0.18750000000000033,
+      0.9874999999999998
+    ],
+    "intervalo_distinto_al_de_semilla_20260829": true
+  },
+  "verificacion_contra_T2": {
+    "archivo": "entrada/T2/resultados.json",
+    "diferencias_coinciden": true
+  },
+  "archivos_generados": {
+    "csv": "output/store_differences.csv",
+    "png_diferencias": "output/store_differences.png",
+    "png_bootstrap": "bootstrap_media_diferencias.png",
+    "resultados": "resultados.json"
+  },
+  "explicaciones": {
+    "por_que_remuestrear_tiendas_completas": "La unidad experimental es la tienda: error_a y error_b de una misma tienda comparten condiciones (clientela, inventario, temporada) y por eso están correlacionados. Remuestrear tiendas completas —muestrear con reemplazo filas del vector de diferencias— preserva el emparejamiento y esa correlación intra-par, de modo que la distribución bootstrap aproxima la ley muestral del estadístico correcto (la media de las diferencias pareadas). Si se remuestrearan por separado los errores de A y de B se rompería el pareo: las diferencias remuestreadas ya no corresponderían a pares reales, se destruiría la correlación entre modelos y la variabilidad del estimador quedaría mal representada (típicamente inflada), produciendo un intervalo inválido para el diseño pareado.",
+    "que_no_puede_corregir_el_bootstrap": "El bootstrap asume que la muestra empírica es representativa y que las observaciones son intercambiables (i.i.d.). No corrige automáticamente: (1) sesgo de selección o tiendas no elegidas al azar; (2) dependencia entre tiendas (estructura jerárquica, correlación espacial/temporal, efectos de región o campaña); (3) el tamaño muestral pequeño (n=16 explora mal las colas de la distribución poblacional); (4) errores de medición o parejas mal construidas; (5) violaciones del diseño (p. ej., modelos evaluados en periodos o condiciones distintas). Solo refleja la variabilidad presente en los datos observados.",
+    "papel_analisis_sensibilidad": "El intervalo percentil del 95% es una referencia aproximada de sensibilidad: indica cuánto podría variar la media de la diferencia bajo el mecanismo de remuestreo de tiendas. Como el 0 sí cae dentro del intervalo, la ventaja observada de B no es robusta a la variabilidad muestral a este nivel de confianza."
+  }
+}

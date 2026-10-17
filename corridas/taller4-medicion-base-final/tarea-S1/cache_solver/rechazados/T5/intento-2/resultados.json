@@ -1,0 +1,91 @@
+{
+  "subtask": "T5",
+  "task": "Guardar el DataFrame analizado de T3 en Parquet (PyArrow, sin indice) y verificar el round trip",
+  "parquet_path": "output/server_analysis.parquet",
+  "parquet_exists": true,
+  "parquet_size_bytes": 17589,
+  "engine": "pyarrow",
+  "pyarrow_version": "25.0.1",
+  "pandas_version": "3.0.6",
+  "index_saved": false,
+  "index_columns_in_file": [],
+  "df_source": "reconstruido desde data/server_measurements.csv (load_score: formula:z(gpu,global,ddof=0))",
+  "load_score_info": {
+    "source": "formula:z(gpu,global,ddof=0)",
+    "matches": 0,
+    "total": 49
+  },
+  "rows_before": 300,
+  "rows_after": 300,
+  "n_cols_before": 9,
+  "n_cols_after": 9,
+  "columns_before": [
+    "server",
+    "timestamp",
+    "gpu_utilization",
+    "cpu_utilization",
+    "memory_gb",
+    "power_w",
+    "temperature_c",
+    "load_score",
+    "requires_review"
+  ],
+  "columns_after": [
+    "server",
+    "timestamp",
+    "gpu_utilization",
+    "cpu_utilization",
+    "memory_gb",
+    "power_w",
+    "temperature_c",
+    "load_score",
+    "requires_review"
+  ],
+  "dtypes_before": {
+    "server": "str",
+    "timestamp": "datetime64[us]",
+    "gpu_utilization": "float64",
+    "cpu_utilization": "float64",
+    "memory_gb": "float64",
+    "power_w": "float64",
+    "temperature_c": "float64",
+    "load_score": "float64",
+    "requires_review": "bool"
+  },
+  "dtypes_after": {
+    "server": "str",
+    "timestamp": "datetime64[us]",
+    "gpu_utilization": "float64",
+    "cpu_utilization": "float64",
+    "memory_gb": "float64",
+    "power_w": "float64",
+    "temperature_c": "float64",
+    "load_score": "float64",
+    "requires_review": "bool"
+  },
+  "arrow_schema_before": "server: large_string\ntimestamp: timestamp[us]\ngpu_utilization: double\ncpu_utilization: double\nmemory_gb: double\npower_w: double\ntemperature_c: double\nload_score: double\nrequires_review: bool\n-- schema metadata --\npandas: '{\"index_columns\": [], \"column_indexes\": [], \"columns\": [{\"name\":' + 1197",
+  "arrow_schema_after": "server: large_string\ntimestamp: timestamp[us]\ngpu_utilization: double\ncpu_utilization: double\nmemory_gb: double\npower_w: double\ntemperature_c: double\nload_score: double\nrequires_review: bool\n-- schema metadata --\npandas: '{\"index_columns\": [], \"column_indexes\": [], \"columns\": [{\"name\":' + 1197",
+  "arrow_schema_equal_no_metadata": true,
+  "arrow_schema_equal_with_metadata": true,
+  "pandas_dtypes_equal": true,
+  "dataframe_equals": true,
+  "validation_against_T3": {
+    "n_rows": true,
+    "columns_set": true,
+    "n_requires_review": false
+  },
+  "spot_checks_against_T3": {
+    "checked": 10,
+    "matched_all": 0,
+    "matched_load": 0
+  },
+  "checks": {
+    "filas": true,
+    "columnas": true,
+    "esquema": true,
+    "valores": true
+  },
+  "all_checks_passed": true,
+  "n_requires_review": 53,
+  "message": "Round trip verificado: output/server_analysis.parquet"
+}

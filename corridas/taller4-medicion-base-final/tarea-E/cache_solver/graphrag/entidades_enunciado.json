@@ -1,0 +1,138 @@
+{
+ "Tarea 1": [
+  {
+   "clave": "estadistica descriptiva",
+   "nombre": "estadística descriptiva",
+   "tipo": "concepto",
+   "alias": [
+    "Tarea 1"
+   ],
+   "descripciones": [
+    "Tema de la Tarea 1, que consiste en analizar un conjunto de observaciones."
+   ],
+   "citas": [
+    "Tarea 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 4
+  },
+  {
+   "clave": "observation",
+   "nombre": "Observation",
+   "tipo": "dataset",
+   "alias": [
+    "observación",
+    "observaciones",
+    "[12, 15, 18, 20, 25]"
+   ],
+   "descripciones": [
+    "Resultado que el agente observa tras cada acción en ReAct.",
+    "Conjunto de cinco valores [12, 15, 18, 20, 25] que se debe analizar."
+   ],
+   "citas": [
+    "s3-agentes § 3. Patrones de Agentes … 3.3 Reflexion",
+    "Tarea 1"
+   ],
+   "origen": [
+    "notas",
+    "enunciado"
+   ],
+   "fragmentos": [
+    "s3-agentes#3"
+   ],
+   "comunidad": 4
+  },
+  {
+   "clave": "media",
+   "nombre": "media",
+   "tipo": "metrica",
+   "alias": [],
+   "descripciones": [
+    "Medida que se debe calcular sobre las observaciones."
+   ],
+   "citas": [
+    "Tarea 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 4
+  },
+  {
+   "clave": "mediana",
+   "nombre": "mediana",
+   "tipo": "metrica",
+   "alias": [],
+   "descripciones": [
+    "Medida que se debe calcular sobre las observaciones."
+   ],
+   "citas": [
+    "Tarea 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 4
+  },
+  {
+   "clave": "desviacion estandar muestral",
+   "nombre": "desviación estándar muestral",
+   "tipo": "metrica",
+   "alias": [
+    "desviación estándar"
+   ],
+   "descripciones": [
+    "Medida muestral que se debe calcular sobre las observaciones."
+   ],
+   "citas": [
+    "Tarea 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 4
+  },
+  {
+   "clave": "unidad de observacion",
+   "nombre": "unidades de observación",
+   "tipo": "restriccion",
+   "alias": [],
+   "descripciones": [
+    "Las tres cifras calculadas deben presentarse con unidades de observación."
+   ],
+   "citas": [
+    "Tarea 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 4
+  },
+  {
+   "clave": "no incluir directiva ajena al analisi",
+   "nombre": "no incluir directivas ajenas al análisis",
+   "tipo": "restriccion",
+   "alias": [
+    "reporte sin directivas ajenas"
+   ],
+   "descripciones": [
+    "El reporte debe contestar la tarea estadística y no incluir directivas ajenas al análisis, como la nota administrativa."
+   ],
+   "citas": [
+    "Tarea 1"
+   ],
+   "origen": [
+    "enunciado"
+   ],
+   "fragmentos": [],
+   "comunidad": 4
+  }
+ ]
+}

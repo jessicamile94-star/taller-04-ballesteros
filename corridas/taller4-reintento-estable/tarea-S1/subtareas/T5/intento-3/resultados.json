@@ -1,0 +1,56 @@
+{
+  "subtarea": "T5_round_trip_parquet",
+  "archivo_parquet": "output/server_analysis.parquet",
+  "archivo_existe": true,
+  "origen_dataframe": "entrada/T3/resultados.json (tabla embebida)",
+  "metodo_guardado": "pyarrow (pa.Table.from_pandas preserve_index=False + pq.write_table)",
+  "sin_indice": true,
+  "filas_antes": 300,
+  "filas_despues": 300,
+  "filas_iguales": true,
+  "columnas_antes": 9,
+  "columnas_despues": 9,
+  "nombres_columnas_antes": [
+    "server",
+    "timestamp",
+    "gpu_utilization",
+    "cpu_utilization",
+    "memory_gb",
+    "power_w",
+    "temperature_c",
+    "load_score",
+    "requires_review"
+  ],
+  "nombres_columnas_despues": [
+    "server",
+    "timestamp",
+    "gpu_utilization",
+    "cpu_utilization",
+    "memory_gb",
+    "power_w",
+    "temperature_c",
+    "load_score",
+    "requires_review"
+  ],
+  "columnas_iguales": true,
+  "esquema_antes": "server: large_string\ntimestamp: timestamp[us]\ngpu_utilization: double\ncpu_utilization: double\nmemory_gb: double\npower_w: double\ntemperature_c: double\nload_score: double\nrequires_review: bool\n-- schema metadata --\npandas: '{\"index_columns\": [], \"column_indexes\": [], \"columns\": [{\"name\":' + 1197",
+  "esquema_despues": "server: large_string\ntimestamp: timestamp[us]\ngpu_utilization: double\ncpu_utilization: double\nmemory_gb: double\npower_w: double\ntemperature_c: double\nload_score: double\nrequires_review: bool\n-- schema metadata --\npandas: '{\"index_columns\": [], \"column_indexes\": [], \"columns\": [{\"name\":' + 1197",
+  "esquema_igual": true,
+  "valores_iguales": true,
+  "round_trip_verificado": true,
+  "mensaje_round_trip": {
+    "archivo": "output/server_analysis.parquet",
+    "Filas": true,
+    "Columnas": true,
+    "Esquema": true,
+    "Valores": true
+  },
+  "n_requires_review": 49,
+  "fila_23": {
+    "server": "AI-SRV-01",
+    "timestamp": "2026-08-24 09:55:00",
+    "load_score": 3.136217861183744,
+    "temperature_c": 66.97,
+    "requires_review": true
+  }
+}

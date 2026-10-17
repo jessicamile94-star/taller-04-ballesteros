@@ -1,0 +1,27 @@
+============================================================================
+T4 — Construir un resumen por servidor (agrupación por `server`)
+============================================================================
+[i] Referencia de T3: entrada/T3/resultados.json
+[i] Datos base: data/server_measurements.csv (300 filas)
+[~] load_score deducido por ajuste (exacto=True)
+
+Tabla resumen por servidor:
+   server  observations mean_power_w max_temperature_c mean_load  review_count
+AI-SRV-01            50     363.4598             86.50 -0.614527             2
+AI-SRV-02            50     390.4990             76.47 -0.417730             1
+AI-SRV-03            50     416.6088             86.50 -0.085884             2
+AI-SRV-04            50     434.8684             80.86 -0.003041             5
+AI-SRV-05            50     471.1808             86.50  0.453583            12
+AI-SRV-06            50     495.7276             88.01  0.667600            27
+
+[OK] Parquet escrito: output/server_analysis.parquet (6 filas x 6 columnas)
+
+Resumen: 6 servidores | 300 observaciones | 49 filas marcadas para revisión
+Columnas en orden exigido: True | 6 filas: True
+  AI-SRV-01 · observations: obtenido=50 | esperado=50 [OK]
+  AI-SRV-01 · mean_power_w: obtenido=363.45980000000003 | esperado=363.4598 [OK]
+  AI-SRV-01 · max_temperature_c: obtenido=86.5 | esperado=86.5 [OK]
+  AI-SRV-01 · mean_load: obtenido=-0.6145273545959999 | esperado=-0.614527 [OK]
+  AI-SRV-01 · review_count: obtenido=2 | esperado=2 [OK]
+Criterio de éxito: CUMPLIDO
+Archivos escritos: output/server_analysis.parquet , resultados.json

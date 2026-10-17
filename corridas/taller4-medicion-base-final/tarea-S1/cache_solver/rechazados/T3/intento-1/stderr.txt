@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/jessicaballesteros/Downloads/taller-04-ballesteros/corridas/taller4-medicion-base-final/tarea-S1/subtareas/T3/intento-1/script.py", line 66, in <module>
+    if "timestamp" in df_original.columns and not np.issubdtype(
+                                                  ^^^^^^^^^^^^^^
+  File "/Users/jessicaballesteros/Downloads/taller-04-ballesteros/.venv/lib/python3.12/site-packages/numpy/_core/numerictypes.py", line 477, in issubdtype
+    arg1 = dtype(arg1).type
+           ^^^^^^^^^^^
+TypeError: Cannot interpret '<StringDtype(na_value=nan)>' as a data type

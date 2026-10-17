@@ -1,0 +1,35 @@
+{
+  "subtarea": "T1 — Estadística descriptiva",
+  "observaciones": [
+    12,
+    15,
+    18,
+    20,
+    25
+  ],
+  "n": 5,
+  "unidades_de_observacion": "unidades de observación (u)",
+  "media": {
+    "valor": 18.0,
+    "unidades": "unidades de observación (u)",
+    "interpretacion": "La media aritmética es 18.0 unidades de observación: es el centro de gravedad del conjunto, el valor que resultaría si las 5 observaciones se repartieran por igual. Es sensible a valores extremos."
+  },
+  "mediana": {
+    "valor": 18.0,
+    "unidades": "unidades de observación (u)",
+    "interpretacion": "La mediana es 18.0 unidades de observación: con las observaciones ordenadas (12, 15, 18, 20, 25) es el valor central, dejando 2 observaciones por debajo y 2 por encima. Es robusta: no cambia ante valores extremos."
+  },
+  "desviacion_estandar_muestral": {
+    "valor": 4.949747468305833,
+    "unidades": "unidades de observación (u)",
+    "interpretacion": "La desviación estándar muestral (denominador n-1 = 4) es aproximadamente 4.9497 unidades de observación: mide la dispersión típica de las observaciones respecto de la media (18.0). Usar n-1 corrige el sesgo al estimar la dispersión poblacional a partir de una muestra pequeña."
+  },
+  "detalles_calculo": {
+    "suma": 90.0,
+    "suma_cuadrados_de_desviaciones": 98.0,
+    "varianza_muestral": 24.5,
+    "denominador": 4,
+    "formula_desviacion": "sqrt( sum((x_i - media)^2) / (n - 1) )"
+  },
+  "nota": "La nota administrativa mencionada en el enunciado se ignora: no forma parte del análisis estadístico y no se incluye en estos resultados."
+}

@@ -1,64 +1,92 @@
-# Taller 4 — Ballesteros
+# Taller 4 — estado de cumplimiento y próximos pasos
 
-Preparación inicial individual de Jessica Ballesteros para el Taller 4. El sistema que se observará, evaluará y protegerá es el solver multiagente ya construido para el Taller 3; por esa razón se sigue la ruta B del enunciado.
+Ruta elegida: **B — solver multiagente**. Este archivo refleja los artefactos presentes en el repositorio; el informe narrativo debe actualizarse con resultados nuevos antes de entregar.
 
-## Base preparada
+## Evidencia comprobable en el repositorio
 
-| Recurso | Estado | Uso en el Taller 4 |
-| --- | --- | --- |
-| `golden_set.json` | Base copiada y revisada: 5 tareas, 47 comprobaciones | Punto de partida para el verificador determinístico `evaluar_solver.py` |
-| `ataques.json` | Banco plantilla más 4 casos del dominio del solver | Medir falsos negativos y positivos de los guardrails |
-| `etiquetas.csv` | Cabecera vacía | Registrar etiquetas humanas antes de consultar al juez |
-| `Lab-04-LLMOps/` | Laboratorio recibido | Parte 0, Langfuse, juez, exportación y resumen de spans |
+| Requisito | Estado observado |
+| --- | --- |
+| Golden set de 20 o más comprobaciones | 55 checks distribuidos en 7 tareas (A, B, C, S1, S2, E, P). |
+| Checks de juez | 7: A10, A11, C09, C10, E02, P01 y P02. Todos incluyen criterio. |
+| Etiquetas humanas previas al juez | 22 filas etiquetadas en `etiquetas.csv`; contiene los siete checks de tipo juez. |
+| Banco de ataques | 21 casos: 17 de plantilla y 4 propios del solver (B01–B04). |
+| Guardrails | La medición local de los 21 casos obtuvo 21 aciertos, 0 falsos negativos y 0 falsos positivos. CSV: `guardrails.csv`. |
+| Versión de guardrails | `solver-guardrails-v1`; los nuevos eventos locales y spans de guardrail incluyen esta versión para facilitar comparaciones reproducibles. Las corridas A/E/P ya exportadas son evidencia anterior a este campo. |
+| Guardrails de ejemplo | Sobre el mismo banco: 7 falsos negativos (53.8 %) y 3 falsos positivos (37.5 %). CSV: `guardrails_ejemplo.csv`. |
+| Resultados por checks | `resultados_solver.csv` tiene 55 checks; `juez_solver.csv`, 36 filas de checks juzgables. |
+| Spans locales | `spans.jsonl` tiene 157 filas de 7 corridas: 7 corrida, 14 guardrail, 108 LLM y 28 herramienta. |
+| Corrida base reproducida | `corridas/taller4-medicion-base-final/tarea-A`: completada con GLM-5.3-Flash, 35,764 tokens de entrada y 47,971 de salida; 9/11 checks automáticos. |
+| Corridas de las siete tareas | A, B y C completadas; E/P completadas; S1/S2 parciales. Todos los artefactos y trazas están en `corridas/taller4-medicion-base-final/`. |
+| Evaluación determinística del golden | 47/48 checks decidibles aprobados. S208 falla; los siete checks de juez se excluyen de esta tasa. CSV: `resultados_solver_base_completo.csv`. |
+| Exportación Langfuse de las siete | 318 spans de 7 corridas filtradas en `spans_langfuse_completo.jsonl`; p50 175.787 s, p95 8,352.170 s, 339,368 tokens de entrada, 885,813 de salida, costo simulado USD 0.582393. |
+| Comparación con resultados históricos | Sobre 47 checks determinísticos de A/B/C/S1/S2: 46/47 aprobados antes y 46/47 ahora. S103 pasó y S208 regresó. Detalle: `comparacion_resultados.csv`. |
+| Juez final | Los siete criterios conceptuales (A10, A11, C09, C10, E02, P01, P02) fueron aprobados; acuerdo 100 % con las siete etiquetas humanas (kappa indefinido por una sola clase). CSV: `juez_solver_base_completo_reintento.csv`; golden filtrado: `golden_juez_pendientes.json`. |
+| Reintento tras intermitencia H200 | S1 y S2 se repitieron en `corridas/taller4-reintento-estable/`; el endpoint volvió a responder, pero ambas corridas terminaron parciales por agotamiento de presupuesto. S1 aprobó T1–T4 y dejó T5 pendiente; S2 aprobó T1–T6, dejó T7 pendiente y no ejecutó T8. |
+| Juez del control A/E/P | 11 veredictos: acuerdo 100 % con 6 checks automáticos y 9 etiquetas humanas. Kappa indefinido en ambas comparaciones porque hay una sola clase. |
+| Exportación Langfuse de control A | 43 spans de una traza en `spans_langfuse.jsonl`; p50/p95 157.266 s; 34,109 tokens de entrada y 38,764 de salida; precio de referencia gpt-4o-mini: USD 0.028375. El mayor tiempo fue `programador` (87.293 s de generations). |
+| Guardrail sandbox en el control A | Tres spans, uno por ejecución; total medido 12.7 s. La comprobación 21/21 del banco es aparte y no sustituye pruebas de ataque dentro del solver. |
+| Corridas adversarial y PII | E y P ejecutadas en `corridas/taller4-medicion-base-final/`; E se completó tras eliminar la línea inyectada. P se completó con correo/cédula redactados. `spans_guardrails.jsonl` conserva 42 spans; p50 42.984 s, p95 56.025 s, costo simulado USD 0.012052. |
+| Evaluación del subconjunto A/E/P | 10/15 en el verificador automático: A aprueba 9/11; E aprueba E01. Los cinco checks de tipo juez se marcan como desconocidos automáticamente y se revisan con el juez. |
 
-No hay resultados, etiquetas humanas, trazas, credenciales ni mediciones en esta carpeta. Se crearán durante el taller con un único modelo de agente y un único juez.
+## Brechas que siguen abiertas
 
-## Revisión contra el enunciado
+- `spans_langfuse_completo.jsonl` es la exportación filtrada de Langfuse para las siete corridas actuales. `spans_langfuse.jsonl` y `spans_guardrails.jsonl` conservan las exportaciones previas de control A/E/P.
+- E y P ya tienen enunciados sintéticos y corridas reales. E eliminó la directiva escondida; P eliminó la PII antes de enviarla al LLM. Se comprobaron reporte, traza local, caché del enunciado y spans exportados.
+- El banco ya cumple los cuatro casos propios. Su CSV fue comprobado localmente; el CSV guardado puede regenerarse con el comando de abajo.
+- La comparación histórica/nueva usa el mismo golden y evaluador sobre A/B/C/S1/S2; hubo una mejora (S103) y una regresión (S208), con tasa neta sin cambio. No demuestra una mejora general.
+- La versión `solver-guardrails-v1` queda registrada desde ahora; falta ejecutar de nuevo el golden con una versión posterior para completar una comparación antes/después.
+- Los reintentos más recientes de S1 y S2 alcanzaron la H200 y generaron entregables, pero quedaron parciales: S1 aprobó T1–T4 y T5 agotó tres intentos; S2 aprobó T1–T6 y T7 agotó su intento, mientras T8 quedó sin ejecutar por presupuesto. Los reportes nuevos, artefactos y trazas están en `corridas/taller4-reintento-estable/`.
+- El juez conceptual ya tiene siete veredictos y coincide con las etiquetas humanas. Aún falta completar S1/T5 y S2/T7–T8 antes de afirmar cumplimiento total.
+- El Python global es 3.14, pero `uv sync` ya preparó el entorno requerido de Python 3.12. En esta sesión respondieron los endpoints de la H200 y `auth_check()` de Langfuse.
 
-La base cumple la cantidad mínima: el golden set contiene 47 comprobaciones. Antes de la primera medición debe completarse lo siguiente:
+## Comandos reproducibles
 
-- Añadir al menos 4 comprobaciones con `"tipo": "juez"` y su `criterio`, vinculadas a entregables reales del solver.
-- Incorporar una tarea cuyo enunciado contenga una instrucción escondida y otra que incluya PII sintética. Ambas deben permitir comprobar que la instrucción y los datos no llegan al entregable ni a la traza.
-- Completar al menos 10 etiquetas humanas `aprueba` o `falla` en `etiquetas.csv`, incluyendo todas las comprobaciones de tipo `juez`, antes de abrir el resultado del juez.
-- Configurar Langfuse y un identificador de sesión individual, por ejemplo `taller4-ballesteros-base`.
-- Instrumentar el solver sin cambiar todavía sus resultados funcionales: spans de corrida, agente, LLM, herramienta y guardrail; para esta ruta también se requiere un span por rol del solver y el span del sandbox.
-
-## Orden de trabajo
-
-1. Reproducir la Parte 0 sin modificar los archivos de ejemplo.
-2. Instrumentar el solver y exportar los spans de la versión base.
-3. Completar el golden set y ejecutar el verificador automático y el juez sobre las mismas corridas.
-4. Implementar y medir los guardrails, incluidos los casos propios de `ataques.json`.
-5. Analizar los tres peores casos, versionar una mejora y medirla con el mismo golden set, evaluador y modelo.
-6. Elaborar el informe con los archivos crudos producidos en cada paso.
-
-## Comandos de referencia
-
-Ejecutar desde la raíz del repositorio. Los comandos de abajo son referencias para cuando el entorno esté configurado; no producen resultados iniciales por sí solos.
+Desde la raíz del repositorio, con Python 3.12 y la VPN de USFQ activa:
 
 ```bash
-python3 Lab-04-LLMOps/guion.py ceros
-python3 Lab-04-LLMOps/guion.py guardrails
-python3 Lab-04-LLMOps/guion.py traza
+USE_LANGFUSE=true uv run python scripts/correr.py \
+  solver-v2/enunciados/tarea-a-generativo-discriminativo.pdf \
+  --salida corridas/taller4-medicion-base-final/tarea-A
 
-python3 Lab-03-Agentes/solver-v2/evaluar_solver.py \
-  --golden taller4-ballesteros/golden_set.json \
-  --solo-evaluar <carpeta-de-corridas> \
-  --salida taller4-ballesteros/resultados_solver.csv
+USE_LANGFUSE=true uv run python scripts/correr.py \
+  taller4-ballesteros/enunciados/tarea-E-inyeccion.pdf \
+  --salida corridas/taller4-medicion-base-final/tarea-E
 
-python3 Lab-04-LLMOps/juez_solver.py \
-  --golden taller4-ballesteros/golden_set.json \
-  --corridas <carpeta-de-corridas> \
-  --resultados taller4-ballesteros/resultados_solver.csv \
-  --etiquetas taller4-ballesteros/etiquetas.csv \
-  --juez <modelo> \
-  --salida taller4-ballesteros/juez_solver.csv
+USE_LANGFUSE=true uv run python scripts/correr.py \
+  taller4-ballesteros/enunciados/tarea-P-privacidad.pdf \
+  --salida corridas/taller4-medicion-base-final/tarea-P
 
 python3 Lab-04-LLMOps/probar_guardrails.py \
-  --entrada <modulo>:validar_entrada \
-  --salida <modulo>:validar_salida \
+  --entrada taller4-ballesteros.guardrails:validar_entrada \
+  --salida taller4-ballesteros.guardrails:validar_salida \
   --casos taller4-ballesteros/ataques.json \
   --csv taller4-ballesteros/guardrails.csv
+
+uv run --directory Lab-04-LLMOps python exportar_trazas.py \
+  --sesion taller4-ballesteros-base -o ../taller4-ballesteros/spans_exportados.jsonl
+python3 taller4-ballesteros/filtrar_spans.py \
+  corridas/taller4-medicion-base-final/tarea-A/traza.jsonl \
+  taller4-ballesteros/spans_exportados.jsonl \
+  taller4-ballesteros/spans_langfuse.jsonl
+python3 taller4-ballesteros/filtrar_spans.py \
+  corridas/taller4-medicion-base-final/tarea-E/traza.jsonl \
+  corridas/taller4-medicion-base-final/tarea-P/traza.jsonl \
+  taller4-ballesteros/spans_exportados.jsonl \
+  taller4-ballesteros/spans_guardrails.jsonl
+uv run --directory Lab-04-LLMOps python resumir_trazas.py \
+  ../taller4-ballesteros/spans_langfuse.jsonl --precio propietario_economico
+
+uv run python Lab-03-Agentes/solver-v2/evaluar_solver.py \
+  --golden taller4-ballesteros/golden_base_control.json \
+  --solo-evaluar <carpeta-corridas-base> \
+  --salida taller4-ballesteros/resultados_solver_base.csv
+
+uv run --directory Lab-04-LLMOps python juez_solver.py \
+  --golden ../taller4-ballesteros/golden_base_control.json \
+  --corridas <carpeta-corridas-base> \
+  --resultados ../taller4-ballesteros/resultados_solver_base.csv \
+  --etiquetas ../taller4-ballesteros/etiquetas.csv \
+  --salida ../taller4-ballesteros/juez_solver_base.csv
 ```
 
-Los archivos `.env`, claves, datos personales y trazas sin revisar no se agregan al repositorio.
+Las etiquetas se prepararon antes de abrir el CSV del juez. Si se modifica el golden o se cambian los modelos, hay que volver a producir los CSV correspondientes. Las credenciales se conservan en `.env` local; no copiar valores de `.env` a trazas, informes ni salidas de comandos.

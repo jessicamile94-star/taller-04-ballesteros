@@ -1,0 +1,277 @@
+{
+  "subtarea": "T2_semantica_latente_lsa",
+  "descripcion": "Proyección LSA de la matriz TF-IDF a 4 dimensiones, recálculo de similitud coseno y rankings, evaluación Hit@1/Hit@3/MRR y tabla comparativa única TF-IDF vs LSA sobre las mismas 6 consultas y juicios de T1.",
+  "metodo_lsa": "TruncatedSVD(n_components=4, random_state=0) ajustado sobre la matriz TF-IDF de los 10 documentos; consultas proyectadas con transform (fold-in)",
+  "num_documentos": 10,
+  "num_consultas": 6,
+  "dimensiones_lsa": 4,
+  "tam_vocabulario": 105,
+  "varianza_explicada_por_componente": [
+    0.03421161979685327,
+    0.12657480443196806,
+    0.11600387824885859,
+    0.11855186843101549
+  ],
+  "varianza_explicada_acumulada": 0.39534217090869544,
+  "rankings_lsa_por_consulta": [
+    {
+      "consulta_id": "q1",
+      "consulta": "¿Qué función de ranking léxica pondera la frecuencia de términos?",
+      "documento_relevante": "d04",
+      "ranking_10_documentos": [
+        "d04",
+        "d01",
+        "d06",
+        "d10",
+        "d09",
+        "d05",
+        "d03",
+        "d08",
+        "d07",
+        "d02"
+      ],
+      "similitudes_en_orden_ranking": [
+        0.9542338764603773,
+        0.9261673642870456,
+        0.6302861368690812,
+        0.5834748914843857,
+        0.50602389638608,
+        0.465752176194667,
+        0.37388789812768963,
+        0.3245207546801637,
+        0.1934378078177649,
+        0.00302208734967524
+      ],
+      "rank_del_relevante": 1,
+      "reciprocal_rank": 1.0,
+      "rank_del_relevante_tfidf": 1,
+      "delta_rank_vs_tfidf": 0
+    },
+    {
+      "consulta_id": "q2",
+      "consulta": "¿Cómo se añaden fragmentos recuperados al prompt?",
+      "documento_relevante": "d03",
+      "ranking_10_documentos": [
+        "d03",
+        "d07",
+        "d09",
+        "d02",
+        "d04",
+        "d10",
+        "d08",
+        "d01",
+        "d05",
+        "d06"
+      ],
+      "similitudes_en_orden_ranking": [
+        0.975361619861609,
+        0.8023847351500162,
+        0.47086791359664454,
+        0.40229305763029966,
+        0.3826981299579792,
+        0.29423807632144655,
+        0.14626163623898353,
+        0.033741063891205486,
+        -0.16002038909687336,
+        -0.26136569169094553
+      ],
+      "rank_del_relevante": 1,
+      "reciprocal_rank": 1.0,
+      "rank_del_relevante_tfidf": 1,
+      "delta_rank_vs_tfidf": 0
+    },
+    {
+      "consulta_id": "q3",
+      "consulta": "¿Qué técnica entrena matrices de bajo rango?",
+      "documento_relevante": "d08",
+      "ranking_10_documentos": [
+        "d08",
+        "d02",
+        "d06",
+        "d10",
+        "d01",
+        "d04",
+        "d03",
+        "d05",
+        "d07",
+        "d09"
+      ],
+      "similitudes_en_orden_ranking": [
+        0.9746239272656919,
+        0.7665154388303856,
+        0.5606217883245741,
+        0.4133039788806711,
+        0.3543433582332378,
+        0.22438785854469642,
+        0.1482078249922283,
+        -0.13297643110944013,
+        -0.1359959095041188,
+        -0.1735393373877595
+      ],
+      "rank_del_relevante": 1,
+      "reciprocal_rank": 1.0,
+      "rank_del_relevante_tfidf": 1,
+      "delta_rank_vs_tfidf": 0
+    },
+    {
+      "consulta_id": "q4",
+      "consulta": "¿Cómo se compara la orientación de dos vectores de texto?",
+      "documento_relevante": "d05",
+      "ranking_10_documentos": [
+        "d01",
+        "d10",
+        "d05",
+        "d09",
+        "d04",
+        "d03",
+        "d08",
+        "d02",
+        "d06",
+        "d07"
+      ],
+      "similitudes_en_orden_ranking": [
+        0.9219618094000098,
+        0.92055691089256,
+        0.898421713413974,
+        0.8201270985637524,
+        0.7523786823058957,
+        0.2875415099375291,
+        0.2695002757697431,
+        0.12236796902645403,
+        0.05001260690761758,
+        -0.2581150056915142
+      ],
+      "rank_del_relevante": 3,
+      "reciprocal_rank": 0.3333333333333333,
+      "rank_del_relevante_tfidf": 1,
+      "delta_rank_vs_tfidf": -2
+    },
+    {
+      "consulta_id": "q5",
+      "consulta": "¿Qué hace que el modelo sea más determinista al elegir la siguiente palabra?",
+      "documento_relevante": "d09",
+      "ranking_10_documentos": [
+        "d04",
+        "d01",
+        "d03",
+        "d06",
+        "d10",
+        "d09",
+        "d07",
+        "d08",
+        "d05",
+        "d02"
+      ],
+      "similitudes_en_orden_ranking": [
+        0.942735953468204,
+        0.8066012329018122,
+        0.6140509840251382,
+        0.5655795641518999,
+        0.5629897534965769,
+        0.49988551680348114,
+        0.4337516103914672,
+        0.4046979346963282,
+        0.2737753303946184,
+        0.17339640145552676
+      ],
+      "rank_del_relevante": 6,
+      "reciprocal_rank": 0.16666666666666666,
+      "rank_del_relevante_tfidf": 6,
+      "delta_rank_vs_tfidf": 0
+    },
+    {
+      "consulta_id": "q6",
+      "consulta": "¿Qué arquitectura combina autoatención con capas feed-forward?",
+      "documento_relevante": "d02",
+      "ranking_10_documentos": [
+        "d02",
+        "d08",
+        "d10",
+        "d03",
+        "d06",
+        "d01",
+        "d07",
+        "d04",
+        "d09",
+        "d05"
+      ],
+      "similitudes_en_orden_ranking": [
+        0.9530957100505452,
+        0.9523406024377624,
+        0.3484279929519712,
+        0.33015611410498324,
+        0.21635859777817698,
+        0.040024920441372985,
+        0.005194301093239068,
+        -0.011801219300029697,
+        -0.18718419462120195,
+        -0.32567217098164875
+      ],
+      "rank_del_relevante": 1,
+      "reciprocal_rank": 1.0,
+      "rank_del_relevante_tfidf": 1,
+      "delta_rank_vs_tfidf": 0
+    }
+  ],
+  "metricas": {
+    "tfidf": {
+      "hit_at_1": 0.8333333333333334,
+      "hit_at_3": 0.8333333333333334,
+      "mrr": 0.8611111111111112
+    },
+    "tfidf_T1_oficial": {
+      "hit_at_1": 0.8333333333333334,
+      "hit_at_3": 0.8333333333333334,
+      "mrr": 0.8611111111111112
+    },
+    "lsa": {
+      "hit_at_1": 0.6666666666666666,
+      "hit_at_3": 0.8333333333333334,
+      "mrr": 0.75
+    }
+  },
+  "hit_at_1_tfidf": 0.8333333333333334,
+  "hit_at_3_tfidf": 0.8333333333333334,
+  "mrr_tfidf": 0.8611111111111112,
+  "hit_at_1_lsa": 0.6666666666666666,
+  "hit_at_3_lsa": 0.8333333333333334,
+  "mrr_lsa": 0.75,
+  "tabla_comparativa": [
+    {
+      "metodo": "TF-IDF (linea base lexica, Parte 1)",
+      "hit_at_1": 0.8333333333333334,
+      "hit_at_3": 0.8333333333333334,
+      "mrr": 0.8611111111111112
+    },
+    {
+      "metodo": "LSA (TruncatedSVD, 4 dimensiones)",
+      "hit_at_1": 0.6666666666666666,
+      "hit_at_3": 0.8333333333333334,
+      "mrr": 0.75
+    }
+  ],
+  "verificacion_contra_T1": {
+    "t1_disponible": true,
+    "max_dif_metricas_recalculadas_vs_T1": 0.0,
+    "metricas_T1": {
+      "hit_at_1": 0.8333333333333334,
+      "hit_at_3": 0.8333333333333334,
+      "mrr": 0.8611111111111112
+    },
+    "rankings_tfidf_identicos_por_consulta": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "archivos_generados": [
+    "resultados.json",
+    "tabla_comparativa.csv",
+    "tabla_comparativa.png",
+    "comparacion_metricas.png",
+    "rank_relevante_por_consulta.png"
+  ]
+}

@@ -1,0 +1,29 @@
+  fraccion= 0.05  n_train= 19  Naive Bayes gaussiano  accuracy=0.9415  f1_macro=0.9353
+  fraccion= 0.05  n_train= 19  Regresión logística    accuracy=0.9357  f1_macro=0.9285
+  fraccion= 0.10  n_train= 39  Naive Bayes gaussiano  accuracy=0.9474  f1_macro=0.9420
+  fraccion= 0.10  n_train= 39  Regresión logística    accuracy=0.9357  f1_macro=0.9285
+  fraccion= 0.25  n_train= 99  Naive Bayes gaussiano  accuracy=0.9357  f1_macro=0.9302
+  fraccion= 0.25  n_train= 99  Regresión logística    accuracy=0.9474  f1_macro=0.9429
+  fraccion= 0.50  n_train=199  Naive Bayes gaussiano  accuracy=0.9240  f1_macro=0.9180
+  fraccion= 0.50  n_train=199  Regresión logística    accuracy=0.9766  f1_macro=0.9747
+  fraccion= 1.00  n_train=398  Naive Bayes gaussiano  accuracy=0.9357  f1_macro=0.9307
+  fraccion= 1.00  n_train=398  Regresión logística    accuracy=0.9883  f1_macro=0.9875
+
+========================================================================
+T3 — Curva de aprendizaje (evaluación sobre la prueba fija de la Parte 1)
+========================================================================
+División: 398 entrenamiento / 171 prueba (random_state=42, estratificada)
+Tamaños de entrenamiento evaluados: [19, 39, 99, 199, 398]
+
+Accuracy en el conjunto de prueba:
+modelo                    Naive Bayes gaussiano  Regresión logística
+n_ejemplos_entrenamiento                                            
+19                                       0.9415               0.9357
+39                                       0.9474               0.9357
+99                                       0.9357               0.9474
+199                                      0.9240               0.9766
+398                                      0.9357               0.9883
+
+Figura guardada en : parte3_curva_aprendizaje.png
+Tabla CSV          : parte3_curva_aprendizaje.csv
+Resultados escritos: resultados.json

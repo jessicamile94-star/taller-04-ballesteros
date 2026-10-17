@@ -1,0 +1,13 @@
+=== T3: Comprobación empírica (Parte 3) ===
+Fuente de la distribución teórica: entrada/T2/resultados.json (distribucion renormalizada top-p p=0.9 sobre T=1)
+Muestras: 10,000 · generador: numpy.random.default_rng(0)
+token | frec. observada | prob. teórica
+  t0  |     0.568200    |   0.569376
+  t1  |     0.209300    |   0.209462
+  t2  |     0.129600    |   0.127045
+  t3  |     0.092900    |   0.094117
+  t4  |     0.000000    |   0.000000
+  t5  |     0.000000    |   0.000000
+Divergencia KL (empírica || teórica) = 0.000050 bits
+Figura guardada: T3_frecuencias_vs_teoricas.png
+Resultados escritos en resultados.json

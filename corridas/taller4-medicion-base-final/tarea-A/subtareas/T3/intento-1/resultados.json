@@ -1,0 +1,253 @@
+{
+  "subtarea": "T3_curva_de_aprendizaje",
+  "dataset": "Breast Cancer Wisconsin (Diagnostic)",
+  "division_usada": {
+    "origen": "misma división de la Parte 1, reproducida con test_size=0.3, random_state=42, estratificada por clase",
+    "random_state": 42,
+    "test_size": 0.3,
+    "estratificada": true,
+    "n_entrenamiento": 398,
+    "n_prueba": 171,
+    "conteo_clases_prueba": {
+      "malignant": 64,
+      "benign": 107
+    },
+    "verificacion_con_T1": {
+      "archivo_referencia": "entrada/T1/resultados.json",
+      "coincide_n_entrenamiento": true,
+      "coincide_n_prueba": true,
+      "coincide_conteo_clases_entrenamiento": true,
+      "coincide_conteo_clases_prueba": true
+    }
+  },
+  "preprocesamiento": {
+    "escalador": "StandardScaler",
+    "ajustado_solo_con": "entrenamiento completo de la Parte 1 (398 ejemplos); nunca con la prueba",
+    "nota": "El escalador se ajusta una sola vez con el entrenamiento completo (igual que en la Parte 2) y las submuestras se toman sobre los atributos ya estandarizados; el conjunto de prueba transformado es exactamente el mismo para todos los puntos."
+  },
+  "submuestreo": {
+    "metodo": "train_test_split(train_size=fraccion, stratify=y_train, random_state=42); para 100% se usa el entrenamiento completo",
+    "estratificado": true,
+    "random_state": 42,
+    "fracciones": [
+      0.05,
+      0.1,
+      0.25,
+      0.5,
+      1.0
+    ]
+  },
+  "modelos": {
+    "Naive Bayes gaussiano": "sklearn.naive_bayes.GaussianNB",
+    "Regresión logística": "sklearn.linear_model.LogisticRegression(max_iter=1000, random_state=42)"
+  },
+  "metrica": "accuracy (y f1_macro como referencia), evaluada siempre sobre el mismo conjunto de prueba de la Parte 1",
+  "tamanos_entrenamiento": [
+    19,
+    39,
+    99,
+    199,
+    398
+  ],
+  "curva_aprendizaje": {
+    "Naive Bayes gaussiano": {
+      "fracciones": [
+        0.05,
+        0.1,
+        0.25,
+        0.5,
+        1.0
+      ],
+      "n_ejemplos_entrenamiento": [
+        19,
+        39,
+        99,
+        199,
+        398
+      ],
+      "accuracy": [
+        0.9415204678362573,
+        0.9473684210526315,
+        0.935672514619883,
+        0.9239766081871345,
+        0.935672514619883
+      ],
+      "f1_macro": [
+        0.9353056900726393,
+        0.9420055017522704,
+        0.9301703975943869,
+        0.9180460829493088,
+        0.9306543778801843
+      ]
+    },
+    "Regresión logística": {
+      "fracciones": [
+        0.05,
+        0.1,
+        0.25,
+        0.5,
+        1.0
+      ],
+      "n_ejemplos_entrenamiento": [
+        19,
+        39,
+        99,
+        199,
+        398
+      ],
+      "accuracy": [
+        0.935672514619883,
+        0.935672514619883,
+        0.9473684210526315,
+        0.9766081871345029,
+        0.9883040935672515
+      ],
+      "f1_macro": [
+        0.9285470085470086,
+        0.9285470085470086,
+        0.942866688940862,
+        0.97469665581533,
+        0.9875146028037383
+      ]
+    }
+  },
+  "accuracy_nb_gaussiano_por_n": {
+    "19": 0.9415204678362573,
+    "39": 0.9473684210526315,
+    "99": 0.935672514619883,
+    "199": 0.9239766081871345,
+    "398": 0.935672514619883
+  },
+  "accuracy_regresion_logistica_por_n": {
+    "19": 0.935672514619883,
+    "39": 0.935672514619883,
+    "99": 0.9473684210526315,
+    "199": 0.9766081871345029,
+    "398": 0.9883040935672515
+  },
+  "modelo_ganador_por_n": {
+    "19": "Naive Bayes gaussiano",
+    "39": "Naive Bayes gaussiano",
+    "99": "Regresión logística",
+    "199": "Regresión logística",
+    "398": "Regresión logística"
+  },
+  "tabla_puntos": [
+    {
+      "modelo": "Naive Bayes gaussiano",
+      "fraccion": 0.05,
+      "n_ejemplos_entrenamiento": 19,
+      "accuracy": 0.9415204678362573,
+      "f1_macro": 0.9353056900726393,
+      "composicion_submuestra": {
+        "malignant": 7,
+        "benign": 12
+      }
+    },
+    {
+      "modelo": "Regresión logística",
+      "fraccion": 0.05,
+      "n_ejemplos_entrenamiento": 19,
+      "accuracy": 0.935672514619883,
+      "f1_macro": 0.9285470085470086,
+      "composicion_submuestra": {
+        "malignant": 7,
+        "benign": 12
+      }
+    },
+    {
+      "modelo": "Naive Bayes gaussiano",
+      "fraccion": 0.1,
+      "n_ejemplos_entrenamiento": 39,
+      "accuracy": 0.9473684210526315,
+      "f1_macro": 0.9420055017522704,
+      "composicion_submuestra": {
+        "malignant": 15,
+        "benign": 24
+      }
+    },
+    {
+      "modelo": "Regresión logística",
+      "fraccion": 0.1,
+      "n_ejemplos_entrenamiento": 39,
+      "accuracy": 0.935672514619883,
+      "f1_macro": 0.9285470085470086,
+      "composicion_submuestra": {
+        "malignant": 15,
+        "benign": 24
+      }
+    },
+    {
+      "modelo": "Naive Bayes gaussiano",
+      "fraccion": 0.25,
+      "n_ejemplos_entrenamiento": 99,
+      "accuracy": 0.935672514619883,
+      "f1_macro": 0.9301703975943869,
+      "composicion_submuestra": {
+        "malignant": 37,
+        "benign": 62
+      }
+    },
+    {
+      "modelo": "Regresión logística",
+      "fraccion": 0.25,
+      "n_ejemplos_entrenamiento": 99,
+      "accuracy": 0.9473684210526315,
+      "f1_macro": 0.942866688940862,
+      "composicion_submuestra": {
+        "malignant": 37,
+        "benign": 62
+      }
+    },
+    {
+      "modelo": "Naive Bayes gaussiano",
+      "fraccion": 0.5,
+      "n_ejemplos_entrenamiento": 199,
+      "accuracy": 0.9239766081871345,
+      "f1_macro": 0.9180460829493088,
+      "composicion_submuestra": {
+        "malignant": 74,
+        "benign": 125
+      }
+    },
+    {
+      "modelo": "Regresión logística",
+      "fraccion": 0.5,
+      "n_ejemplos_entrenamiento": 199,
+      "accuracy": 0.9766081871345029,
+      "f1_macro": 0.97469665581533,
+      "composicion_submuestra": {
+        "malignant": 74,
+        "benign": 125
+      }
+    },
+    {
+      "modelo": "Naive Bayes gaussiano",
+      "fraccion": 1.0,
+      "n_ejemplos_entrenamiento": 398,
+      "accuracy": 0.935672514619883,
+      "f1_macro": 0.9306543778801843,
+      "composicion_submuestra": {
+        "malignant": 148,
+        "benign": 250
+      }
+    },
+    {
+      "modelo": "Regresión logística",
+      "fraccion": 1.0,
+      "n_ejemplos_entrenamiento": 398,
+      "accuracy": 0.9883040935672515,
+      "f1_macro": 0.9875146028037383,
+      "composicion_submuestra": {
+        "malignant": 148,
+        "benign": 250
+      }
+    }
+  ],
+  "figura_png": "parte3_curva_aprendizaje.png",
+  "archivos_generados": [
+    "resultados.json",
+    "parte3_curva_aprendizaje.csv",
+    "parte3_curva_aprendizaje.png"
+  ]
+}

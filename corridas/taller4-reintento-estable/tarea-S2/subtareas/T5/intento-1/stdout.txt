@@ -1,0 +1,17 @@
+======================================================================
+T5 · Referencia nula exacta por cambios de signo (2^16 = 65536)
+======================================================================
+Fuente de diferencias   : data/model_errors.csv (difference = error_a - error_b, pareada por store_id)
+n diferencias pareadas  : 16
+Media observada         : 0.418750  (suma = 6.7000)
+Configuraciones totales : 65536
+Extremas (|media| >= 0.41875): 13372
+  cola derecha  (>= +obs): 6686
+  cola izquierda (<= -obs): 6686
+p-value exacto          : 13372/65536 = 0.204041
+Prueba t (T4)           : t(15) = 1.3364 | p bilateral = 0.201342
+|p_signos - p_t| = 0.002698 | razon signos/t = 1.0134
+Decision al 5%          : coincidente (no se rechaza H0 en ambas)
+Verificacion DP entera  : conteo = 13372 | coincide = True
+Archivos escritos: resultados.json, t5_distribucion_nula_cambios_signo.png,
+  t5_comparacion_p_values.png, output/store_differences.csv, output/store_differences.png

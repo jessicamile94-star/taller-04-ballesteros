@@ -1,0 +1,14 @@
+Aviso: la serie load_score elegida coincide con 0 de 49 valores de referencia de T3.
+DataFrame analizado obtenido de: reconstruido desde data/server_measurements.csv (load_score: formula:z(gpu,global,ddof=0))
+Round trip verificado: output/server_analysis.parquet
+Filas: True
+Columnas: True
+Esquema: True
+Valores: True
+
+Resumen T5:
+  Archivo Parquet : output/server_analysis.parquet (17589 bytes, PyArrow 25.0.1)
+  Origen del DataFrame analizado: reconstruido desde data/server_measurements.csv (load_score: formula:z(gpu,global,ddof=0))
+  Dimensiones     : 300 filas x 9 columnas (antes) -> 300 filas x 9 columnas (despues)
+  Verificaciones  : Filas=True, Columnas=True, Esquema=True, Valores=True
+  Filas con requires_review=True: 53

@@ -1,0 +1,11 @@
+==================================================================
+T6 · Bootstrap pareado (remuestreo de tiendas completas)
+==================================================================
+Datos: data/model_errors.csv | tiendas (pares pareados): 16
+Media observada de las diferencias : 0.418750
+Semilla: 20260829 | remuestras: 10000
+IC percentil 95 %: [-0.193750, 1.006250] (contiene 0: True)
+EE bootstrap: 0.305594 | sesgo bootstrap: 0.002218
+Reproducibilidad (2 ejecuciones, misma semilla): idénticos = True
+Archivos: output/store_differences.csv, output/store_differences.png,
+          bootstrap_percentil95.png, resultados.json

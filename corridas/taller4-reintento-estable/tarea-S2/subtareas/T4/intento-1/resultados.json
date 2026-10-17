@@ -1,0 +1,172 @@
+{
+  "subtarea": "T4_efecto_e_incertidumbre",
+  "fuente_diferencias": "data/model_errors.csv (difference = error_a - error_b recalculada)",
+  "definicion": "difference = error_a - error_b, pareada por store_id",
+  "n": 16,
+  "mean": 0.4187499999999997,
+  "sample_sd": 1.2533787669070087,
+  "standard_error": 0.31334469172675217,
+  "standard_error_formula": "SE = sample_sd / sqrt(n)",
+  "suma_diferencias": 6.699999999999995,
+  "grados_de_libertad": 15,
+  "df": 15,
+  "t_statistic": 1.3363877259014323,
+  "p_value": 0.20134214922904944,
+  "ci95_low": -0.24912840078455428,
+  "ci95_high": 1.0866284007845537,
+  "prueba_t": {
+    "metodo": "scipy.stats.ttest_1samp (una muestra sobre las diferencias)",
+    "popmean": 0.0,
+    "alternativa": "two-sided",
+    "estadistico_t": 1.3363877259014323,
+    "grados_de_libertad": 15,
+    "p_value_bilateral": 0.20134214922904944,
+    "estadistico_t_pareada_ttest_rel": 1.3363877259014323
+  },
+  "intervalo_confianza": {
+    "nivel": 0.95,
+    "tipo": "t bilateral para la media pareada (scipy.stats.t.interval)",
+    "limite_inferior": -0.24912840078455428,
+    "limite_superior": 1.0866284007845537,
+    "t_critico": 2.131449545559776,
+    "margen_de_error": 0.667878400784554
+  },
+  "conteos": {
+    "diferencia_positiva_favorece_B": 10,
+    "diferencia_negativa_favorece_A": 6,
+    "empates": 0
+  },
+  "verificaciones": {
+    "n_es_16": true,
+    "se_igual_sd_sobre_sqrt_n": true,
+    "se_coincide_con_scipy_sem": true,
+    "p_value_coincide_con_2_sf": true,
+    "ic_coincide_con_mean_pm_tcrit_se": true,
+    "ttest_rel_mismo_estadistico": true,
+    "ic_contiene_cero": true
+  },
+  "tabla_diferencias": [
+    {
+      "store_id": "S01",
+      "error_a": 12.4,
+      "error_b": 10.6,
+      "difference": 1.8000000000000007,
+      "favors": "B"
+    },
+    {
+      "store_id": "S02",
+      "error_a": 9.8,
+      "error_b": 9.1,
+      "difference": 0.7000000000000011,
+      "favors": "B"
+    },
+    {
+      "store_id": "S03",
+      "error_a": 15.1,
+      "error_b": 13.9,
+      "difference": 1.1999999999999993,
+      "favors": "B"
+    },
+    {
+      "store_id": "S04",
+      "error_a": 11.0,
+      "error_b": 12.4,
+      "difference": -1.4000000000000004,
+      "favors": "A"
+    },
+    {
+      "store_id": "S05",
+      "error_a": 8.7,
+      "error_b": 7.2,
+      "difference": 1.4999999999999991,
+      "favors": "B"
+    },
+    {
+      "store_id": "S06",
+      "error_a": 13.6,
+      "error_b": 13.9,
+      "difference": -0.3000000000000007,
+      "favors": "A"
+    },
+    {
+      "store_id": "S07",
+      "error_a": 10.2,
+      "error_b": 9.3,
+      "difference": 0.8999999999999986,
+      "favors": "B"
+    },
+    {
+      "store_id": "S08",
+      "error_a": 14.9,
+      "error_b": 12.8,
+      "difference": 2.0999999999999996,
+      "favors": "B"
+    },
+    {
+      "store_id": "S09",
+      "error_a": 7.5,
+      "error_b": 9.3,
+      "difference": -1.8000000000000007,
+      "favors": "A"
+    },
+    {
+      "store_id": "S10",
+      "error_a": 16.0,
+      "error_b": 15.0,
+      "difference": 1.0,
+      "favors": "B"
+    },
+    {
+      "store_id": "S11",
+      "error_a": 9.3,
+      "error_b": 9.8,
+      "difference": -0.5,
+      "favors": "A"
+    },
+    {
+      "store_id": "S12",
+      "error_a": 12.8,
+      "error_b": 11.1,
+      "difference": 1.700000000000001,
+      "favors": "B"
+    },
+    {
+      "store_id": "S13",
+      "error_a": 11.7,
+      "error_b": 12.9,
+      "difference": -1.200000000000001,
+      "favors": "A"
+    },
+    {
+      "store_id": "S14",
+      "error_a": 8.9,
+      "error_b": 8.3,
+      "difference": 0.5999999999999996,
+      "favors": "B"
+    },
+    {
+      "store_id": "S15",
+      "error_a": 13.2,
+      "error_b": 11.9,
+      "difference": 1.299999999999999,
+      "favors": "B"
+    },
+    {
+      "store_id": "S16",
+      "error_a": 10.6,
+      "error_b": 11.5,
+      "difference": -0.9000000000000004,
+      "favors": "A"
+    }
+  ],
+  "interpretacion": {
+    "media": "La diferencia media es 0.4187 unidades por tienda (n=16): en promedio error_a excede a error_b en 0.4187 unidades; el signo positivo indica un efecto medio que favorece a B (10 de 16 tiendas con diferencia positiva, 6 negativa).",
+    "dispersion_vs_se": "La desviación muestral (1.2534) describe la dispersión de las diferencias ENTRE tiendas; el error estándar (0.3133) = sd/√n describe la incertidumbre de la MEDIA: la dispersión entre tiendas es √n ≈ 4.00 veces el error estándar.",
+    "ic_valores_compatibles": "El IC t del 95 % [-0.2491, 1.0866] unidades contiene 0: bajo el modelo t, efectos medios entre ~-0.249 y ~1.087 unidades son compatibles con los datos. El intervalo es un rango de valores plausibles para la media tras los datos, no una probabilidad posterior sobre el parámetro.",
+    "decision_prueba_t": "t(15) = 1.3364, p bilateral = 0.2013 → no se rechaza H0: media de las diferencias = 0 (nivel 0.05)."
+  },
+  "salidas": {
+    "csv": "output/store_differences.csv",
+    "figura": "output/store_differences.png"
+  }
+}

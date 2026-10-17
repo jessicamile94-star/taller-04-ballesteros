@@ -1,0 +1,17 @@
+    5% del entrenamiento -> n= 19 | NB=0.9415 | RL=0.9298
+   10% del entrenamiento -> n= 39 | NB=0.9474 | RL=0.9357
+   25% del entrenamiento -> n= 99 | NB=0.9357 | RL=0.9415
+   50% del entrenamiento -> n=199 | NB=0.9240 | RL=0.9766
+  100% del entrenamiento -> n=398 | NB=0.9357 | RL=0.9883
+
+=== T3 — Curva de aprendizaje (evaluación sobre la prueba fija de la Parte 1) ===
+ fracción | n entrenamiento |      NB |      RL
+      5% |              19 |  0.9415 |  0.9298
+     10% |              39 |  0.9474 |  0.9357
+     25% |              99 |  0.9357 |  0.9415
+     50% |             199 |  0.9240 |  0.9766
+    100% |             398 |  0.9357 |  0.9883
+
+Figura guardada en:  T3_curva_aprendizaje.png
+Tabla guardada en:   T3_curva_aprendizaje.csv
+Cifras completas en: resultados.json

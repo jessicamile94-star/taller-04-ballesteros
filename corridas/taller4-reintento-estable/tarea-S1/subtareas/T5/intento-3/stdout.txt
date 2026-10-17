@@ -1,0 +1,8 @@
+Round trip verificado: output/server_analysis.parquet
+Filas: True
+Columnas: True
+Esquema: True
+Valores: True
+Origen del DataFrame analizado: entrada/T3/resultados.json (tabla embebida)
+Parquet escrito: output/server_analysis.parquet (17629 bytes, 300 filas x 9 columnas, sin índice)
+resultados.json escrito en: resultados.json

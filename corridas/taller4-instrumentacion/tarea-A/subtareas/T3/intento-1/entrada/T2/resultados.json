@@ -1,0 +1,79 @@
+{
+  "subtarea": "T2",
+  "descripcion": "Naive Bayes gaussiano y regresión logística entrenados sobre la división 70/30 de la Parte 1 (atributos estandarizados; escalador ajustado solo con el entrenamiento) y evaluados con accuracy y F1 macro sobre el conjunto de prueba.",
+  "datos": {
+    "fuente": "División de la Parte 1 reutilizada desde entrada/T1/T1_entrenamiento.csv y entrada/T1/T1_prueba.csv",
+    "division_reutilizada_de_parte_1": true,
+    "test_size": 0.3,
+    "estratificada_por_clase": true,
+    "random_state": 42,
+    "n_entrenamiento": 398,
+    "n_prueba": 171,
+    "n_atributos": 30,
+    "conteo_clases_entrenamiento": {
+      "malignant": 148,
+      "benign": 250
+    },
+    "conteo_clases_prueba": {
+      "malignant": 64,
+      "benign": 107
+    },
+    "coincide_con_T1": true
+  },
+  "preprocesamiento": {
+    "escalador": "sklearn.preprocessing.StandardScaler",
+    "ajustado_solo_con_entrenamiento": true,
+    "conjunto_de_prueba_solo_transformado": true,
+    "verificacion": {
+      "max_abs_dif_media_escalador_vs_media_entrenamiento": 0.0,
+      "max_abs_dif_media_escalador_vs_media_prueba": 13.659103999529862,
+      "max_abs_media_atributos_escalados_entrenamiento": 7.319661348282439e-16,
+      "min_desv_est_atributos_escalados_entrenamiento": 0.9999999999999998,
+      "max_desv_est_atributos_escalados_entrenamiento": 1.0,
+      "interpretacion": "La media del escalador coincide exactamente con la media del entrenamiento y difiere de la media de la prueba: se ajustó únicamente con el entrenamiento."
+    }
+  },
+  "modelos": {
+    "naive_bayes_gaussiano": {
+      "implementacion": "sklearn.naive_bayes.GaussianNB",
+      "hiperparametros": "por defecto",
+      "accuracy_test": 0.935672514619883,
+      "f1_macro_test": 0.9306543778801843
+    },
+    "regresion_logistica": {
+      "implementacion": "sklearn.linear_model.LogisticRegression",
+      "hiperparametros": {
+        "max_iter": 1000,
+        "random_state": 42,
+        "resto": "por defecto"
+      },
+      "accuracy_test": 0.9883040935672515,
+      "f1_macro_test": 0.9875146028037383
+    }
+  },
+  "tabla": {
+    "columnas": [
+      "modelo",
+      "accuracy_test",
+      "f1_macro_test"
+    ],
+    "filas": [
+      {
+        "modelo": "Naive Bayes gaussiano (GaussianNB)",
+        "accuracy_test": 0.935672514619883,
+        "f1_macro_test": 0.9306543778801843
+      },
+      {
+        "modelo": "Regresión logística (LogisticRegression)",
+        "accuracy_test": 0.9883040935672515,
+        "f1_macro_test": 0.9875146028037383
+      }
+    ]
+  },
+  "tabla_markdown": "| Modelo | Accuracy (prueba) | F1 macro (prueba) |\n|---|---:|---:|\n| Naive Bayes gaussiano (GaussianNB) | 0.935673 | 0.930654 |\n| Regresión logística (LogisticRegression) | 0.988304 | 0.987515 |",
+  "archivos_generados": {
+    "tabla_csv": "T2_tabla_metricas_test.csv",
+    "figura": "T2_metricas_modelos.png"
+  },
+  "nota": "El escalador se ajustó únicamente con los 398 ejemplos de entrenamiento; el conjunto de prueba (171 ejemplos) solo se transformó con ese escalador y se usó exclusivamente para la evaluación final. No se ajustó ningún hiperparámetro con el conjunto de prueba."
+}

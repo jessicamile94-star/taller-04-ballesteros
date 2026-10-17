@@ -1,0 +1,12 @@
+T3 — Curva de aprendizaje (evaluación fija sobre el conjunto de prueba)
+División: reproducida: load_breast_cancer + train_test_split(test_size=0.3, random_state=42, stratify=y)
+Entrenamiento: 398 ejemplos | Prueba: 171 ejemplos (fija)
+ %entren.  n_train    Acc NB    Acc LR
+       5%       19    0.9415    0.9298
+      10%       39    0.9474    0.9357
+      25%       99    0.9357    0.9415
+      50%      199    0.9240    0.9766
+     100%      398    0.9357    0.9883
+Figura guardada en: t3_curva_aprendizaje.png
+Tabla guardada en:  t3_curva_aprendizaje.csv
+Resultados en:      resultados.json

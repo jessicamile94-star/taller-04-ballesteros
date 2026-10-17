@@ -1,0 +1,1 @@
+ERROR: no se pudo obtener el DataFrame analizado de T3.

@@ -1,0 +1,8 @@
+T2 completada.
+  Pares validados por store_id: 16
+  Favorecen a A: 6 | Favorecen a B: 10 | Empates: 0
+  Mayor diferencia a favor de B: S08 (2.1000)
+  Mayor diferencia a favor de A: S09 (-1.8000)
+  Escrito: output/store_differences.csv (16 filas x 5 columnas)
+  Figura: output/store_differences.png
+  CSV original intacto: True

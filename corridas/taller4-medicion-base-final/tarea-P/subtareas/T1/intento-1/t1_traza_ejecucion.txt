@@ -1,0 +1,6 @@
+=== T1 - Resumen de ventas (ejecutado en sandbox) ===
+Importes analizados (USD): [120, 200, 80]
+Numero de ventas: 3
+Total calculado por codigo: 400.00 USD
+Promedio calculado por codigo: 133.33 USD
+Escaneo PII: limpio (sin correo ni cedula sinteticos).

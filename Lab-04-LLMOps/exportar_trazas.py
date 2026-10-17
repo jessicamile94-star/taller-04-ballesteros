@@ -104,6 +104,9 @@ def a_spans(obs: list[dict]) -> list[dict]:
                 "traza": traza,
                 "span": "corrida" if raiz else TIPOS.get(o["type"], o["type"].lower()),
                 "nombre": o.get("name"),
+                "input": o.get("input"),
+                "output": o.get("output"),
+                "metadata": o.get("metadata"),
                 "duracion_ms": _ms(o),
                 "error": (o.get("statusMessage") or "error") if o.get("level") == "ERROR" else None,
             }
