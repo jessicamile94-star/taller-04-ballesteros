@@ -19,6 +19,7 @@ duración sale de `endTime - startTime` —el campo `latency` llega vacío en lo
 un milisegundo—. El error es el `statusMessage` de una observation en nivel `ERROR`. Y
 `prompt_version` es el que pusiste en `metadata` con `propagate_attributes`, o, si no lo
 pusiste, la versión del prompt de Langfuse ligado a la primera generation.
+El export conserva además `session_id` y las etiquetas (`tags`) del contexto de la traza.
 
 **Los tokens de salida incluyen los de razonamiento.** Langfuse guarda `output` y
 `output_reasoning_tokens` por separado; el proveedor cobra los dos como salida. Aquí
@@ -49,7 +50,7 @@ load_dotenv()
 from langfuse import get_client  # noqa: E402
 
 TIPOS = {"GENERATION": "llm", "TOOL": "herramienta", "GUARDRAIL": "guardrail"}
-CAMPOS = "core,basic,time,io,metadata,model,usage,prompt"
+CAMPOS = "core,basic,time,io,metadata,model,usage,prompt,trace_context"
 
 
 def _fecha(valor) -> datetime | None:
@@ -104,6 +105,13 @@ def a_spans(obs: list[dict]) -> list[dict]:
                 "traza": traza,
                 "span": "corrida" if raiz else TIPOS.get(o["type"], o["type"].lower()),
                 "nombre": o.get("name"),
+                # These are trace-level Langfuse attributes repeated on observations by
+                # observations v2. Preserve them in the portable export instead of
+                # reconstructing them from local run settings.
+                "session_id": o.get("sessionId"),
+                # The SDK model serializes this field as `tags` (the API calls it
+                # `traceTags` in filter documentation), depending on the SDK version.
+                "tags": o.get("tags") or o.get("traceTags") or [],
                 "input": o.get("input"),
                 "output": o.get("output"),
                 "metadata": o.get("metadata"),

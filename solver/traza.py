@@ -109,10 +109,16 @@ class Traza:
         try:
             from langfuse import propagate_attributes
             session = os.getenv("LANGFUSE_SESSION_ID", "taller4-ballesteros-base")
-            stack.enter_context(propagate_attributes(session_id=session, tags=["taller-04", "solver-b"]))
+            etiquetas = ["taller-04", "solver-b"]
+            stack.enter_context(propagate_attributes(session_id=session, tags=etiquetas))
             root = stack.enter_context(self._langfuse.start_as_current_observation(
                 as_type="span", name=nombre, input=entrada[:20000], metadata={"prompt_version": "base-v1"}
             ))
+            # Langfuse 4.x preserves session_id on observations, but propagated OTel tags
+            # may not populate the trace tag list. Enqueue the trace update explicitly.
+            traza_id = self._langfuse.get_current_trace_id()
+            if traza_id:
+                self._langfuse._create_trace_tags_via_ingestion(trace_id=traza_id, tags=etiquetas)
         except Exception:
             stack.close()
             yield None
